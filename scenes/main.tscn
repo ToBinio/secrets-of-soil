@@ -1,15 +1,148 @@
-[gd_scene load_steps=7 format=3 uid="uid://c4l41075qhjsw"]
+[gd_scene load_steps=12 format=3 uid="uid://c4l41075qhjsw"]
 
 [ext_resource type="Script" uid="uid://ck4nxaeidpcxl" path="res://scripts/camera.gd" id="1_0wfyh"]
 [ext_resource type="PackedScene" uid="uid://22wsbw7e8njp" path="res://scenes/world.tscn" id="1_o5qli"]
+[ext_resource type="Script" uid="uid://c41htxxbt565f" path="res://scripts/environment.gd" id="1_tbgi4"]
+[ext_resource type="Script" uid="uid://cb4ftraq7hg1l" path="res://scripts/next_day.gd" id="2_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://cec3esephtkpq" path="res://scenes/info.tscn" id="3_sugp2"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_o5qli"]
-sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
-ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+[sub_resource type="Animation" id="Animation_sugp2"]
+resource_name = "DayNightCycle"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sun:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3.96667),
+"transitions": PackedFloat32Array(0.594604, 1),
+"update": 0,
+"values": [Vector3(-0.698132, -0.176278, -0.225147), Vector3(5.58505, -0.176278, -0.225147)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("WorldEnvironment:environment:sky:sky_material:sky_top_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.02203, 4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0.385, 0.454, 0.55, 1), Color(0.0627451, 0.0980392, 0.207843, 1), Color(0.385, 0.454, 0.55, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("WorldEnvironment:environment:sky:sky_material:sky_horizon_color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.03556, 4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0.6463, 0.6558, 0.6708, 1), Color(0.172549, 0.227451, 0.352941, 1), Color(0.6463, 0.6558, 0.6708, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("WorldEnvironment:environment:sky:sky_material:ground_horizon_color")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1.02203, 4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0.6463, 0.6558, 0.6708, 1), Color(0.172549, 0.227451, 0.352941, 1), Color(0.6463, 0.6558, 0.6708, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("WorldEnvironment:environment:sky:sky_material:ground_bottom_color")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1.04233, 4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0.2, 0.169, 0.133, 1), Color(0.0431373, 0.0470588, 0.109804, 1), Color(0.2, 0.169, 0.133, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_jyhfs"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sun:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.783525, -0.175988, -0.22486)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("WorldEnvironment:environment:sky:sky_material:sky_top_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.385, 0.454, 0.55, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("WorldEnvironment:environment:sky:sky_material:sky_horizon_color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.6463, 0.6558, 0.6708, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("WorldEnvironment:environment:sky:sky_material:ground_horizon_color")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.6463, 0.6558, 0.6708, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("WorldEnvironment:environment:sky:sky_material:ground_bottom_color")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.2, 0.169, 0.133, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tbgi4"]
+_data = {
+&"DayNightCycle": SubResource("Animation_sugp2"),
+&"RESET": SubResource("Animation_jyhfs")
+}
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_sugp2"]
 
 [sub_resource type="Sky" id="Sky_0wfyh"]
-sky_material = SubResource("ProceduralSkyMaterial_o5qli")
+sky_material = SubResource("ProceduralSkyMaterial_sugp2")
 
 [sub_resource type="Environment" id="Environment_sugp2"]
 background_mode = 2
@@ -18,12 +151,46 @@ tonemap_mode = 2
 
 [node name="Main" type="Node3D"]
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+[node name="Environment" type="Node" parent="."]
+script = ExtResource("1_tbgi4")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Environment"]
+libraries = {
+&"": SubResource("AnimationLibrary_tbgi4")
+}
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Environment"]
 environment = SubResource("Environment_sugp2")
 
-[node name="Sun" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+[node name="Sun" type="DirectionalLight3D" parent="Environment"]
+transform = Transform3D(0.932216, 0.339984, -0.124033, -0.157959, 0.690595, 0.705781, 0.325611, -0.638348, 0.697488, 0, 0, -0.0436931)
 shadow_enabled = true
+
+[node name="Ui" type="Node" parent="."]
+
+[node name="NextDay" type="Control" parent="Ui"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("2_jyhfs")
+
+[node name="Button" type="Button" parent="Ui/NextDay"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -107.0
+offset_top = 9.0
+offset_right = -11.0
+offset_bottom = 48.0
+grow_horizontal = 0
+text = "Next Day"
+
+[node name="Info" parent="Ui" instance=ExtResource("3_sugp2")]
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.32608, 0.945342, 0, -0.945342, 0.32608, 0.131146, 6.20349, 7.31348)
@@ -31,6 +198,6 @@ script = ExtResource("1_0wfyh")
 zoom_speed = 0.15
 zoom_animation_speed = 10.0
 
-[node name="Info" parent="." instance=ExtResource("3_sugp2")]
-
 [node name="World" parent="." instance=ExtResource("1_o5qli")]
+
+[connection signal="pressed" from="Ui/NextDay/Button" to="Ui/NextDay" method="_on_next_day_button_pressed"]

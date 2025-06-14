@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bbivfwup2rbo2"]
+
+[ext_resource type="Script" uid="uid://cqxn7kbefvw0w" path="res://scripts/growable.gd" id="1_qctm5"]
+
+[node name="Growable" type="Node"]
+script = ExtResource("1_qctm5")

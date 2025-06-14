@@ -4,4 +4,4 @@ extends Area3D
 
 func _on_input_event(_camera: Node, event: InputEvent, _event_position: Vector3, _normal: Vector3, _shape_idx: int) -> void:
 	if event is InputEventMouseButton && event.is_pressed() && event.button_index == MOUSE_BUTTON_LEFT:
-		PlantInfo.show_plant(plant)
+		Global.show_plant(plant)
