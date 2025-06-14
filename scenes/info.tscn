@@ -1,0 +1,107 @@
+[gd_scene load_steps=6 format=3 uid="uid://cec3esephtkpq"]
+
+[ext_resource type="Script" uid="uid://rv4c16td201r" path="res://scenes/info.gd" id="1_6cmwp"]
+
+[sub_resource type="Animation" id="Animation_kin2u"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-326.0]
+}
+
+[sub_resource type="Animation" id="Animation_6cmwp"]
+resource_name = "slideIn"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(0.7, 0.7),
+"update": 0,
+"values": [-326.0, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_1t52y"]
+resource_name = "slideOut"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(0.707107, 0.707107),
+"update": 0,
+"values": [0.0, -329.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3wikv"]
+_data = {
+&"RESET": SubResource("Animation_kin2u"),
+&"slideIn": SubResource("Animation_6cmwp"),
+&"slideOut": SubResource("Animation_1t52y")
+}
+
+[node name="Info" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+script = ExtResource("1_6cmwp")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_3wikv")
+}
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = -326.0
+offset_right = -6.0
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -76.5
+offset_top = 21.0
+offset_right = 76.5
+offset_bottom = 44.0
+grow_horizontal = 2
+text = "Plant Title"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -42.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = 42.0
+grow_horizontal = 0
+text = "X"
+
+[connection signal="button_down" from="Panel/Button" to="." method="_on_close_button_down"]
