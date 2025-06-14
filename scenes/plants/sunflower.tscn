@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://bfvklom7mvg26"]
 
 [ext_resource type="PackedScene" uid="uid://bnju6l2m5u8rc" path="res://assets/plants/sunflower/sunflower.gltf" id="1_40ky6"]
-[ext_resource type="PackedScene" path="res://scenes/plant_clicker.tscn" id="1_uoh7n"]
+[ext_resource type="PackedScene" uid="uid://boeiwk7qotto2" path="res://scenes/plant_clicker.tscn" id="1_uoh7n"]
 [ext_resource type="Resource" uid="uid://c85nr0tqy0565" path="res://scripts/resources/plants/sunflower.tres" id="2_duwge"]
 [ext_resource type="PackedScene" uid="uid://bd00p8h4tp4ej" path="res://scenes/click_clear_component.tscn" id="4_1v48e"]
 
@@ -22,4 +22,3 @@ shape = SubResource("CapsuleShape3D_40ky6")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0663506)
 
 [node name="ClickClearComponent" parent="." instance=ExtResource("4_1v48e")]
-radius = 1.0
