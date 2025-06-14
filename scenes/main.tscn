@@ -168,8 +168,6 @@ shadow_enabled = true
 
 [node name="Ui" type="Node" parent="."]
 
-[node name="Info" parent="Ui" instance=ExtResource("3_sugp2")]
-
 [node name="NextDay" type="Control" parent="Ui"]
 layout_mode = 3
 anchors_preset = 15
@@ -177,7 +175,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 1
+mouse_filter = 2
 script = ExtResource("2_jyhfs")
 
 [node name="Button" type="Button" parent="Ui/NextDay"]
@@ -191,6 +189,8 @@ offset_right = -11.0
 offset_bottom = 48.0
 grow_horizontal = 0
 text = "Next Day"
+
+[node name="Info" parent="Ui" instance=ExtResource("3_sugp2")]
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.32608, 0.945342, 0, -0.945342, 0.32608, 0.131146, 6.20349, 7.31348)

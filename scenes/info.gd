@@ -18,8 +18,6 @@ func _on_plant_show(plant: Plant):
 	_open = true
 
 func _on_close_button_down() -> void:
-	print("close")
-	
 	if(!_open):
 		return
 	
