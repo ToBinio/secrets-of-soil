@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://b20puety53ilr" path="res://scripts/components/click_clear_component.gd" id="1_rwuwh"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_rwuwh"]
+height = 0.1
 
 [node name="ClickClearComponent" type="Area3D"]
 script = ExtResource("1_rwuwh")
