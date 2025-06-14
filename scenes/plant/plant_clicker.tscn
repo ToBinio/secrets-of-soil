@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://boeiwk7qotto2"]
 
-[ext_resource type="Script" path="res://scripts/plant_clicker.gd" id="1_am5sk"]
+[ext_resource type="Script" uid="uid://bxpknsj5j8a1v" path="res://scripts/plant_clicker.gd" id="1_am5sk"]
 
 [node name="Clicker" type="Area3D"]
 script = ExtResource("1_am5sk")

@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://kukoxvnrq6e5"]
+[gd_scene load_steps=6 format=3 uid="uid://kukoxvnrq6e5"]
 
-[ext_resource type="PackedScene" uid="uid://boeiwk7qotto2" path="res://scenes/plant_clicker.tscn" id="1_hodiq"]
+[ext_resource type="PackedScene" uid="uid://bbivfwup2rbo2" path="res://scenes/plant/growable.tscn" id="1_coew3"]
+[ext_resource type="PackedScene" uid="uid://boeiwk7qotto2" path="res://scenes/plant/plant_clicker.tscn" id="1_hodiq"]
 [ext_resource type="PackedScene" uid="uid://bwi3piy4f66no" path="res://assets/plants/wheat/wheat.gltf" id="1_yfabo"]
 [ext_resource type="Resource" uid="uid://dl5fl0mgy1sor" path="res://scripts/resources/plants/wheat.tres" id="2_ucxq8"]
 
@@ -9,6 +10,8 @@ radius = 0.503301
 height = 1.26241
 
 [node name="Wheat" type="Node3D"]
+
+[node name="Growable" parent="." instance=ExtResource("1_coew3")]
 
 [node name="Clicker" parent="." instance=ExtResource("1_hodiq")]
 plant = ExtResource("2_ucxq8")

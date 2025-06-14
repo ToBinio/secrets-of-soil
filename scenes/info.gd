@@ -6,7 +6,7 @@ extends Control
 var _open: bool = false;
 
 func _ready() -> void:
-	PlantInfo.on_plant_show.connect(_on_plant_show)
+	Global.on_plant_show.connect(_on_plant_show)
 
 func _on_plant_show(plant: Plant):
 	label.text = plant.name
@@ -18,6 +18,8 @@ func _on_plant_show(plant: Plant):
 	_open = true
 
 func _on_close_button_down() -> void:
+	print("close")
+	
 	if(!_open):
 		return
 	
