@@ -1,5 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://kukoxvnrq6e5"]
+[gd_scene load_steps=7 format=3 uid="uid://kukoxvnrq6e5"]
 
+[ext_resource type="Script" uid="uid://kmp8a7og7efk" path="res://scripts/components/plant.gd" id="1_8jru4"]
 [ext_resource type="PackedScene" uid="uid://bbivfwup2rbo2" path="res://scenes/plant/growable.tscn" id="1_coew3"]
 [ext_resource type="PackedScene" uid="uid://boeiwk7qotto2" path="res://scenes/plant/plant_clicker.tscn" id="1_hodiq"]
 [ext_resource type="PackedScene" uid="uid://bwi3piy4f66no" path="res://assets/plants/wheat/wheat.gltf" id="1_yfabo"]
@@ -10,11 +11,15 @@ radius = 0.503301
 height = 1.26241
 
 [node name="Wheat" type="Node3D"]
-
-[node name="Growable" parent="." instance=ExtResource("1_coew3")]
-
-[node name="Clicker" parent="." instance=ExtResource("1_hodiq")]
+script = ExtResource("1_8jru4")
 plant = ExtResource("2_ucxq8")
+
+[node name="Growable" parent="." node_paths=PackedStringArray("plant", "visual") instance=ExtResource("1_coew3")]
+plant = NodePath("..")
+visual = NodePath("../Visual")
+
+[node name="Clicker" parent="." node_paths=PackedStringArray("plant") instance=ExtResource("1_hodiq")]
+plant = NodePath("..")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Clicker"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.631755, 0)

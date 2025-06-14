@@ -1,9 +1,10 @@
-[gd_resource type="Resource" script_class="Plant" load_steps=2 format=3 uid="uid://c85nr0tqy0565"]
+[gd_resource type="Resource" script_class="PlantResource" load_steps=2 format=3 uid="uid://c85nr0tqy0565"]
 
-[ext_resource type="Script" uid="uid://c2qk2325ok2gv" path="res://scripts/resources/plant.gd" id="2_ptpjg"]
+[ext_resource type="Script" uid="uid://c2qk2325ok2gv" path="res://scripts/resources/plant_resource.gd" id="1_3cfa8"]
 
 [resource]
-script = ExtResource("2_ptpjg")
+script = ExtResource("1_3cfa8")
 name = "Sunflower"
-water_consumption = 10.0
+growth_speed = 0.2
+preferred_water = 0.5
 metadata/_custom_type_script = "uid://c2qk2325ok2gv"

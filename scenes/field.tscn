@@ -1,8 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://dpg1chidhkvy3"]
+[gd_scene load_steps=5 format=3 uid="uid://dpg1chidhkvy3"]
 
 [ext_resource type="Script" uid="uid://c6qxasibnqplc" path="res://scripts/field.gd" id="1_6pmjc"]
-[ext_resource type="Resource" uid="uid://c85nr0tqy0565" path="res://scripts/resources/plants/sunflower.tres" id="2_ttalb"]
-[ext_resource type="PackedScene" uid="uid://bfvklom7mvg26" path="res://scenes/plants/sunflower.tscn" id="3_lptdg"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ycb0e"]
 size = Vector3(5, 0.1, 5)
@@ -16,9 +14,6 @@ size = Vector3(5, 0.1, 5)
 
 [node name="Field" type="Node3D"]
 script = ExtResource("1_6pmjc")
-plant = ExtResource("2_ttalb")
-scene = ExtResource("3_lptdg")
-max_water = 100.0
 
 [node name="Area3D" type="Area3D" parent="."]
 

@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://bfvklom7mvg26"]
+[gd_scene load_steps=8 format=3 uid="uid://bfvklom7mvg26"]
 
 [ext_resource type="PackedScene" uid="uid://bbivfwup2rbo2" path="res://scenes/plant/growable.tscn" id="1_1v48e"]
 [ext_resource type="PackedScene" uid="uid://bnju6l2m5u8rc" path="res://assets/plants/sunflower/sunflower.gltf" id="1_40ky6"]
+[ext_resource type="Script" uid="uid://kmp8a7og7efk" path="res://scripts/components/plant.gd" id="1_mtwp4"]
 [ext_resource type="PackedScene" uid="uid://boeiwk7qotto2" path="res://scenes/plant/plant_clicker.tscn" id="1_uoh7n"]
 [ext_resource type="Resource" uid="uid://c85nr0tqy0565" path="res://scripts/resources/plants/sunflower.tres" id="2_duwge"]
 [ext_resource type="PackedScene" uid="uid://bd00p8h4tp4ej" path="res://scenes/plant/click_clear_component.tscn" id="4_1v48e"]
@@ -11,17 +12,21 @@ radius = 0.474813
 height = 1.5629
 
 [node name="Sunflower" type="Node3D"]
-
-[node name="Growable" parent="." instance=ExtResource("1_1v48e")]
-
-[node name="Clicker" parent="." instance=ExtResource("1_uoh7n")]
+script = ExtResource("1_mtwp4")
 plant = ExtResource("2_duwge")
+
+[node name="Growable" parent="." node_paths=PackedStringArray("plant", "visual") instance=ExtResource("1_1v48e")]
+plant = NodePath("..")
+visual = NodePath("../Visual")
+
+[node name="Clicker" parent="." node_paths=PackedStringArray("plant") instance=ExtResource("1_uoh7n")]
+plant = NodePath("..")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Clicker"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.774343, 0)
 shape = SubResource("CapsuleShape3D_40ky6")
 
+[node name="ClickClearComponent" parent="." instance=ExtResource("4_1v48e")]
+
 [node name="Visual" parent="." instance=ExtResource("1_40ky6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0663506)
-
-[node name="ClickClearComponent" parent="." instance=ExtResource("4_1v48e")]

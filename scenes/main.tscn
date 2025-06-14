@@ -199,5 +199,6 @@ zoom_speed = 0.15
 zoom_animation_speed = 10.0
 
 [node name="World" parent="." instance=ExtResource("1_o5qli")]
+transform = Transform3D(0.999998, -0.000154248, 0.00215105, 0.00014794, 0.999996, 0.00292046, -0.00215149, -0.00292013, 0.999993, 0, 0, 0)
 
 [connection signal="pressed" from="Ui/NextDay/Button" to="Ui/NextDay" method="_on_next_day_button_pressed"]
