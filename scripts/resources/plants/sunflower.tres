@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Plant" load_steps=3 format=3 uid="uid://c2i5h20773boj"]
+
+[ext_resource type="Script" uid="uid://c2qk2325ok2gv" path="res://scripts/resources/plant.gd" id="1_3cfa8"]
+[ext_resource type="PackedScene" uid="uid://bfvklom7mvg26" path="res://scenes/plants/sunflower.tscn" id="1_tbiuf"]
+
+[resource]
+script = ExtResource("1_3cfa8")
+scene = ExtResource("1_tbiuf")
+water_consumption = 10.0
+metadata/_custom_type_script = "uid://c2qk2325ok2gv"
