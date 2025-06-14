@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://dpg1chidhkvy3"]
+
+[ext_resource type="Script" uid="uid://c6qxasibnqplc" path="res://scripts/field.gd" id="1_6pmjc"]
+[ext_resource type="PackedScene" uid="uid://bfvklom7mvg26" path="res://scenes/plants/sunflower.tscn" id="2_ttalb"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ycb0e"]
+size = Vector3(5, 0.1, 5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ycb0e"]
+albedo_color = Color(0.407843, 0.25098, 0.223529, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_6pmjc"]
+material = SubResource("StandardMaterial3D_ycb0e")
+size = Vector3(5, 0.1, 5)
+
+[node name="Field" type="Node3D"]
+script = ExtResource("1_6pmjc")
+flower = ExtResource("2_ttalb")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("BoxShape3D_ycb0e")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_6pmjc")
+
+[connection signal="input_event" from="Area3D" to="." method="_on_area_3d_input_event"]

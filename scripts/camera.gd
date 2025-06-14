@@ -16,7 +16,7 @@ func _process(delta: float) -> void:
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
 		if event.is_pressed():
-			if event.button_index == MOUSE_BUTTON_LEFT:
+			if event.button_index == MOUSE_BUTTON_RIGHT:
 				_prevous_mouse_location = event.position
 			if event.button_index == MOUSE_BUTTON_WHEEL_UP:
 				_target_zoom /= 1 + zoom_speed
@@ -24,7 +24,7 @@ func _unhandled_input(event: InputEvent) -> void:
 				_target_zoom *= 1 + zoom_speed
 
 	if event is InputEventMouseMotion:
-		if event.button_mask == MOUSE_BUTTON_MASK_LEFT:
+		if event.button_mask == MOUSE_BUTTON_MASK_RIGHT:
 			if(!_prevous_mouse_location):
 				return
 			
