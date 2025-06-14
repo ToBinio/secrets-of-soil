@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Plant" load_steps=2 format=3 uid="uid://dl5fl0mgy1sor"]
+
+[ext_resource type="Script" uid="uid://c2qk2325ok2gv" path="res://scripts/resources/plant.gd" id="1_g7v3s"]
+
+[resource]
+script = ExtResource("1_g7v3s")
+name = "Wheat"
+water_consumption = 5.0
+metadata/_custom_type_script = "uid://c2qk2325ok2gv"

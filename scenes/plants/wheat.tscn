@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://kukoxvnrq6e5"]
+
+[ext_resource type="PackedScene" uid="uid://boeiwk7qotto2" path="res://scenes/plant_clicker.tscn" id="1_hodiq"]
+[ext_resource type="PackedScene" uid="uid://bwi3piy4f66no" path="res://assets/plants/wheat/wheat.gltf" id="1_yfabo"]
+[ext_resource type="Resource" uid="uid://dl5fl0mgy1sor" path="res://scripts/resources/plants/wheat.tres" id="2_ucxq8"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ucxq8"]
+radius = 0.503301
+height = 1.26241
+
+[node name="Wheat" type="Node3D"]
+
+[node name="Clicker" parent="." instance=ExtResource("1_hodiq")]
+plant = ExtResource("2_ucxq8")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Clicker"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.631755, 0)
+shape = SubResource("CapsuleShape3D_ucxq8")
+
+[node name="Visual" parent="." instance=ExtResource("1_yfabo")]
