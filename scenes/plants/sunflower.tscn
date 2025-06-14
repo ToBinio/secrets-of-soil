@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bfvklom7mvg26"]
+[gd_scene load_steps=6 format=3 uid="uid://bfvklom7mvg26"]
 
 [ext_resource type="PackedScene" uid="uid://bnju6l2m5u8rc" path="res://assets/plants/sunflower/sunflower.gltf" id="1_40ky6"]
 [ext_resource type="Script" uid="uid://bxpknsj5j8a1v" path="res://scripts/plant-clicker.gd" id="1_uoh7n"]
@@ -8,10 +8,6 @@
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_40ky6"]
 radius = 0.474813
 height = 1.5629
-
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_wg0ja"]
-height = 0.5
-radius = 1.0
 
 [node name="Sunflower" type="Node3D"]
 
@@ -27,8 +23,6 @@ shape = SubResource("CapsuleShape3D_40ky6")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0663506)
 
 [node name="ClickClearComponent" parent="." instance=ExtResource("4_1v48e")]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ClickClearComponent"]
-shape = SubResource("CylinderShape3D_wg0ja")
+radius = 1.0
 
 [connection signal="input_event" from="Clicker" to="Clicker" method="_on_input_event"]
