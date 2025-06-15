@@ -3,6 +3,8 @@ extends Control
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var label: Label = $Panel/Label
 
+@onready var water_progress_bar: ProgressBar = $Panel/ScrollContainer/VBoxContainer/VBoxContainer/ProgressBar
+
 var _open: bool = false;
 
 func _ready() -> void:
@@ -10,6 +12,7 @@ func _ready() -> void:
 
 func _on_plant_show(plant: PlantResource):
 	label.text = plant.name
+	water_progress_bar.value = plant.preferred_water
 	
 	if(_open):
 		return
