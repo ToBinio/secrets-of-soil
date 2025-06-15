@@ -4,9 +4,11 @@
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_rwuwh"]
 height = 0.1
+radius = 1.0
 
 [node name="ClickClearComponent" type="Area3D"]
 script = ExtResource("1_rwuwh")
+radius = 1.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CylinderShape3D_rwuwh")
