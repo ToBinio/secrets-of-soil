@@ -1,0 +1,39 @@
+[gd_scene load_steps=3 format=3 uid="uid://drq48tovhsxqs"]
+
+[ext_resource type="Script" uid="uid://ihbn2sth3yml" path="res://scripts/ui/plant_selection.gd" id="1_i7dau"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_q1j3t"]
+
+[node name="Panel" type="Button"]
+custom_minimum_size = Vector2(200, 80)
+script = ExtResource("1_i7dau")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 12.0
+offset_top = -19.5
+offset_right = 52.0
+offset_bottom = 20.5
+grow_vertical = 2
+texture = SubResource("PlaceholderTexture2D_q1j3t")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -111.0
+offset_top = -11.5
+offset_right = -11.0
+offset_bottom = 11.5
+grow_horizontal = 0
+grow_vertical = 2
+text = "Plant name"
+horizontal_alignment = 2
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

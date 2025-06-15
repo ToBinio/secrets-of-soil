@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=3 uid="uid://cheyy73j6p542"]
+
+[ext_resource type="Script" uid="uid://dc2jotto6mjxq" path="res://scripts/ui/plant_list.gd" id="1_n7jw7"]
+[ext_resource type="PackedScene" uid="uid://drq48tovhsxqs" path="res://scenes/ui/plant_selection.tscn" id="2_ryk2w"]
+
+[node name="PlantList" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_n7jw7")
+plant_container = ExtResource("2_ryk2w")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -81.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3

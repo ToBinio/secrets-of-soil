@@ -1,0 +1,15 @@
+[gd_scene load_steps=7 format=3 uid="uid://bybivuxciy03"]
+
+[ext_resource type="Script" uid="uid://csdy82sgjaft3" path="res://scripts/autoloads/global.gd" id="1_fg6a1"]
+[ext_resource type="Script" uid="uid://c2qk2325ok2gv" path="res://scripts/resources/plant_resource.gd" id="2_vskmb"]
+[ext_resource type="Resource" uid="uid://c85nr0tqy0565" path="res://scripts/resources/plants/sunflower.tres" id="3_c7w40"]
+[ext_resource type="Resource" uid="uid://dl5fl0mgy1sor" path="res://scripts/resources/plants/wheat.tres" id="4_ew72y"]
+[ext_resource type="PackedScene" uid="uid://bfvklom7mvg26" path="res://scenes/plants/sunflower.tscn" id="4_j540c"]
+[ext_resource type="PackedScene" uid="uid://kukoxvnrq6e5" path="res://scenes/plants/wheat.tscn" id="6_uckhh"]
+
+[node name="Global" type="Node"]
+script = ExtResource("1_fg6a1")
+plants = Dictionary[ExtResource("2_vskmb"), PackedScene]({
+ExtResource("3_c7w40"): ExtResource("4_j540c"),
+ExtResource("4_ew72y"): ExtResource("6_uckhh")
+})

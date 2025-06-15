@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://cec3esephtkpq"]
 
-[ext_resource type="Script" uid="uid://rv4c16td201r" path="res://scenes/info.gd" id="1_6cmwp"]
+[ext_resource type="Script" uid="uid://rv4c16td201r" path="res://scripts/ui/info.gd" id="1_6cmwp"]
 
 [sub_resource type="Animation" id="Animation_kin2u"]
 length = 0.001
