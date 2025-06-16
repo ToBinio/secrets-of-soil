@@ -6,6 +6,7 @@ extends Button
 var plant: PlantResource
 
 @onready var name_label: Label = $Name
+@onready var count: Label = $Count
 
 func _ready() -> void:
 	name_label.text = plant.name
@@ -15,6 +16,8 @@ func _process(_delta: float) -> void:
 		add_theme_stylebox_override("normal", active_pannel_state)
 	else:
 		add_theme_stylebox_override("normal", inactive_pannel_state)
+	
+	count.text = str(Inventory.plants[plant])
 
 func _on_pressed() -> void:
 	Events.selected_plant = plant
