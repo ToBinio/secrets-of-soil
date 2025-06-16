@@ -10,9 +10,7 @@
 [ext_resource type="Resource" uid="uid://c85nr0tqy0565" path="res://scripts/resources/plants/sunflower.tres" id="3_ya4ey"]
 [ext_resource type="Resource" uid="uid://dl5fl0mgy1sor" path="res://scripts/resources/plants/wheat.tres" id="4_eb6dy"]
 [ext_resource type="PackedScene" uid="uid://cheyy73j6p542" path="res://scenes/ui/plant_list.tscn" id="4_tefeu"]
-[ext_resource type="PackedScene" uid="uid://cn50eq5oj33yx" path="res://scenes/ui/quest_display.tscn" id="5_85g3d"]
-[ext_resource type="PackedScene" uid="uid://dyc8nhwgqib5g" path="res://assets/houses/housA/houseA.gltf" id="7_o6xl0"]
-[ext_resource type="PackedScene" uid="uid://d3maoy3blejtf" path="res://assets/villagers/villager_1.glb" id="8_tipki"]
+[ext_resource type="PackedScene" uid="uid://cd6yn8ep2yldo" path="res://scenes/ui/quest_display.tscn" id="5_85g3d"]
 
 [sub_resource type="Animation" id="Animation_sugp2"]
 resource_name = "DayNightCycle"
@@ -210,6 +208,7 @@ text = "Next Day"
 [node name="PlantSelector" parent="Ui" instance=ExtResource("4_tefeu")]
 
 [node name="QuestDisplay" parent="Ui" instance=ExtResource("5_85g3d")]
+mouse_filter = 2
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.32608, 0.945342, 0, -0.945342, 0.32608, 0.131146, 6.20349, 7.31348)

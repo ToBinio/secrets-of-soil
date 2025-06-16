@@ -11,5 +11,10 @@ class_name QuestIcon
 func _ready() -> void:
 	set_label_text()
 	
+func _process(delta: float) -> void:
+	set_label_text()
+	
 func set_label_text():
-	label.text = "0/"+str(requirement.required_amount)
+	var data = Inventory.plants[requirement.plant_resource];
+		
+	label.text = str(data.harvested)+"/"+str(requirement.required_amount)

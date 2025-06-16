@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://3wqm7x704b87"]
 
 [ext_resource type="PackedScene" uid="uid://cibn2worqabp7" path="res://scenes/ui/quest_type.tscn" id="1_2voud"]
-[ext_resource type="Script" uid="uid://b3rr8rj3e3vh" path="res://scripts/ui/quest.gd" id="1_t3s0l"]
+[ext_resource type="Script" path="res://scripts/ui/quest.gd" id="1_t3s0l"]
 
 [node name="Quest" type="Control"]
 custom_minimum_size = Vector2(0, 40)
