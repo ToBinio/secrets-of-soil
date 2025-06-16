@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bd8amtq8rrtw2"]
 
-[ext_resource type="PackedScene" uid="uid://dyc8nhwgqib5g" path="res://assets/houses/housA/houseA.gltf" id="1_gx76v"]
+[ext_resource type="PackedScene" uid="uid://dyc8nhwgqib5g" path="res://assets/village/housA/houseA.gltf" id="1_gx76v"]
 [ext_resource type="PackedScene" uid="uid://bd00p8h4tp4ej" path="res://scenes/plant/grid_blocker.tscn" id="2_vxfrs"]
 
 [node name="House" type="Node3D"]
