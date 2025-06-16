@@ -8,7 +8,17 @@
 custom_minimum_size = Vector2(200, 80)
 script = ExtResource("1_i7dau")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="InfoButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -32.0
+offset_bottom = 31.0
+grow_horizontal = 0
+text = "i"
+
+[node name="Icon" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -20,7 +30,7 @@ offset_bottom = 20.5
 grow_vertical = 2
 texture = SubResource("PlaceholderTexture2D_q1j3t")
 
-[node name="Label" type="Label" parent="."]
+[node name="Name" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
@@ -37,3 +47,4 @@ text = "Plant name"
 horizontal_alignment = 2
 
 [connection signal="pressed" from="." to="." method="_on_pressed"]
+[connection signal="pressed" from="InfoButton" to="." method="_on_info_button_pressed"]

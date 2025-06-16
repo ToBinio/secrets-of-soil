@@ -2,10 +2,14 @@ extends Button
 
 var plant: PlantResource
 
-@onready var label: Label = $Label
+@onready var name_label: Label = $Name
 
 func _ready() -> void:
-	label.text = plant.name
+	name_label.text = plant.name
 
 func _on_pressed() -> void:
 	Global.selected_plant = plant
+
+
+func _on_info_button_pressed() -> void:
+	Global.show_plant(plant)
