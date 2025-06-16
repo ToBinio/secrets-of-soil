@@ -8,9 +8,11 @@ var plant: PlantResource
 @onready var name_label: Label = $Name
 @onready var harvested: Label = $Harvested
 @onready var seeds: Label = $Seeds
+@onready var plant_icon: TextureRect = $Icon;
 
 func _ready() -> void:
 	name_label.text = plant.name
+	plant_icon.texture = plant.icon
 
 func _process(_delta: float) -> void:
 	if(plant == Events.selected_plant):

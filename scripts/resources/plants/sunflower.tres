@@ -1,11 +1,13 @@
-[gd_resource type="Resource" script_class="PlantResource" load_steps=2 format=3 uid="uid://c85nr0tqy0565"]
+[gd_resource type="Resource" script_class="PlantResource" load_steps=3 format=3 uid="uid://c85nr0tqy0565"]
 
 [ext_resource type="Script" uid="uid://c2qk2325ok2gv" path="res://scripts/resources/plant_resource.gd" id="1_3cfa8"]
+[ext_resource type="Texture2D" uid="uid://bo7abxlejyd25" path="res://assets/plants/sunflower/sunflower.png" id="1_tbiuf"]
 
 [resource]
 script = ExtResource("1_3cfa8")
 name = "Sunflower"
 growth_speed = 0.2
 size = 5
+icon = ExtResource("1_tbiuf")
 preferred_water = 0.5
 metadata/_custom_type_script = "uid://c2qk2325ok2gv"
