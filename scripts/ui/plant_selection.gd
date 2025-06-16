@@ -10,7 +10,7 @@ var plant: PlantResource
 func _ready() -> void:
 	name_label.text = plant.name
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if(plant == Global.selected_plant):
 		add_theme_stylebox_override("normal", active_pannel_state)
 	else:
