@@ -5,7 +5,7 @@ extends Control
 @onready var plant_box: HBoxContainer = $ScrollContainer/HBoxContainer
 
 func _ready() -> void:
-	for plant in Global.all_plants():
+	for plant in Plants.all_plants():
 		var container = plant_container.instantiate()
 		container.plant = plant
 		
