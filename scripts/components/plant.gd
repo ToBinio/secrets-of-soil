@@ -7,7 +7,7 @@ class_name Plant
 
 func _ready() -> void:
 	clicker_area.on_click.connect(_on_click)
-	plant.size = grid_blocker.size
+	grid_blocker.size = plant.size
 	
 func _on_click():
 	print("harvest " + plant.name)
