@@ -30,6 +30,9 @@ func is_overlapping_blocker(grid_pos: Vector3, grid_size: float) -> bool:
 	
 	var gridBlockers = get_tree().get_nodes_in_group("GridBlocker") as Array[GridBlocker]
 	for blockers in gridBlockers:
+		if(blockers.is_in_group("Preview")):
+			continue
+		
 		var other_position = Grid.to_grid_cord(blockers.global_position)
 		var other_size = blockers.size * Grid.cell_size
 		

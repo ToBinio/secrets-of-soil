@@ -1,0 +1,30 @@
+[gd_scene load_steps=8 format=3 uid="uid://b02xejo14xqvk"]
+
+[ext_resource type="Script" uid="uid://c0ja0jhsr5ruk" path="res://scripts/components/plant_preview.gd" id="1_hiade"]
+[ext_resource type="Resource" uid="uid://c85nr0tqy0565" path="res://scripts/resources/plants/sunflower.tres" id="2_pmwg7"]
+[ext_resource type="Material" uid="uid://cdxhr3dvt28vk" path="res://assets/plants/sunflower/preview.tres" id="3_7dgs5"]
+[ext_resource type="PackedScene" uid="uid://b6pr5f7tn25j7" path="res://assets/plants/sunflower/sunflower_preview.gltf" id="4_k4bk7"]
+[ext_resource type="Material" uid="uid://ctdmilrs7sdou" path="res://assets/grid_blocker_preview.tres" id="5_7dgs5"]
+[ext_resource type="PackedScene" uid="uid://bd00p8h4tp4ej" path="res://scenes/plant/grid_blocker.tscn" id="5_8j1yc"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_pmwg7"]
+resource_local_to_scene = true
+material = ExtResource("5_7dgs5")
+size = Vector2(2.52, 2.52)
+
+[node name="Sunflower" type="Node3D" node_paths=PackedStringArray("grid_blocker") groups=["Plant"]]
+script = ExtResource("1_hiade")
+plant = ExtResource("2_pmwg7")
+grid_blocker = NodePath("GridBlocker")
+preview_materials = Array[StandardMaterial3D]([ExtResource("3_7dgs5"), ExtResource("5_7dgs5")])
+
+[node name="GridBlocker" parent="." groups=["Preview"] instance=ExtResource("5_8j1yc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.05, 0)
+size = 5
+
+[node name="Mesh" parent="GridBlocker" index="0"]
+mesh = SubResource("PlaneMesh_pmwg7")
+
+[node name="Visual" parent="." instance=ExtResource("4_k4bk7")]
+
+[editable path="GridBlocker"]
