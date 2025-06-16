@@ -30,6 +30,7 @@ shape = SubResource("BoxShape3D_213ai")
 [node name="blockbench_export" parent="." instance=ExtResource("1_bkgaa")]
 
 [node name="GridBlocker" parent="." instance=ExtResource("2_6wk6f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.01, 0)
 size = 1
 
 [node name="AffectArea" type="MeshInstance3D" parent="."]

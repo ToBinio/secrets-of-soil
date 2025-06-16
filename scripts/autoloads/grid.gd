@@ -1,6 +1,7 @@
 extends Node
 
 const cell_size = 0.5
+const grid_size = 20
 
 func to_grid_cord(cord: Vector3) -> Vector3:
 	var new_cord = cord.snapped(Vector3(cell_size,cell_size,cell_size))
@@ -20,13 +21,60 @@ func get_water_percentage(grid_pos: Vector3) -> float:
 	
 	var water_level = 1 - min(closest_distance, 10) / 10;
 	return water_level
+
+func is_valid_location(grid_pos: Vector3, node: Node) -> bool:
+	var size = _get_size_from_node(node) * cell_size
 	
-func is_overlapping_blocker(grid_pos: Vector3, grid_size: float) -> bool:
-	var size = grid_size * Grid.cell_size
+	if(_is_outside(grid_pos, size)):
+		return false
 	
-	var half = (size - Grid.cell_size) / 2
+	return _get_collisions(grid_pos, size).is_empty()
+	
+func is_valid_location_ignore_plants(grid_pos: Vector3, node: Node):
+	var size = _get_size_from_node(node) * cell_size
+	
+	if(_is_outside(grid_pos, size)):
+		return false
+	
+	var collisions = _get_collisions(grid_pos, size)
+	for collision in collisions:
+		if !collision.is_in_group("Plant"):
+			return false
+	
+	return collisions
+
+func _get_size_from_node(node: Node) -> float:
+	for child in node.get_children():
+		if child is GridBlocker:
+			return child.size
+			
+	printerr("is_valid_location called with node that does not have a size!")
+	return 0
+
+func _is_outside(grid_pos: Vector3, real_size: float) -> bool:
+	var half = (real_size - Grid.cell_size) / 2
 	var min_a = grid_pos - Vector3(half, 0, half)
 	var max_a = grid_pos + Vector3(half, 0, half)
+	
+	#Check if outside grid bounds
+	var min_grid = Vector3(-Grid.grid_size * Grid.cell_size, 0, -Grid.grid_size * Grid.cell_size)
+	var max_grid = Vector3(Grid.grid_size * Grid.cell_size, 0, Grid.grid_size * Grid.cell_size)
+	
+	if min_a.x <= min_grid.x or max_a.x >= max_grid.x:
+		return true
+	if min_a.z <= min_grid.z or max_a.z >= max_grid.z:
+		return true
+	
+	return false
+
+
+func _get_collisions(grid_pos: Vector3, real_size: float) -> Array[Node]:
+	var half = (real_size - Grid.cell_size) / 2
+	var min_a = grid_pos - Vector3(half, 0, half)
+	var max_a = grid_pos + Vector3(half, 0, half)
+
+	# Check overlap with blockers
+	var collisions: Array[Node] = []
 	
 	var gridBlockers = get_tree().get_nodes_in_group("GridBlocker") as Array[GridBlocker]
 	for blockers in gridBlockers:
@@ -46,6 +94,6 @@ func is_overlapping_blocker(grid_pos: Vector3, grid_size: float) -> bool:
 		)
 		
 		if overlap:
-			return true
+			collisions.push_back(blockers.get_parent())
 	
-	return false
+	return collisions
