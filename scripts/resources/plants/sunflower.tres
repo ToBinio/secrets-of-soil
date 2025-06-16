@@ -6,5 +6,6 @@
 script = ExtResource("1_3cfa8")
 name = "Sunflower"
 growth_speed = 0.2
+size = 5
 preferred_water = 0.5
 metadata/_custom_type_script = "uid://c2qk2325ok2gv"
