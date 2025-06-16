@@ -16,7 +16,7 @@ shader_parameter/alpha_bias = 0.58
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_213ai"]
 material = SubResource("ShaderMaterial_xy6dp")
-size = Vector2(10, 10)
+size = Vector2(20, 20)
 
 [node name="Well" type="Node3D" groups=["Well"]]
 script = ExtResource("1_xy6dp")

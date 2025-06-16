@@ -20,7 +20,10 @@ func _process(_delta: float) -> void:
 	count.text = str(Inventory.plants[plant])
 
 func _on_pressed() -> void:
-	Events.selected_plant = plant
+	if(Events.selected_plant == plant):
+		Events.selected_plant = null
+	else:
+		Events.selected_plant = plant
 
 func _on_info_button_pressed() -> void:
 	Events.show_plant(plant)
