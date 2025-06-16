@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://3wqm7x704b87"]
+
+[ext_resource type="PackedScene" uid="uid://cibn2worqabp7" path="res://scenes/ui/quest_type.tscn" id="1_2voud"]
+[ext_resource type="Script" uid="uid://b3rr8rj3e3vh" path="res://scripts/ui/quest.gd" id="1_t3s0l"]
+
+[node name="Quest" type="Control"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_t3s0l")
+
+[node name="QuestType" parent="." instance=ExtResource("1_2voud")]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 10.0
+offset_right = 34.0
+offset_bottom = 30.0
+
+[node name="Requirements" type="HBoxContainer" parent="."]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+offset_left = 42.0
+offset_right = 188.0
+offset_bottom = 40.0
+alignment = 1

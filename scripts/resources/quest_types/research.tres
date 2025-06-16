@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="QuestTypeResource" load_steps=3 format=3 uid="uid://4ovjpg6b7k1a"]
+
+[ext_resource type="Script" uid="uid://dl7eih8bkdpyl" path="res://scripts/resources/quest_type_resource.gd" id="1_uudu1"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_uudu1"]
+
+[resource]
+script = ExtResource("1_uudu1")
+name = "Research"
+description = "If you complete this kind of quest, you will receive new information about a certain plant."
+icon = SubResource("PlaceholderTexture2D_uudu1")
+metadata/_custom_type_script = "uid://dl7eih8bkdpyl"

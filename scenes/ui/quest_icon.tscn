@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://byu3xol58hskj"]
+
+[ext_resource type="Script" uid="uid://ctnoljcbnsjug" path="res://scripts/ui/quest_icon.gd" id="1_iasy3"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_tipki"]
+
+[node name="QuestIcon" type="Control"]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+size_flags_horizontal = 8
+script = ExtResource("1_iasy3")
+
+[node name="Icon" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = SubResource("PlaceholderTexture2D_tipki")
+
+[node name="QuantityAmount" type="Label" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_font_sizes/font_size = 12
+text = "0/5"
+horizontal_alignment = 2
+vertical_alignment = 2
+justification_flags = 227

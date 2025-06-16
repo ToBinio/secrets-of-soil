@@ -1,0 +1,111 @@
+[gd_scene load_steps=15 format=3 uid="uid://cn50eq5oj33yx"]
+
+[ext_resource type="PackedScene" uid="uid://byu3xol58hskj" path="res://scenes/ui/quest_icon.tscn" id="1_thvn5"]
+[ext_resource type="PackedScene" uid="uid://3wqm7x704b87" path="res://scenes/ui/quest.tscn" id="2_s4ftv"]
+[ext_resource type="Resource" uid="uid://4ovjpg6b7k1a" path="res://scripts/resources/quest_types/research.tres" id="3_qaetd"]
+[ext_resource type="Script" uid="uid://cjtp7kpgbgy2h" path="res://scripts/resources/quest_requirement_resource.gd" id="3_s0wcl"]
+[ext_resource type="Resource" uid="uid://dl5fl0mgy1sor" path="res://scripts/resources/plants/wheat.tres" id="4_kgkxc"]
+[ext_resource type="Resource" uid="uid://c85nr0tqy0565" path="res://scripts/resources/plants/sunflower.tres" id="5_dp4qy"]
+[ext_resource type="Script" uid="uid://b8nijldcrxc72" path="res://scripts/resources/quest_resource.gd" id="6_wj50s"]
+[ext_resource type="Resource" uid="uid://b7wrrh3s6i7cx" path="res://scripts/resources/quest_types/weather.tres" id="8_kgkxc"]
+
+[sub_resource type="Resource" id="Resource_s0wcl"]
+script = ExtResource("3_s0wcl")
+plant_resource = ExtResource("5_dp4qy")
+required_amount = 10
+metadata/_custom_type_script = "uid://cjtp7kpgbgy2h"
+
+[sub_resource type="Resource" id="Resource_ft74a"]
+script = ExtResource("3_s0wcl")
+plant_resource = ExtResource("4_kgkxc")
+required_amount = 5
+metadata/_custom_type_script = "uid://cjtp7kpgbgy2h"
+
+[sub_resource type="Resource" id="Resource_vasou"]
+script = ExtResource("3_s0wcl")
+plant_resource = ExtResource("5_dp4qy")
+required_amount = 3
+metadata/_custom_type_script = "uid://cjtp7kpgbgy2h"
+
+[sub_resource type="Resource" id="Resource_uibx1"]
+script = ExtResource("6_wj50s")
+type = ExtResource("3_qaetd")
+requirements = Array[ExtResource("3_s0wcl")]([SubResource("Resource_ft74a"), SubResource("Resource_vasou")])
+metadata/_custom_type_script = "uid://b8nijldcrxc72"
+
+[sub_resource type="Resource" id="Resource_kgkxc"]
+script = ExtResource("3_s0wcl")
+plant_resource = ExtResource("5_dp4qy")
+required_amount = 10
+metadata/_custom_type_script = "uid://cjtp7kpgbgy2h"
+
+[sub_resource type="Resource" id="Resource_dp4qy"]
+script = ExtResource("6_wj50s")
+type = ExtResource("8_kgkxc")
+requirements = Array[ExtResource("3_s0wcl")]([SubResource("Resource_kgkxc")])
+metadata/_custom_type_script = "uid://b8nijldcrxc72"
+
+[node name="QuestDisplay" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -1.0
+offset_top = 22.0
+offset_right = 1156.0
+offset_bottom = 670.0
+
+[node name="Background" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 950.0
+offset_top = 194.0
+offset_right = 1138.0
+offset_bottom = 482.0
+
+[node name="Quests" type="Label" parent="Background"]
+layout_mode = 0
+offset_right = 187.0
+offset_bottom = 47.0
+text = "Quests"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Daily" type="Label" parent="Background"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 42.0
+offset_right = 183.0
+offset_bottom = 68.0
+theme_override_font_sizes/font_size = 12
+text = "Daily Challenge:"
+vertical_alignment = 1
+
+[node name="MainQuest" parent="Background" instance=ExtResource("1_thvn5")]
+layout_mode = 2
+offset_left = 74.0
+offset_top = 74.0
+offset_right = 114.0
+offset_bottom = 114.0
+requirement = SubResource("Resource_s0wcl")
+
+[node name="Additionals" type="Label" parent="Background"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 118.0
+offset_right = 183.0
+offset_bottom = 144.0
+theme_override_font_sizes/font_size = 12
+text = "Additional Challenges:"
+vertical_alignment = 1
+
+[node name="AdditionalQuestsContainer" type="VBoxContainer" parent="Background"]
+layout_mode = 2
+offset_top = 147.0
+offset_right = 188.0
+offset_bottom = 307.0
+
+[node name="Quest1" parent="Background/AdditionalQuestsContainer" instance=ExtResource("2_s4ftv")]
+layout_mode = 2
+quest = SubResource("Resource_uibx1")
+
+[node name="Quest2" parent="Background/AdditionalQuestsContainer" instance=ExtResource("2_s4ftv")]
+layout_mode = 2
+quest = SubResource("Resource_dp4qy")

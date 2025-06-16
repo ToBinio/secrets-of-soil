@@ -1,0 +1,43 @@
+[gd_scene load_steps=3 format=3 uid="uid://cibn2worqabp7"]
+
+[ext_resource type="Script" uid="uid://vdbha6xkfoeg" path="res://scripts/ui/quest_type.gd" id="1_6uuu3"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_thvn5"]
+
+[node name="QuestType" type="TextureRect"]
+custom_minimum_size = Vector2(20, 20)
+offset_left = 15.0
+offset_top = 9.0
+offset_right = 35.0
+offset_bottom = 29.0
+texture = SubResource("PlaceholderTexture2D_thvn5")
+script = ExtResource("1_6uuu3")
+
+[node name="Tooltip" type="Panel" parent="."]
+visible = false
+layout_mode = 0
+offset_left = -189.0
+offset_top = -53.0
+offset_right = -26.0
+offset_bottom = 72.0
+
+[node name="Name" type="Label" parent="Tooltip"]
+layout_mode = 0
+offset_right = 162.0
+offset_bottom = 33.0
+text = "Type Name"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Description" type="Label" parent="Tooltip"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 36.0
+offset_right = 158.0
+offset_bottom = 121.0
+theme_override_font_sizes/font_size = 9
+text = "Description of type"
+autowrap_mode = 2
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
