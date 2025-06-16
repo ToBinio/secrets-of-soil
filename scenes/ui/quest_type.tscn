@@ -5,11 +5,9 @@
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_thvn5"]
 
 [node name="QuestType" type="TextureRect"]
-custom_minimum_size = Vector2(20, 20)
-offset_left = 15.0
-offset_top = 9.0
-offset_right = 35.0
-offset_bottom = 29.0
+custom_minimum_size = Vector2(40, 40)
+offset_right = 20.0
+offset_bottom = 20.0
 texture = SubResource("PlaceholderTexture2D_thvn5")
 script = ExtResource("1_6uuu3")
 

@@ -14,9 +14,13 @@ script = ExtResource("1_iasy3")
 
 [node name="Icon" type="TextureRect" parent="."]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 35.0
+offset_bottom = 35.0
 texture = SubResource("PlaceholderTexture2D_tipki")
+expand_mode = 5
+stretch_mode = 5
 
 [node name="QuantityAmount" type="Label" parent="."]
 layout_mode = 0

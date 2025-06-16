@@ -6,10 +6,12 @@ class_name QuestIcon
 		requirement = value
 
 @onready var label: Label = $QuantityAmount;
+@onready var icon: TextureRect = $Icon;
 		
 
 func _ready() -> void:
 	set_label_text()
+	icon.texture = requirement.plant_resource.icon
 	
 func _process(delta: float) -> void:
 	set_label_text()

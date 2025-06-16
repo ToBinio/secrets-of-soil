@@ -1,5 +1,6 @@
 [gd_scene load_steps=14 format=3 uid="uid://cd6yn8ep2yldo"]
 
+[ext_resource type="Texture2D" uid="uid://wjiuk85eafmo" path="res://assets/ui/food/food.png" id="1_kgkxc"]
 [ext_resource type="PackedScene" uid="uid://3wqm7x704b87" path="res://scenes/ui/quest.tscn" id="2_s4ftv"]
 [ext_resource type="Resource" uid="uid://4ovjpg6b7k1a" path="res://scripts/resources/quest_types/research.tres" id="3_qaetd"]
 [ext_resource type="Script" path="res://scripts/resources/quest_requirement_resource.gd" id="3_s0wcl"]
@@ -7,8 +8,6 @@
 [ext_resource type="Resource" uid="uid://c85nr0tqy0565" path="res://scripts/resources/plants/sunflower.tres" id="5_dp4qy"]
 [ext_resource type="Script" path="res://scripts/resources/quest_resource.gd" id="6_wj50s"]
 [ext_resource type="Resource" uid="uid://b7wrrh3s6i7cx" path="res://scripts/resources/quest_types/weather.tres" id="8_kgkxc"]
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_s0wcl"]
 
 [sub_resource type="Resource" id="Resource_ft74a"]
 script = ExtResource("3_s0wcl")
@@ -79,7 +78,7 @@ offset_left = 76.0
 offset_top = 75.0
 offset_right = 116.0
 offset_bottom = 115.0
-texture = SubResource("PlaceholderTexture2D_s0wcl")
+texture = ExtResource("1_kgkxc")
 
 [node name="Label" type="Label" parent="Background/TextureRect"]
 layout_mode = 0

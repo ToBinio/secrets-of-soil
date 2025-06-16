@@ -40,6 +40,8 @@ offset_right = 52.0
 offset_bottom = 23.0
 grow_vertical = 2
 texture = SubResource("PlaceholderTexture2D_q1j3t")
+expand_mode = 3
+stretch_mode = 5
 
 [node name="Harvested" type="Label" parent="."]
 layout_mode = 1

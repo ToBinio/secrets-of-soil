@@ -11,15 +11,16 @@ script = ExtResource("1_t3s0l")
 
 [node name="QuestType" parent="." instance=ExtResource("1_2voud")]
 layout_mode = 0
-offset_left = 14.0
-offset_top = 10.0
-offset_right = 34.0
-offset_bottom = 30.0
+offset_left = 8.0
+offset_right = 48.0
+offset_bottom = 40.0
+expand_mode = 3
+stretch_mode = 5
 
 [node name="Requirements" type="HBoxContainer" parent="."]
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
-offset_left = 42.0
+offset_left = 59.0
 offset_right = 188.0
 offset_bottom = 40.0
 alignment = 1

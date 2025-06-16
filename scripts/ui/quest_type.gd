@@ -14,6 +14,7 @@ class_name QuestType
 func set_type():
 	type_name.text = quest_type.name;
 	type_description.text = quest_type.description;
+	texture = quest_type.icon
 
 func _on_mouse_entered() -> void:
 	tooltip.visible = true
