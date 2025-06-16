@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://boeiwk7qotto2"]
+
+[ext_resource type="Script" uid="uid://bxpknsj5j8a1v" path="res://scripts/components/clicker_area.gd" id="1_p2d2d"]
+
+[node name="Clicker" type="Area3D"]
+monitoring = false
+monitorable = false
+script = ExtResource("1_p2d2d")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]

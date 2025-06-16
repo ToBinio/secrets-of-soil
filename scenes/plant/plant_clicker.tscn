@@ -1,8 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://boeiwk7qotto2"]
-
-[ext_resource type="Script" uid="uid://bxpknsj5j8a1v" path="res://scripts/components/clicker.gd" id="1_am5sk"]
-
-[node name="Clicker" type="Area3D"]
-script = ExtResource("1_am5sk")
-
-[connection signal="input_event" from="." to="." method="_on_input_event"]
