@@ -13,6 +13,8 @@ func _try_add_preview():
 		var plant_scene = Plants.get_scene_for_plant(Events.selected_plant)
 		var plant_instance = plant_scene.instantiate() as Plant
 		
+		plant_instance.preview = true
+		
 		add_child(plant_instance)
 		
 		preview = plant_instance
