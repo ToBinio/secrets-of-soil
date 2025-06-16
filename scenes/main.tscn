@@ -206,6 +206,6 @@ zoom_animation_speed = 10.0
 transform = Transform3D(0.999998, -0.000154248, 0.00215105, 0.00014794, 0.999996, 0.00292046, -0.00215149, -0.00292013, 0.999993, 0, 0, 0)
 
 [node name="villager 1" parent="." instance=ExtResource("8_tipki")]
-transform = Transform3D(-0.942519, 0, 0.334152, -0.0661677, 0.980199, -0.186634, -0.327536, -0.198017, -0.923856, -1.49997, 0, 0)
+transform = Transform3D(-0.942519, 0, 0.334152, -0.0661677, 0.980199, -0.186634, -0.327536, -0.198017, -0.923856, -1.52543, -9.53674e-07, -0.0192595)
 
 [connection signal="pressed" from="Ui/NextDay/Button" to="Ui/NextDay" method="_on_next_day_button_pressed"]

@@ -6,13 +6,13 @@ class_name Field
 func _on_area_3d_input_event(_camera: Node, event: InputEvent, event_position: Vector3, _normal: Vector3, _shape_idx: int) -> void:
 	if event is InputEventMouseButton && event.is_pressed() && event.button_index == MOUSE_BUTTON_LEFT:
 		
-		if !Global.selected_plant:
+		if !Events.selected_plant:
 			return
 		
 		if !is_valid_location(event_position):
 			return
-			
-		var plant_scene = Global.get_scene_for_plant(Global.selected_plant)
+		
+		var plant_scene = Plants.get_scene_for_plant(Events.selected_plant)
 		
 		var plant_instance = plant_scene.instantiate() as Plant
 		plant_instance.field = self
@@ -23,7 +23,7 @@ func _on_area_3d_input_event(_camera: Node, event: InputEvent, event_position: V
 
 func is_valid_location(location: Vector3) -> bool:
 	var grid_position = Grid.to_grid_cord(location)
-	var size = Global.selected_plant.size * Grid.cell_size
+	var size = Events.selected_plant.size * Grid.cell_size
 	var half = (size - Grid.cell_size) / 2
 	var min_a = grid_position - Vector3(half, 0, half)
 	var max_a = grid_position + Vector3(half, 0, half)

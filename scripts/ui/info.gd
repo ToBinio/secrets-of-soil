@@ -8,7 +8,7 @@ extends Control
 var _open: bool = false;
 
 func _ready() -> void:
-	Global.on_plant_show.connect(_on_plant_show)
+	Events.on_plant_show.connect(_on_plant_show)
 
 func _on_plant_show(plant: PlantResource):
 	label.text = plant.name

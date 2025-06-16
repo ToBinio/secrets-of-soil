@@ -1,9 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://22wsbw7e8njp"]
+[gd_scene load_steps=4 format=3 uid="uid://22wsbw7e8njp"]
 
 [ext_resource type="PackedScene" uid="uid://dpg1chidhkvy3" path="res://scenes/field.tscn" id="1_nnsk1"]
+[ext_resource type="PackedScene" uid="uid://d3maoy3blejtf" path="res://assets/villagers/villager_1.glb" id="2_4wyf3"]
 [ext_resource type="PackedScene" uid="uid://bd8amtq8rrtw2" path="res://scenes/houses/House.tscn" id="2_rwgxs"]
 
 [node name="World" type="Node3D"]
+
+[node name="villager 1" parent="." instance=ExtResource("2_4wyf3")]
+transform = Transform3D(-0.942519, 0, 0.334152, -0.0661677, 0.980199, -0.186634, -0.327536, -0.198017, -0.923856, -1.52543, -0.050001, -0.0192595)
 
 [node name="Field" parent="." instance=ExtResource("1_nnsk1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.05, 0)

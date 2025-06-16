@@ -9,7 +9,7 @@ signal on_fully_grown
 var target_size = 0.1
 
 func _ready() -> void:
-	Global.on_next_day.connect(_on_next_day)
+	Events.on_next_day.connect(_on_next_day)
 	visual.scale = Vector3.ONE * target_size;
 	
 func _process(delta: float) -> void:
