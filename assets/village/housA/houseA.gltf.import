@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://d3maoy3blejtf"
-path="res://.godot/imported/villager_1.glb-07bb989333987251e78f7c432af13fc1.scn"
+uid="uid://dyc8nhwgqib5g"
+path="res://.godot/imported/houseA.gltf-c38d065f376caba7419bfcc5e868308a.scn"
 
 [deps]
 
-source_file="res://assets/villagers/villager_1.glb"
-dest_files=["res://.godot/imported/villager_1.glb-07bb989333987251e78f7c432af13fc1.scn"]
+source_file="res://assets/village/housA/houseA.gltf"
+dest_files=["res://.godot/imported/houseA.gltf-c38d065f376caba7419bfcc5e868308a.scn"]
 
 [params]
 
