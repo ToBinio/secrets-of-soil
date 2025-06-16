@@ -11,7 +11,7 @@
 radius = 0.503301
 height = 1.26241
 
-[node name="Wheat" type="Node3D" node_paths=PackedStringArray("clicker_area")]
+[node name="Wheat" type="Node3D" node_paths=PackedStringArray("clicker_area") groups=["Plant"]]
 script = ExtResource("1_8jru4")
 plant = ExtResource("2_ucxq8")
 clicker_area = NodePath("Clicker")
@@ -27,6 +27,7 @@ growable = NodePath("../Growable")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.631755, 0)
 shape = SubResource("CapsuleShape3D_ucxq8")
 
-[node name="ClickClearComponent" parent="." instance=ExtResource("5_yhkry")]
+[node name="ClickClearComponent" parent="." node_paths=PackedStringArray("plant") instance=ExtResource("5_yhkry")]
+plant = NodePath("..")
 
 [node name="Visual" parent="." instance=ExtResource("1_yfabo")]

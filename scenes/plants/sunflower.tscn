@@ -11,7 +11,7 @@
 radius = 0.474813
 height = 1.5629
 
-[node name="Sunflower" type="Node3D" node_paths=PackedStringArray("clicker_area")]
+[node name="Sunflower" type="Node3D" node_paths=PackedStringArray("clicker_area") groups=["Plant"]]
 script = ExtResource("1_mtwp4")
 plant = ExtResource("2_duwge")
 clicker_area = NodePath("Clicker")
@@ -27,8 +27,8 @@ growable = NodePath("../Growable")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.774343, 0)
 shape = SubResource("CapsuleShape3D_40ky6")
 
-[node name="ClickClearComponent" parent="." instance=ExtResource("4_1v48e")]
-radius = 1.5
+[node name="ClickClearComponent" parent="." node_paths=PackedStringArray("plant") instance=ExtResource("4_1v48e")]
+plant = NodePath("..")
 
 [node name="Visual" parent="." instance=ExtResource("1_40ky6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0663506)

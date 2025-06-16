@@ -1,14 +1,18 @@
-[gd_scene load_steps=3 format=3 uid="uid://bd00p8h4tp4ej"]
+[gd_scene load_steps=4 format=3 uid="uid://bd00p8h4tp4ej"]
 
 [ext_resource type="Script" uid="uid://b20puety53ilr" path="res://scripts/components/click_clear_component.gd" id="1_rwuwh"]
 
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_rwuwh"]
-height = 0.1
-radius = 1.0
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dvlu5"]
+albedo_color = Color(0.38919, 0.191217, 4.81308e-08, 1)
 
-[node name="ClickClearComponent" type="Area3D"]
+[sub_resource type="PlaneMesh" id="PlaneMesh_ogw1f"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_dvlu5")
+size = Vector2(1.5, 1.5)
+
+[node name="ClickClearComponent" type="Node3D"]
 script = ExtResource("1_rwuwh")
-radius = 1.0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-shape = SubResource("CylinderShape3D_rwuwh")
+[node name="Mesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.01, 0)
+mesh = SubResource("PlaneMesh_ogw1f")

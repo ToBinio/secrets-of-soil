@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://c4l41075qhjsw"]
+[gd_scene load_steps=13 format=3 uid="uid://c4l41075qhjsw"]
 
 [ext_resource type="Script" uid="uid://ck4nxaeidpcxl" path="res://scripts/camera.gd" id="1_0wfyh"]
 [ext_resource type="PackedScene" uid="uid://22wsbw7e8njp" path="res://scenes/world.tscn" id="1_o5qli"]
@@ -6,7 +6,6 @@
 [ext_resource type="Script" uid="uid://cb4ftraq7hg1l" path="res://scripts/ui/next_day.gd" id="2_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://cec3esephtkpq" path="res://scenes/ui/info.tscn" id="3_sugp2"]
 [ext_resource type="PackedScene" uid="uid://cheyy73j6p542" path="res://scenes/ui/plant_list.tscn" id="4_tefeu"]
-[ext_resource type="PackedScene" uid="uid://dyc8nhwgqib5g" path="res://assets/houses/housA/houseA.gltf" id="7_o6xl0"]
 
 [sub_resource type="Animation" id="Animation_sugp2"]
 resource_name = "DayNightCycle"
@@ -204,14 +203,5 @@ zoom_animation_speed = 10.0
 
 [node name="World" parent="." instance=ExtResource("1_o5qli")]
 transform = Transform3D(0.999998, -0.000154248, 0.00215105, 0.00014794, 0.999996, 0.00292046, -0.00215149, -0.00292013, 0.999993, 0, 0, 0)
-
-[node name="blockbench_export" parent="." instance=ExtResource("7_o6xl0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.03503, 0, 5.45763)
-
-[node name="blockbench_export2" parent="." instance=ExtResource("7_o6xl0")]
-transform = Transform3D(0.00110168, -0.000519934, -0.999999, 0.000429185, 1, -0.000519461, 0.999999, -0.000428612, 0.0011019, -2.37344, 0, 4.71275)
-
-[node name="blockbench_export3" parent="." instance=ExtResource("7_o6xl0")]
-transform = Transform3D(-0.00619581, -0.00284205, 0.999977, 0.00205085, 0.999994, 0.00285481, -0.999979, 0.00206849, -0.00618994, -5.24533, 0, 4.32433)
 
 [connection signal="pressed" from="Ui/NextDay/Button" to="Ui/NextDay" method="_on_next_day_button_pressed"]

@@ -1,15 +1,13 @@
 @tool
-extends Area3D
-class_name ClickClearComponent
+extends Node3D
+class_name GridAreaDisplay
 
-@export var radius: float :
-	set(value):
-		radius = value
-		
-		if shape:
-			shape.shape.radius = radius
+@export var plant: Plant
 
-@onready var shape: CollisionShape3D = $CollisionShape3D
+@onready var mesh: MeshInstance3D = $Mesh
 
 func _ready():
-	shape.shape.radius = radius
+	var plane_mesh = mesh.mesh as PlaneMesh
+	
+	plane_mesh.size.x = plant.plant.size * Grid.cell_size + 0.02
+	plane_mesh.size.y = plant.plant.size * Grid.cell_size + 0.02
