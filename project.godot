@@ -41,6 +41,7 @@ folder_colors={
 Plant=""
 GridBlocker=""
 Well=""
+Preview=""
 
 [rendering]
 

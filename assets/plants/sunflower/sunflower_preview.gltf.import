@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bwi3piy4f66no"
-path="res://.godot/imported/wheat.gltf-dd91fcb6dbed0234594864b6acb09940.scn"
+uid="uid://b6pr5f7tn25j7"
+path="res://.godot/imported/sunflower_preview.gltf-f021632c309858c0b060eb1b21a2b7a8.scn"
 
 [deps]
 
-source_file="res://assets/plants/wheat/wheat.gltf"
-dest_files=["res://.godot/imported/wheat.gltf-dd91fcb6dbed0234594864b6acb09940.scn"]
+source_file="res://assets/plants/sunflower/sunflower_preview.gltf"
+dest_files=["res://.godot/imported/sunflower_preview.gltf-f021632c309858c0b060eb1b21a2b7a8.scn"]
 
 [params]
 
@@ -35,12 +35,8 @@ import_script/path=""
 _subresources={
 "materials": {
 "material_0": {
-"use_external/enabled": false,
-"use_external/path": "res://assets/plants/wheat/material_0.tres"
-},
-"material_1": {
-"use_external/enabled": false,
-"use_external/path": "res://assets/plants/wheat/material_1.tres"
+"use_external/enabled": true,
+"use_external/path": "res://assets/plants/sunflower/preview.tres"
 }
 }
 }

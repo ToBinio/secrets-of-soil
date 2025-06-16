@@ -8,7 +8,7 @@
 [node name="World" type="Node3D"]
 
 [node name="villager 1" parent="." instance=ExtResource("2_4wyf3")]
-transform = Transform3D(-0.942519, 0, 0.334152, -0.0661677, 0.980199, -0.186634, -0.327536, -0.198017, -0.923856, -1.52543, -0.050001, -0.0192595)
+transform = Transform3D(-0.942519, 0, 0.334152, -0.0661677, 0.980199, -0.186634, -0.327536, -0.198017, -0.923856, -1.52543, -0.050001, -0.71738)
 
 [node name="Field" parent="." instance=ExtResource("1_nnsk1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.05, 0)

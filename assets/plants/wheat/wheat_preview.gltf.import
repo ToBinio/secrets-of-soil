@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bwi3piy4f66no"
-path="res://.godot/imported/wheat.gltf-dd91fcb6dbed0234594864b6acb09940.scn"
+uid="uid://wv2jpsiiw5oh"
+path="res://.godot/imported/wheat_preview.gltf-951ae33fec721933970b3a13efcdb207.scn"
 
 [deps]
 
-source_file="res://assets/plants/wheat/wheat.gltf"
-dest_files=["res://.godot/imported/wheat.gltf-dd91fcb6dbed0234594864b6acb09940.scn"]
+source_file="res://assets/plants/wheat/wheat_preview.gltf"
+dest_files=["res://.godot/imported/wheat_preview.gltf-951ae33fec721933970b3a13efcdb207.scn"]
 
 [params]
 
@@ -39,8 +39,8 @@ _subresources={
 "use_external/path": "res://assets/plants/wheat/material_0.tres"
 },
 "material_1": {
-"use_external/enabled": false,
-"use_external/path": "res://assets/plants/wheat/material_1.tres"
+"use_external/enabled": true,
+"use_external/path": "uid://c2b7xbyr3tcvu"
 }
 }
 }

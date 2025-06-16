@@ -1,7 +1,10 @@
 extends Node3D
 class_name Field
 
-var preview: Plant;
+@export var preview_color: Color
+@export var invalid_preview_color: Color
+
+var preview: PlantPreview;
 
 func _on_mouse_exited() -> void:
 	if(preview):
@@ -10,10 +13,10 @@ func _on_mouse_exited() -> void:
 
 func _try_add_preview():
 	if(Events.selected_plant && !preview):
-		var plant_scene = Plants.get_scene_for_plant(Events.selected_plant)
-		var plant_instance = plant_scene.instantiate() as Plant
+		var plant_scene = Plants.get_preview_for_plant(Events.selected_plant)
+		var plant_instance = plant_scene.instantiate() as PlantPreview
 		
-		plant_instance.preview = true
+		plant_instance.set_color(preview_color)
 		
 		add_child(plant_instance)
 		
@@ -33,7 +36,12 @@ func _on_input_event(_camera: Node, event: InputEvent, event_position: Vector3, 
 		_try_add_preview()
 		
 		if preview:
-			preview.global_position = Grid.to_grid_cord(event_position)  
+			preview.global_position = Grid.to_grid_cord(event_position)
+			
+			if is_valid_location(event_position):
+				preview.set_color(preview_color)
+			else:
+				preview.set_color(invalid_preview_color)
 	
 	if event is InputEventMouseButton && event.is_pressed() && event.button_index == MOUSE_BUTTON_LEFT:
 		
@@ -42,6 +50,8 @@ func _on_input_event(_camera: Node, event: InputEvent, event_position: Vector3, 
 		
 		if !is_valid_location(event_position):
 			return
+		
+		preview.set_color(invalid_preview_color)
 		
 		var plant_scene = Plants.get_scene_for_plant(Events.selected_plant)
 		var plant_instance = plant_scene.instantiate() as Plant
