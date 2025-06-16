@@ -6,6 +6,5 @@
 script = ExtResource("1_g7v3s")
 name = "Wheat"
 growth_speed = 0.5
-size = 3
 preferred_water = 1.0
 metadata/_custom_type_script = "uid://c2qk2325ok2gv"

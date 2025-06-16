@@ -28,10 +28,10 @@ func is_valid_location(location: Vector3) -> bool:
 	var min_a = grid_position - Vector3(half, 0, half)
 	var max_a = grid_position + Vector3(half, 0, half)
 	
-	var plants = get_tree().get_nodes_in_group("Plant") as Array[Plant]
-	for plant in plants:
-		var other_position = Grid.to_grid_cord(plant.position)
-		var other_size = plant.plant.size * Grid.cell_size
+	var gridBlockers = get_tree().get_nodes_in_group("GridBlocker") as Array[GridBlocker]
+	for blockers in gridBlockers:
+		var other_position = Grid.to_grid_cord(blockers.global_position)
+		var other_size = blockers.size * Grid.cell_size
 		
 		var half_b = (other_size - Grid.cell_size) / 2
 		var min_b = other_position - Vector3(half_b, 0 , half_b)

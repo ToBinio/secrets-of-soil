@@ -5,16 +5,17 @@
 [ext_resource type="Script" uid="uid://kmp8a7og7efk" path="res://scripts/components/plant.gd" id="1_mtwp4"]
 [ext_resource type="PackedScene" uid="uid://boeiwk7qotto2" path="res://scenes/plant/clicker_area.tscn" id="1_uoh7n"]
 [ext_resource type="Resource" uid="uid://c85nr0tqy0565" path="res://scripts/resources/plants/sunflower.tres" id="2_duwge"]
-[ext_resource type="PackedScene" uid="uid://bd00p8h4tp4ej" path="res://scenes/plant/click_clear_component.tscn" id="4_1v48e"]
+[ext_resource type="PackedScene" uid="uid://bd00p8h4tp4ej" path="res://scenes/plant/grid_blocker.tscn" id="4_1v48e"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_40ky6"]
 radius = 0.474813
 height = 1.5629
 
-[node name="Sunflower" type="Node3D" node_paths=PackedStringArray("clicker_area") groups=["Plant"]]
+[node name="Sunflower" type="Node3D" node_paths=PackedStringArray("clicker_area", "grid_blocker") groups=["Plant"]]
 script = ExtResource("1_mtwp4")
 plant = ExtResource("2_duwge")
 clicker_area = NodePath("Clicker")
+grid_blocker = NodePath("GridBlocker")
 
 [node name="Growable" parent="." node_paths=PackedStringArray("plant", "visual") instance=ExtResource("1_1v48e")]
 plant = NodePath("..")
@@ -27,8 +28,8 @@ growable = NodePath("../Growable")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.774343, 0)
 shape = SubResource("CapsuleShape3D_40ky6")
 
-[node name="ClickClearComponent" parent="." node_paths=PackedStringArray("plant") instance=ExtResource("4_1v48e")]
-plant = NodePath("..")
+[node name="GridBlocker" parent="." instance=ExtResource("4_1v48e")]
+size = 5
 
 [node name="Visual" parent="." instance=ExtResource("1_40ky6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0663506)

@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bd00p8h4tp4ej"]
 
-[ext_resource type="Script" uid="uid://b20puety53ilr" path="res://scripts/components/click_clear_component.gd" id="1_rwuwh"]
+[ext_resource type="Script" uid="uid://b20puety53ilr" path="res://scripts/components/grid_blocker.gd" id="1_mjwk0"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dvlu5"]
 albedo_color = Color(0.38919, 0.191217, 4.81308e-08, 1)
@@ -10,8 +10,9 @@ resource_local_to_scene = true
 material = SubResource("StandardMaterial3D_dvlu5")
 size = Vector2(1.5, 1.5)
 
-[node name="ClickClearComponent" type="Node3D"]
-script = ExtResource("1_rwuwh")
+[node name="GridBlocker" type="Node3D" groups=["GridBlocker"]]
+script = ExtResource("1_mjwk0")
+size = null
 
 [node name="Mesh" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.01, 0)
