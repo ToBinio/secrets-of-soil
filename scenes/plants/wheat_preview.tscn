@@ -12,10 +12,9 @@ resource_local_to_scene = true
 material = ExtResource("4_gbn4v")
 size = Vector2(1.52, 1.52)
 
-[node name="Wheat" type="Node3D" node_paths=PackedStringArray("grid_blocker") groups=["Plant"]]
+[node name="Wheat" type="Node3D" groups=["Plant"]]
 script = ExtResource("1_1j8jd")
 plant = ExtResource("2_73vo3")
-grid_blocker = NodePath("GridBlocker")
 preview_materials = Array[StandardMaterial3D]([ExtResource("3_gbn4v"), ExtResource("4_gbn4v")])
 
 [node name="GridBlocker" parent="." groups=["Preview"] instance=ExtResource("5_s8mqj")]

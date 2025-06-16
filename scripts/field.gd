@@ -38,7 +38,7 @@ func _on_input_event(_camera: Node, event: InputEvent, event_position: Vector3, 
 		if preview:
 			preview.global_position = Grid.to_grid_cord(event_position)
 			
-			if is_valid(event_position):
+			if is_valid(event_position, preview):
 				preview.set_color(preview_color)
 			else:
 				preview.set_color(invalid_preview_color)
@@ -48,22 +48,22 @@ func _on_input_event(_camera: Node, event: InputEvent, event_position: Vector3, 
 		if !Events.selected_plant:
 			return
 		
-		if !is_valid(event_position):
+		var plant_scene = Plants.get_scene_for_plant(Events.selected_plant)
+		var plant_instance = plant_scene.instantiate() as Plant
+		
+		if !is_valid(event_position, plant_instance):
 			return
 		
 		preview.set_color(invalid_preview_color)
 		Inventory.plants[Events.selected_plant].seeds -= 1
 		
-		var plant_scene = Plants.get_scene_for_plant(Events.selected_plant)
-		var plant_instance = plant_scene.instantiate() as Plant
-		
 		add_child(plant_instance)
 		
 		plant_instance.global_position = Grid.to_grid_cord(event_position)  
 
-func is_valid(location: Vector3) -> bool:
+func is_valid(location: Vector3, node: Node) -> bool:
 	if Inventory.plants[Events.selected_plant].seeds <= 0:
 		return false
 	
 	var grid_pos = Grid.to_grid_cord(location)
-	return !Grid.is_overlapping_blocker(grid_pos, Events.selected_plant.size)
+	return Grid.is_valid_location(grid_pos, node)
