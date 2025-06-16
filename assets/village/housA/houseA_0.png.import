@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dd1udfursf7g2"
-path.s3tc="res://.godot/imported/wheat_0.png-5d545ae4c85ea4e9610ec8d73ad1bd0b.s3tc.ctex"
+uid="uid://d06mqpoju67dc"
+path.s3tc="res://.godot/imported/houseA_0.png-a6ccc73a2e305bb6f2be0787dca191be.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "0ae9e06f72bf8b58a1032a114fbb6594"
+"md5": "4003c62655e04a33e32843fc11e61e9e"
 }
 
 [deps]
 
-source_file="res://assets/plants/wheat/wheat_0.png"
-dest_files=["res://.godot/imported/wheat_0.png-5d545ae4c85ea4e9610ec8d73ad1bd0b.s3tc.ctex"]
+source_file="res://assets/village/housA/houseA_0.png"
+dest_files=["res://.godot/imported/houseA_0.png-a6ccc73a2e305bb6f2be0787dca191be.s3tc.ctex"]
 
 [params]
 

@@ -16,7 +16,10 @@ func _process(delta: float) -> void:
 	visual.scale = lerp(visual.scale, Vector3.ONE *  target_size, delta * 5);
 
 func _on_next_day():
-	var growth_factor = 1 - abs(plant.plant.preferred_water - plant.field.water_level)
+	var grid_pos = Grid.to_grid_cord(plant.global_position)
+	var water_level = Grid.get_water_percentage(grid_pos)
+	
+	var growth_factor = 1 - abs(plant.plant.preferred_water - water_level)
 	target_size = min(target_size + growth_factor * plant.plant.growth_speed, 1)
 	
 	if(target_size == 1):

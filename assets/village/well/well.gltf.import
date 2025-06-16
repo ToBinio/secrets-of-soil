@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bwi3piy4f66no"
-path="res://.godot/imported/wheat.gltf-dd91fcb6dbed0234594864b6acb09940.scn"
+uid="uid://dbtjy67n85q7t"
+path="res://.godot/imported/well.gltf-2876f7d7c7de6ecea07e7a06f5ac34d2.scn"
 
 [deps]
 
-source_file="res://assets/plants/wheat/wheat.gltf"
-dest_files=["res://.godot/imported/wheat.gltf-dd91fcb6dbed0234594864b6acb09940.scn"]
+source_file="res://assets/village/well/well.gltf"
+dest_files=["res://.godot/imported/well.gltf-2876f7d7c7de6ecea07e7a06f5ac34d2.scn"]
 
 [params]
 
@@ -32,17 +32,6 @@ animation/trimming=false
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
-_subresources={
-"materials": {
-"material_0": {
-"use_external/enabled": false,
-"use_external/path": "res://assets/plants/wheat/material_0.tres"
-},
-"material_1": {
-"use_external/enabled": false,
-"use_external/path": "res://assets/plants/wheat/material_1.tres"
-}
-}
-}
+_subresources={}
 gltf/naming_version=1
 gltf/embedded_image_handling=3

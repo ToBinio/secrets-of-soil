@@ -1,10 +1,14 @@
-[gd_scene load_steps=16 format=3 uid="uid://c4l41075qhjsw"]
+[gd_scene load_steps=18 format=3 uid="uid://c4l41075qhjsw"]
 
 [ext_resource type="Script" uid="uid://ck4nxaeidpcxl" path="res://scripts/camera.gd" id="1_0wfyh"]
 [ext_resource type="PackedScene" uid="uid://22wsbw7e8njp" path="res://scenes/world.tscn" id="1_o5qli"]
+[ext_resource type="Script" uid="uid://ynw6i6x74wqx" path="res://scripts/game_manger.gd" id="1_o6xl0"]
 [ext_resource type="Script" uid="uid://c41htxxbt565f" path="res://scripts/environment.gd" id="1_tbgi4"]
+[ext_resource type="Script" uid="uid://c2qk2325ok2gv" path="res://scripts/resources/plant_resource.gd" id="2_choun"]
 [ext_resource type="Script" uid="uid://cb4ftraq7hg1l" path="res://scripts/ui/next_day.gd" id="2_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://cec3esephtkpq" path="res://scenes/ui/info.tscn" id="3_sugp2"]
+[ext_resource type="Resource" uid="uid://c85nr0tqy0565" path="res://scripts/resources/plants/sunflower.tres" id="3_ya4ey"]
+[ext_resource type="Resource" uid="uid://dl5fl0mgy1sor" path="res://scripts/resources/plants/wheat.tres" id="4_eb6dy"]
 [ext_resource type="PackedScene" uid="uid://cheyy73j6p542" path="res://scenes/ui/plant_list.tscn" id="4_tefeu"]
 [ext_resource type="PackedScene" uid="uid://cn50eq5oj33yx" path="res://scenes/ui/quest_display.tscn" id="5_85g3d"]
 [ext_resource type="PackedScene" uid="uid://dyc8nhwgqib5g" path="res://assets/houses/housA/houseA.gltf" id="7_o6xl0"]
@@ -155,6 +159,13 @@ tonemap_mode = 2
 
 [node name="Main" type="Node3D"]
 
+[node name="GameManger" type="Node" parent="."]
+script = ExtResource("1_o6xl0")
+default_plants = Dictionary[ExtResource("2_choun"), int]({
+ExtResource("3_ya4ey"): 4,
+ExtResource("4_eb6dy"): 5
+})
+
 [node name="Environment" type="Node" parent="."]
 script = ExtResource("1_tbgi4")
 
@@ -205,11 +216,10 @@ transform = Transform3D(1, 0, 0, 0, 0.32608, 0.945342, 0, -0.945342, 0.32608, 0.
 script = ExtResource("1_0wfyh")
 zoom_speed = 0.15
 zoom_animation_speed = 10.0
+max_zoom = 10.0
+min_zoom = 3.0
 
 [node name="World" parent="." instance=ExtResource("1_o5qli")]
-transform = Transform3D(0.999998, -0.000154248, 0.00215105, 0.00014794, 0.999996, 0.00292046, -0.00215149, -0.00292013, 0.999993, 0, 0, 0)
-
-[node name="villager 1" parent="." instance=ExtResource("8_tipki")]
-transform = Transform3D(-0.942519, 0, 0.334152, -0.0661677, 0.980199, -0.186634, -0.327536, -0.198017, -0.923856, -1.52543, -9.53674e-07, -0.0192595)
+transform = Transform3D(0.999998, -6.69819e-05, 0.0021513, 6.06737e-05, 0.999996, 0.00292027, -0.00215149, -0.00292013, 0.999993, 0, 0, 0)
 
 [connection signal="pressed" from="Ui/NextDay/Button" to="Ui/NextDay" method="_on_next_day_button_pressed"]

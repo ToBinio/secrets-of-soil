@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ckrbb7kmdh3sr"
-path.s3tc="res://.godot/imported/sunflower_0.png-890528ccbcadbfbc7cf566df5e80c372.s3tc.ctex"
+uid="uid://cntnf7loutnnb"
+path.s3tc="res://.godot/imported/well_0.png-438dfa2e2328798f4af7bb249a3a1132.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "61cb3c22b0778f5bc23078e74645c88d"
+"md5": "bb3844de9d6a4cae44954a08c9c681f7"
 }
 
 [deps]
 
-source_file="res://assets/plants/sunflower/sunflower_0.png"
-dest_files=["res://.godot/imported/sunflower_0.png-890528ccbcadbfbc7cf566df5e80c372.s3tc.ctex"]
+source_file="res://assets/village/well/well_0.png"
+dest_files=["res://.godot/imported/well_0.png-438dfa2e2328798f4af7bb249a3a1132.s3tc.ctex"]
 
 [params]
 
