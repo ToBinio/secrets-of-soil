@@ -1,3 +1,4 @@
+[gd_scene load_steps=15 format=3 uid="uid://c4l41075qhjsw"]
 [gd_scene load_steps=13 format=3 uid="uid://c4l41075qhjsw"]
 
 [ext_resource type="Script" uid="uid://ck4nxaeidpcxl" path="res://scripts/camera.gd" id="1_0wfyh"]
@@ -6,6 +7,7 @@
 [ext_resource type="Script" uid="uid://cb4ftraq7hg1l" path="res://scripts/ui/next_day.gd" id="2_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://cec3esephtkpq" path="res://scenes/ui/info.tscn" id="3_sugp2"]
 [ext_resource type="PackedScene" uid="uid://cheyy73j6p542" path="res://scenes/ui/plant_list.tscn" id="4_tefeu"]
+[ext_resource type="PackedScene" uid="uid://d3maoy3blejtf" path="res://assets/villagers/villager_1.glb" id="8_tipki"]
 
 [sub_resource type="Animation" id="Animation_sugp2"]
 resource_name = "DayNightCycle"
@@ -203,5 +205,8 @@ zoom_animation_speed = 10.0
 
 [node name="World" parent="." instance=ExtResource("1_o5qli")]
 transform = Transform3D(0.999998, -0.000154248, 0.00215105, 0.00014794, 0.999996, 0.00292046, -0.00215149, -0.00292013, 0.999993, 0, 0, 0)
+
+[node name="villager 1" parent="." instance=ExtResource("8_tipki")]
+transform = Transform3D(-0.942519, 0, 0.334152, -0.0661677, 0.980199, -0.186634, -0.327536, -0.198017, -0.923856, 0, 0, 0)
 
 [connection signal="pressed" from="Ui/NextDay/Button" to="Ui/NextDay" method="_on_next_day_button_pressed"]
