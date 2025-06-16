@@ -11,5 +11,5 @@ func _ready() -> void:
 	
 func _on_click():
 	print("harvest " + plant.name)
-	Inventory.plants[plant] += 1;
+	Inventory.plants[plant].harvested += 1;
 	queue_free()

@@ -3,7 +3,8 @@ extends Camera3D
 @export_group("zoom")
 @export var zoom_speed: float = 0.05;  
 @export var zoom_animation_speed: float = 1.0
-
+@export var max_zoom: float
+@export var min_zoom: float
 
 var _plane = Plane(Vector3.UP)
 var _prevous_mouse_location: Vector2;
@@ -22,6 +23,8 @@ func _unhandled_input(event: InputEvent) -> void:
 				_target_zoom /= 1 + zoom_speed
 			if event.button_index == MOUSE_BUTTON_WHEEL_DOWN:
 				_target_zoom *= 1 + zoom_speed
+			
+			_target_zoom = clamp(_target_zoom, min_zoom, max_zoom)
 
 	if event is InputEventMouseMotion:
 		if event.button_mask == MOUSE_BUTTON_MASK_RIGHT:
