@@ -1,12 +1,23 @@
-[gd_scene load_steps=3 format=3 uid="uid://drq48tovhsxqs"]
+[gd_scene load_steps=6 format=3 uid="uid://drq48tovhsxqs"]
 
 [ext_resource type="Script" uid="uid://ihbn2sth3yml" path="res://scripts/ui/plant_selection.gd" id="1_i7dau"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i7dau"]
+bg_color = Color(0.627228, 0.627228, 0.627227, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_siwpg"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_grkfj"]
+bg_color = Color(0.176419, 0.176419, 0.176419, 1)
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_q1j3t"]
 
 [node name="Panel" type="Button"]
 custom_minimum_size = Vector2(200, 80)
+theme_override_styles/normal = SubResource("StyleBoxFlat_i7dau")
 script = ExtResource("1_i7dau")
+active_pannel_state = SubResource("StyleBoxFlat_siwpg")
+inactive_pannel_state = SubResource("StyleBoxFlat_grkfj")
 
 [node name="InfoButton" type="Button" parent="."]
 layout_mode = 1
