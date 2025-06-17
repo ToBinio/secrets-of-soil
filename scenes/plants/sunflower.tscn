@@ -11,22 +11,28 @@
 radius = 0.474813
 height = 1.5629
 
-[node name="Sunflower" type="Node3D" node_paths=PackedStringArray("clicker_area", "grid_blocker") groups=["Plant"]]
+[node name="Sunflower" type="Node3D" node_paths=PackedStringArray("clicker_area") groups=["Plant"]]
 script = ExtResource("1_mtwp4")
 plant = ExtResource("2_duwge")
 clicker_area = NodePath("Clicker")
-grid_blocker = NodePath("GridBlocker")
 
-[node name="Growable" parent="." node_paths=PackedStringArray("plant", "visual") instance=ExtResource("1_1v48e")]
+[node name="Growable" parent="." node_paths=PackedStringArray("plant", "visual", "happiness_label") instance=ExtResource("1_1v48e")]
 plant = NodePath("..")
 visual = NodePath("../Visual")
+happiness_label = NodePath("../Happiness")
 
-[node name="Clicker" parent="." node_paths=PackedStringArray("growable") instance=ExtResource("1_uoh7n")]
+[node name="Clicker" parent="." node_paths=PackedStringArray("growable", "hover_label") instance=ExtResource("1_uoh7n")]
 growable = NodePath("../Growable")
+hover_label = NodePath("../Happiness")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Clicker"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.774343, 0)
 shape = SubResource("CapsuleShape3D_40ky6")
+
+[node name="Happiness" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.81374, 0)
+billboard = 1
+text = "Happy: ?"
 
 [node name="GridBlocker" parent="." instance=ExtResource("4_1v48e")]
 size = 5
