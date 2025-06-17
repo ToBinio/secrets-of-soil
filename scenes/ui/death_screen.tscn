@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://l1bnxdwqgv4n"]
+[gd_scene load_steps=3 format=3 uid="uid://l1bnxdwqgv4n"]
 
 [ext_resource type="Script" uid="uid://bs0wnt0wwbi12" path="res://scripts/ui/try_again.gd" id="1_j0ehl"]
+[ext_resource type="Script" uid="uid://7pi0p26sauku" path="res://scripts/ui/death_screen_stats.gd" id="2_njuei"]
 
 [node name="DeathScreen" type="Control"]
 layout_mode = 3
@@ -62,5 +63,159 @@ grow_horizontal = 2
 grow_vertical = 0
 text = "Try Again"
 script = ExtResource("1_j0ehl")
+
+[node name="GridContainer" type="GridContainer" parent="Bg/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -168.0
+offset_top = -82.0
+offset_right = 168.0
+offset_bottom = 122.0
+grow_horizontal = 2
+grow_vertical = 2
+columns = 2
+script = ExtResource("2_njuei")
+
+[node name="Panel" type="Panel" parent="Bg/Panel/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="PanelContainer" type="VBoxContainer" parent="Bg/Panel/GridContainer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Header" type="Label" parent="Bg/Panel/GridContainer/Panel/PanelContainer"]
+layout_mode = 2
+text = "Plants Harvested:"
+
+[node name="Header2" type="Label" parent="Bg/Panel/GridContainer/Panel/PanelContainer"]
+layout_mode = 2
+text = "0"
+
+[node name="Panel2" type="Panel" parent="Bg/Panel/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="PanelContainer" type="VBoxContainer" parent="Bg/Panel/GridContainer/Panel2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Header" type="Label" parent="Bg/Panel/GridContainer/Panel2/PanelContainer"]
+layout_mode = 2
+text = "Knowledge Gathered"
+
+[node name="Header2" type="Label" parent="Bg/Panel/GridContainer/Panel2/PanelContainer"]
+layout_mode = 2
+text = "0"
+
+[node name="Panel3" type="Panel" parent="Bg/Panel/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="PanelContainer" type="VBoxContainer" parent="Bg/Panel/GridContainer/Panel3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Header" type="Label" parent="Bg/Panel/GridContainer/Panel3/PanelContainer"]
+layout_mode = 2
+text = "Days Survived"
+
+[node name="Header2" type="Label" parent="Bg/Panel/GridContainer/Panel3/PanelContainer"]
+layout_mode = 2
+text = "0"
+
+[node name="Panel4" type="Panel" parent="Bg/Panel/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="PanelContainer" type="VBoxContainer" parent="Bg/Panel/GridContainer/Panel4"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Header" type="Label" parent="Bg/Panel/GridContainer/Panel4/PanelContainer"]
+layout_mode = 2
+text = "Food Consumed"
+
+[node name="Header2" type="Label" parent="Bg/Panel/GridContainer/Panel4/PanelContainer"]
+layout_mode = 2
+text = "0"
+
+[node name="Panel5" type="Panel" parent="Bg/Panel/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="PanelContainer" type="VBoxContainer" parent="Bg/Panel/GridContainer/Panel5"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Header" type="Label" parent="Bg/Panel/GridContainer/Panel5/PanelContainer"]
+layout_mode = 2
+text = "Villager killed Plants"
+
+[node name="Header2" type="Label" parent="Bg/Panel/GridContainer/Panel5/PanelContainer"]
+layout_mode = 2
+text = "0"
+
+[node name="Panel6" type="Panel" parent="Bg/Panel/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="PanelContainer" type="VBoxContainer" parent="Bg/Panel/GridContainer/Panel6"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Header" type="Label" parent="Bg/Panel/GridContainer/Panel6/PanelContainer"]
+layout_mode = 2
+text = "quests Completed"
+
+[node name="Header2" type="Label" parent="Bg/Panel/GridContainer/Panel6/PanelContainer"]
+layout_mode = 2
+text = "0"
 
 [connection signal="pressed" from="Bg/Panel/Button" to="Bg/Panel/Button" method="_on_pressed"]

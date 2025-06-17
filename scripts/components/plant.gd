@@ -8,5 +8,6 @@ func _ready() -> void:
 	clicker_area.on_click.connect(_on_click)
 	
 func _on_click():
-	Inventory.plants[plant].harvested += 1;
+	Inventory.plants[plant].harvested += 1
+	GameManager.instant(self).stats.plants_harvested += 1
 	queue_free()

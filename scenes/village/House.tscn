@@ -9,4 +9,3 @@
 
 [node name="GridBlocker" parent="." instance=ExtResource("2_vxfrs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.01, 0)
-size = 3

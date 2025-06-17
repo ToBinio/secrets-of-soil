@@ -1,9 +1,17 @@
 extends Node
 class_name GameManager
 
-var current_day: int;
-var current_food_requirements: int;
+class Stats:
+	var days_survived: int = 0
+	var food_consumed: int = 0
+	var plants_harvested: int = 0
+	var knowledge_gathered: int = 0
+	var plants_destroyed_by_village: int = 0
+	var quests_completed: int = 0
 
+var stats: Stats = Stats.new() 
+
+var current_food_requirements: int;
 var _current_weather: int
 
 @export var possible_weather: Array[WeatherResource]
@@ -22,7 +30,6 @@ func current_weather() -> WeatherResource:
 func _ready() -> void:
 	death_screen.hide()
 	
-	current_day = 1
 	current_food_requirements = _calc_food_requirement()
 	_current_weather = floor(possible_weather.size() / 2.)
 	
@@ -44,7 +51,7 @@ func _on_next_day():
 	# needed to make sure plants have grown before stuff changes
 	await get_tree().create_timer(1).timeout
 	
-	current_day += 1
+	stats.days_survived += 1
 	current_food_requirements = _calc_food_requirement()
 	
 	_update_weather()
@@ -63,7 +70,7 @@ func _update_weather():
 	_current_weather = clamp(_current_weather + change, 0, possible_weather.size() - 1)
 
 func _calc_food_requirement() -> int:
-	return (current_day - 1) * 10
+	return stats.days_survived * 10
 
 func _consume_food() -> bool:
 	var to_eat = current_food_requirements
@@ -79,7 +86,10 @@ func _consume_food() -> bool:
 			return false
 		
 		var eat = plants.pick_random() as PlantResource
+		
 		to_eat -= eat.food
+		stats.food_consumed += eat.food
+		
 		Inventory.plants[eat].harvested -= 1
 		
 	return true
@@ -112,6 +122,7 @@ func _generate_random_structure() -> bool:
 		return false
 	
 	for plant in plants:
+		stats.plants_destroyed_by_village += 1
 		plant.queue_free()
 	
 	add_child(strucuter_instance)

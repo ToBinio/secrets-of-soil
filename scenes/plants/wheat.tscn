@@ -35,6 +35,5 @@ billboard = 1
 text = "Happy: ?"
 
 [node name="GridBlocker" parent="." instance=ExtResource("5_yhkry")]
-size = 3
 
 [node name="Visual" parent="." instance=ExtResource("1_yfabo")]
