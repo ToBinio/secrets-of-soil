@@ -20,7 +20,7 @@ func _calc_growth_factor() -> float:
 	var grid_pos = Grid.to_grid_cord(plant.global_position)
 	var water_level = Grid.get_water_percentage(grid_pos)
 	
-	var game_manger = get_tree().get_first_node_in_group("GameManager") as GameManager
+	var game_manger = GameManager.instant(self)
 	
 	water_level += game_manger.current_weather().water_change
 	water_level = clamp(water_level,0,1)

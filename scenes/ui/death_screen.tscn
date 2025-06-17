@@ -1,0 +1,66 @@
+[gd_scene load_steps=2 format=3 uid="uid://l1bnxdwqgv4n"]
+
+[ext_resource type="Script" uid="uid://bs0wnt0wwbi12" path="res://scripts/ui/try_again.gd" id="1_j0ehl"]
+
+[node name="DeathScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Bg" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="Bg"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -319.5
+offset_top = -194.5
+offset_right = 319.5
+offset_bottom = 194.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Header" type="Label" parent="Bg/Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -84.0
+offset_top = 18.5
+offset_right = 85.0
+offset_bottom = 67.5
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 22
+text = "your people starved...
+shame on you :("
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="Bg/Panel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -42.5
+offset_right = 41.0
+offset_bottom = -11.5
+grow_horizontal = 2
+grow_vertical = 0
+text = "Try Again"
+script = ExtResource("1_j0ehl")
+
+[connection signal="pressed" from="Bg/Panel/Button" to="Bg/Panel/Button" method="_on_pressed"]

@@ -11,10 +11,17 @@ var _current_weather: int
 
 @export var default_plants: Dictionary[PlantResource, int]
 
+@export var death_screen: Control
+
+static func instant(node: Node) -> GameManager:
+	return node.get_tree().get_first_node_in_group("GameManager") as GameManager
+
 func current_weather() -> WeatherResource:
 	return possible_weather[_current_weather]
 
 func _ready() -> void:
+	death_screen.hide()
+	
 	current_day = 1
 	current_food_requirements = _calc_food_requirement()
 	_current_weather = possible_weather.size() / 2
@@ -27,7 +34,9 @@ func _ready() -> void:
 	Events.on_next_day.connect(_on_next_day)
 		
 func _on_next_day():
-	_consume_food()
+	if !_consume_food():
+		death_screen.show()
+		return
 	
 	_remove_random_structure()
 	_try_generate_random_structure()
@@ -56,7 +65,7 @@ func _update_weather():
 func _calc_food_requirement() -> int:
 	return (current_day - 1) * 10
 
-func _consume_food():
+func _consume_food() -> bool:
 	var to_eat = current_food_requirements
 	
 	while to_eat > 0:
@@ -67,12 +76,13 @@ func _consume_food():
 				plants.push_back(plant_key)
 		
 		if plants.is_empty():
-			printerr("you lost! - no more plants to eat - " + str(to_eat))
-			return
+			return false
 		
 		var eat = plants.pick_random() as PlantResource
 		to_eat -= eat.food
 		Inventory.plants[eat].harvested -= 1
+		
+	return true
 
 func _remove_random_structure():
 	var generated = get_tree().get_nodes_in_group("Generated")
