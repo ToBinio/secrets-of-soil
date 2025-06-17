@@ -1,10 +1,11 @@
-[gd_scene load_steps=18 format=3 uid="uid://cd6yn8ep2yldo"]
+[gd_scene load_steps=20 format=3 uid="uid://cd6yn8ep2yldo"]
 
-[ext_resource type="Texture2D" uid="uid://diovv14emeibh" path="res://assets/ui/weather/weather.png" id="1_gydex"]
 [ext_resource type="Texture2D" uid="uid://wjiuk85eafmo" path="res://assets/ui/food/food.png" id="1_kgkxc"]
 [ext_resource type="Script" uid="uid://copxj13kvd3fv" path="res://scripts/ui/day_count.gd" id="1_pqpau"]
 [ext_resource type="Script" uid="uid://cb4ftraq7hg1l" path="res://scripts/ui/next_day.gd" id="1_pwilp"]
+[ext_resource type="Texture2D" uid="uid://diovv14emeibh" path="res://assets/ui/weather/weather.png" id="2_lftq7"]
 [ext_resource type="PackedScene" uid="uid://3wqm7x704b87" path="res://scenes/ui/quest.tscn" id="2_s4ftv"]
+[ext_resource type="Script" uid="uid://bv3ctkv746ps6" path="res://scripts/ui/current_wheater.gd" id="3_fool0"]
 [ext_resource type="Resource" uid="uid://4ovjpg6b7k1a" path="res://scripts/resources/quest_types/research.tres" id="3_qaetd"]
 [ext_resource type="Script" path="res://scripts/resources/quest_requirement_resource.gd" id="3_s0wcl"]
 [ext_resource type="Resource" uid="uid://dl5fl0mgy1sor" path="res://scripts/resources/plants/wheat.tres" id="4_kgkxc"]
@@ -12,6 +13,10 @@
 [ext_resource type="Script" uid="uid://cqwtr73q8nk5c" path="res://scripts/ui/food_requirement.gd" id="5_lftq7"]
 [ext_resource type="Script" path="res://scripts/resources/quest_resource.gd" id="6_wj50s"]
 [ext_resource type="Resource" uid="uid://b7wrrh3s6i7cx" path="res://scripts/resources/quest_types/weather.tres" id="8_kgkxc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pqpau"]
+atlas = ExtResource("2_lftq7")
+region = Rect2(0, 0, 16, 16)
 
 [sub_resource type="Resource" id="Resource_ft74a"]
 script = ExtResource("3_s0wcl")
@@ -75,7 +80,8 @@ offset_left = 4.0
 offset_top = 15.0
 offset_right = 44.0
 offset_bottom = 55.0
-texture = ExtResource("1_gydex")
+texture = SubResource("AtlasTexture_pqpau")
+script = ExtResource("3_fool0")
 
 [node name="NextDay" type="Button" parent="Panel"]
 layout_mode = 1

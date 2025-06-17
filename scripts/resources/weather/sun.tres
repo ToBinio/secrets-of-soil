@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="WeatherResource" load_steps=4 format=3 uid="uid://bqfxk0a6xvf1t"]
+
+[ext_resource type="Script" uid="uid://bgxl72c8kwoty" path="res://scripts/resources/weather_resource.gd" id="1_ctune"]
+[ext_resource type="Texture2D" uid="uid://diovv14emeibh" path="res://assets/ui/weather/weather.png" id="1_lc1s1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tpm3t"]
+atlas = ExtResource("1_lc1s1")
+region = Rect2(32, 0, 16, 16)
+
+[resource]
+script = ExtResource("1_ctune")
+icon = SubResource("AtlasTexture_tpm3t")
+water_change = -0.2
+metadata/_custom_type_script = "uid://bgxl72c8kwoty"

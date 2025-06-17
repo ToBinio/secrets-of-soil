@@ -19,6 +19,11 @@ func _on_next_day():
 	var grid_pos = Grid.to_grid_cord(plant.global_position)
 	var water_level = Grid.get_water_percentage(grid_pos)
 	
+	var game_manger = get_tree().get_first_node_in_group("GameManager") as GameManager
+	
+	water_level += game_manger.current_weather().water_change
+	water_level = clamp(water_level,0,1)
+	
 	var growth_factor = 1 - abs(plant.plant.preferred_water - water_level)
 	target_size = min(target_size + growth_factor * plant.plant.growth_speed, 1)
 	

@@ -4,12 +4,20 @@ class_name GameManager
 var current_day: int;
 var current_food_requirements: int;
 
+var _current_weather: int
+
+@export var possible_weather: Array[WeatherResource]
 @export var structures: Array[PackedScene]
+
 @export var default_plants: Dictionary[PlantResource, int]
+
+func current_weather() -> WeatherResource:
+	return possible_weather[_current_weather]
 
 func _ready() -> void:
 	current_day = 1
 	current_food_requirements = _calc_food_requirement()
+	_current_weather = possible_weather.size() / 2
 	
 	for key in default_plants.keys():
 		Inventory.plants[key].max_seeds = default_plants[key]
@@ -21,13 +29,29 @@ func _ready() -> void:
 func _on_next_day():
 	_consume_food()
 	
+	_remove_random_structure()
+	_try_generate_random_structure()
+	
+	# needed to make sure plants have grown before stuff changes
+	await get_tree().create_timer(1).timeout
+	
 	current_day += 1
 	current_food_requirements = _calc_food_requirement()
 	
-	_reset_inventory()
+	_update_weather()
 	
-	_remove_random_structure()
-	_try_generate_random_structure()
+	_reset_inventory()
+
+func _update_weather():
+	var center = (possible_weather.size() - 1) / 2.0
+	var diff = _current_weather - center
+
+	var change = randi_range(-1,1)
+	
+	if randf() < 0.2:
+		change = clamp(-diff, -1,1)
+			
+	_current_weather = clamp(_current_weather + change, 0, possible_weather.size() - 1)
 
 func _calc_food_requirement() -> int:
 	return (current_day - 1) * 10
