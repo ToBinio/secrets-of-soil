@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://cd6yn8ep2yldo"]
+[gd_scene load_steps=18 format=3 uid="uid://cd6yn8ep2yldo"]
 
 [ext_resource type="Texture2D" uid="uid://diovv14emeibh" path="res://assets/ui/weather/weather.png" id="1_gydex"]
 [ext_resource type="Texture2D" uid="uid://wjiuk85eafmo" path="res://assets/ui/food/food.png" id="1_kgkxc"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" path="res://scripts/resources/quest_requirement_resource.gd" id="3_s0wcl"]
 [ext_resource type="Resource" uid="uid://dl5fl0mgy1sor" path="res://scripts/resources/plants/wheat.tres" id="4_kgkxc"]
 [ext_resource type="Resource" uid="uid://c85nr0tqy0565" path="res://scripts/resources/plants/sunflower.tres" id="5_dp4qy"]
+[ext_resource type="Script" uid="uid://cqwtr73q8nk5c" path="res://scripts/ui/food_requirement.gd" id="5_lftq7"]
 [ext_resource type="Script" path="res://scripts/resources/quest_resource.gd" id="6_wj50s"]
 [ext_resource type="Resource" uid="uid://b7wrrh3s6i7cx" path="res://scripts/resources/quest_types/weather.tres" id="8_kgkxc"]
 
@@ -133,6 +134,7 @@ theme_override_font_sizes/font_size = 10
 text = "10"
 horizontal_alignment = 2
 vertical_alignment = 2
+script = ExtResource("5_lftq7")
 
 [node name="Additionals" type="Label" parent="Panel/Background"]
 layout_mode = 0

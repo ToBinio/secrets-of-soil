@@ -125,17 +125,27 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Panel/ScrollContainer/VBoxContainer"]
+[node name="Water" type="VBoxContainer" parent="Panel/ScrollContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="Header" type="Label" parent="Panel/ScrollContainer/VBoxContainer/VBoxContainer"]
+[node name="Header" type="Label" parent="Panel/ScrollContainer/VBoxContainer/Water"]
 layout_mode = 2
 text = "Water Preferance"
 
-[node name="ProgressBar" type="ProgressBar" parent="Panel/ScrollContainer/VBoxContainer/VBoxContainer"]
+[node name="ProgressBar" type="ProgressBar" parent="Panel/ScrollContainer/VBoxContainer/Water"]
 layout_mode = 2
 theme_override_styles/fill = SubResource("StyleBoxFlat_6cmwp")
 max_value = 1.0
 value = 0.56
+
+[node name="Food" type="VBoxContainer" parent="Panel/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Header" type="Label" parent="Panel/ScrollContainer/VBoxContainer/Food"]
+layout_mode = 2
+text = "Food"
+
+[node name="Value" type="Label" parent="Panel/ScrollContainer/VBoxContainer/Food"]
+layout_mode = 2
 
 [connection signal="button_down" from="Panel/Button" to="." method="_on_close_button_down"]

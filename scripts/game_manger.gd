@@ -1,13 +1,15 @@
 extends Node
 class_name GameManager
 
-@export var current_day: int;
+var current_day: int;
+var current_food_requirements: int;
 
 @export var structures: Array[PackedScene]
 @export var default_plants: Dictionary[PlantResource, int]
 
 func _ready() -> void:
 	current_day = 1
+	current_food_requirements = _calc_food_requirement()
 	
 	for key in default_plants.keys():
 		Inventory.plants[key].max_seeds = default_plants[key]
@@ -17,11 +19,36 @@ func _ready() -> void:
 	Events.on_next_day.connect(_on_next_day)
 		
 func _on_next_day():
+	_consume_food()
+	
 	current_day += 1
+	current_food_requirements = _calc_food_requirement()
+	
 	_reset_inventory()
 	
 	_remove_random_structure()
 	_try_generate_random_structure()
+
+func _calc_food_requirement() -> int:
+	return (current_day - 1) * 10
+
+func _consume_food():
+	var to_eat = current_food_requirements
+	
+	while to_eat > 0:
+		var plants: Array[PlantResource] = []
+		
+		for plant_key in Inventory.plants.keys():
+			for i in Inventory.plants[plant_key].harvested:
+				plants.push_back(plant_key)
+		
+		if plants.is_empty():
+			printerr("you lost! - no more plants to eat - " + str(to_eat))
+			return
+		
+		var eat = plants.pick_random() as PlantResource
+		to_eat -= eat.food
+		Inventory.plants[eat].harvested -= 1
 
 func _remove_random_structure():
 	var generated = get_tree().get_nodes_in_group("Generated")
