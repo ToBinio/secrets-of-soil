@@ -11,4 +11,5 @@ region = Rect2(48, 0, 16, 16)
 script = ExtResource("1_2qi8y")
 icon = SubResource("AtlasTexture_w24lj")
 water_change = 0.0
+ground_color = Color(0.509804, 0.337255, 0.27451, 1)
 metadata/_custom_type_script = "uid://bgxl72c8kwoty"

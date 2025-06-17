@@ -3,15 +3,17 @@
 [ext_resource type="Script" uid="uid://b20puety53ilr" path="res://scripts/components/grid_blocker.gd" id="1_mjwk0"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dvlu5"]
-albedo_color = Color(0.38919, 0.191217, 4.81308e-08, 1)
+transparency = 1
+albedo_color = Color(0.388235, 0.192157, 0, 0.254902)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_ogw1f"]
 resource_local_to_scene = true
 material = SubResource("StandardMaterial3D_dvlu5")
-size = Vector2(0.02, 0.02)
+size = Vector2(1.52, 1.52)
 
 [node name="GridBlocker" type="Node3D" groups=["GridBlocker"]]
 script = ExtResource("1_mjwk0")
+size = 3
 
 [node name="Mesh" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.01, 0)

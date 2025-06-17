@@ -24,7 +24,7 @@ func _ready() -> void:
 	
 	current_day = 1
 	current_food_requirements = _calc_food_requirement()
-	_current_weather = possible_weather.size() / 2
+	_current_weather = floor(possible_weather.size() / 2.)
 	
 	for key in default_plants.keys():
 		Inventory.plants[key].max_seeds = default_plants[key]

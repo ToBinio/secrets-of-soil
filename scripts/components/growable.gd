@@ -16,9 +16,13 @@ func _ready() -> void:
 	if growth_speed_label:
 		var growth_factor = _calc_growth_factor()
 		growth_speed_label.text = "Speed: %.2f" % growth_factor
-	
+
 func _process(delta: float) -> void:
 	visual.scale = lerp(visual.scale, Vector3.ONE *  target_size, delta * 5);
+	
+	if growth_speed_label:
+		var growth_factor = _calc_growth_factor()
+		growth_speed_label.text = "Speed: %.2f" % growth_factor
 
 func _calc_growth_factor() -> float:
 	var grid_pos = Grid.to_grid_cord(plant.global_position)
@@ -35,10 +39,6 @@ func _calc_growth_factor() -> float:
 
 func _on_next_day():
 	var growth_factor = _calc_growth_factor()
-	
-	if growth_speed_label:
-		growth_speed_label.text = "Speed: %.2f" % growth_factor
-	
 	target_size = min(target_size + growth_factor * plant.plant.growth_speed, 1)
 	
 	if(target_size == 1):

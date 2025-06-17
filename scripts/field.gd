@@ -4,7 +4,14 @@ class_name Field
 @export var preview_color: Color
 @export var invalid_preview_color: Color
 
+@export var ground_material: StandardMaterial3D 
+
 var preview: PlantPreview;
+
+func _process(delta: float) -> void:
+	var game_manager = GameManager.instant(self)
+	ground_material.albedo_color = ground_material.albedo_color.lerp(game_manager.current_weather().ground_color ,delta)
+	
 
 func _on_mouse_exited() -> void:
 	if(preview):

@@ -1,21 +1,20 @@
 [gd_scene load_steps=5 format=3 uid="uid://dpg1chidhkvy3"]
 
 [ext_resource type="Script" uid="uid://c6qxasibnqplc" path="res://scripts/field.gd" id="1_6pmjc"]
+[ext_resource type="Material" uid="uid://b74s5muwu387y" path="res://scenes/field_material.tres" id="2_ttalb"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ycb0e"]
 size = Vector3(20, 0.1, 20)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ycb0e"]
-albedo_color = Color(0.407843, 0.25098, 0.223529, 1)
-
 [sub_resource type="BoxMesh" id="BoxMesh_6pmjc"]
-material = SubResource("StandardMaterial3D_ycb0e")
+material = ExtResource("2_ttalb")
 size = Vector3(19.5, 0.1, 19.5)
 
 [node name="Field" type="Node3D"]
 script = ExtResource("1_6pmjc")
 preview_color = Color(4.33177e-07, 0.408298, 0.164424, 0.588235)
 invalid_preview_color = Color(1, 0, 0, 0.588235)
+ground_material = ExtResource("2_ttalb")
 
 [node name="Area3D" type="Area3D" parent="."]
 
