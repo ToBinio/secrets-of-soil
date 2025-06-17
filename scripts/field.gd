@@ -56,10 +56,11 @@ func _on_input_event(_camera: Node, event: InputEvent, event_position: Vector3, 
 		
 		preview.set_color(invalid_preview_color)
 		Inventory.plants[Events.selected_plant].seeds -= 1
+		plant_instance.position = Grid.to_grid_cord(event_position)  
+		plant_instance.position.y = 0.05
 		
 		add_child(plant_instance)
 		
-		plant_instance.global_position = Grid.to_grid_cord(event_position)  
 
 func is_valid(location: Vector3, node: Node) -> bool:
 	if Inventory.plants[Events.selected_plant].seeds <= 0:

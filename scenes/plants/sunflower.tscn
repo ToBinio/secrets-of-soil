@@ -16,20 +16,20 @@ script = ExtResource("1_mtwp4")
 plant = ExtResource("2_duwge")
 clicker_area = NodePath("Clicker")
 
-[node name="Growable" parent="." node_paths=PackedStringArray("plant", "visual", "happiness_label") instance=ExtResource("1_1v48e")]
+[node name="Growable" parent="." node_paths=PackedStringArray("plant", "visual", "growth_speed_label") instance=ExtResource("1_1v48e")]
 plant = NodePath("..")
 visual = NodePath("../Visual")
-happiness_label = NodePath("../Happiness")
+growth_speed_label = NodePath("../Speed")
 
 [node name="Clicker" parent="." node_paths=PackedStringArray("growable", "hover_label") instance=ExtResource("1_uoh7n")]
 growable = NodePath("../Growable")
-hover_label = NodePath("../Happiness")
+hover_label = NodePath("../Speed")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Clicker"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.774343, 0)
 shape = SubResource("CapsuleShape3D_40ky6")
 
-[node name="Happiness" type="Label3D" parent="."]
+[node name="Speed" type="Label3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.81374, 0)
 billboard = 1
 text = "Happy: ?"
