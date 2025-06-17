@@ -1,6 +1,8 @@
-[gd_scene load_steps=14 format=3 uid="uid://cd6yn8ep2yldo"]
+[gd_scene load_steps=16 format=3 uid="uid://cd6yn8ep2yldo"]
 
+[ext_resource type="Texture2D" uid="uid://diovv14emeibh" path="res://assets/ui/weather/weather.png" id="1_gydex"]
 [ext_resource type="Texture2D" uid="uid://wjiuk85eafmo" path="res://assets/ui/food/food.png" id="1_kgkxc"]
+[ext_resource type="Script" uid="uid://cb4ftraq7hg1l" path="res://scripts/ui/next_day.gd" id="1_pwilp"]
 [ext_resource type="PackedScene" uid="uid://3wqm7x704b87" path="res://scenes/ui/quest.tscn" id="2_s4ftv"]
 [ext_resource type="Resource" uid="uid://4ovjpg6b7k1a" path="res://scripts/resources/quest_types/research.tres" id="3_qaetd"]
 [ext_resource type="Script" path="res://scripts/resources/quest_requirement_resource.gd" id="3_s0wcl"]
@@ -39,22 +41,54 @@ type = ExtResource("8_kgkxc")
 requirements = Array[ExtResource("3_s0wcl")]([SubResource("Resource_kgkxc")])
 metadata/_custom_type_script = "uid://b8nijldcrxc72"
 
-[node name="QuestDisplay" type="Control"]
+[node name="Sidebar" type="Control"]
 layout_mode = 3
-anchors_preset = 0
-offset_left = -26.0
-offset_top = 87.0
-offset_right = 1131.0
-offset_bottom = 735.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="Background" type="Panel" parent="."]
-layout_mode = 0
-offset_left = 950.0
-offset_top = 194.0
-offset_right = 1138.0
-offset_bottom = 482.0
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -199.0
+offset_bottom = 356.0
+grow_horizontal = 0
 
-[node name="Quests" type="Label" parent="Background"]
+[node name="CurrentWheater" type="TextureRect" parent="Panel"]
+layout_mode = 1
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 45.0
+offset_bottom = 45.0
+texture = ExtResource("1_gydex")
+
+[node name="NextDay" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -100.0
+offset_top = 4.0
+offset_right = -4.0
+offset_bottom = 43.0
+grow_horizontal = 0
+text = "Next Day"
+script = ExtResource("1_pwilp")
+
+[node name="Background" type="Control" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Quests" type="Label" parent="Panel/Background"]
 layout_mode = 0
 offset_right = 187.0
 offset_bottom = 47.0
@@ -62,7 +96,7 @@ text = "Quests"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Daily" type="Label" parent="Background"]
+[node name="Daily" type="Label" parent="Panel/Background"]
 layout_mode = 0
 offset_left = 4.0
 offset_top = 42.0
@@ -72,7 +106,7 @@ theme_override_font_sizes/font_size = 12
 text = "Daily Challenge:"
 vertical_alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="Background"]
+[node name="TextureRect" type="TextureRect" parent="Panel/Background"]
 layout_mode = 0
 offset_left = 76.0
 offset_top = 75.0
@@ -80,7 +114,7 @@ offset_right = 116.0
 offset_bottom = 115.0
 texture = ExtResource("1_kgkxc")
 
-[node name="Label" type="Label" parent="Background/TextureRect"]
+[node name="Label" type="Label" parent="Panel/Background/TextureRect"]
 layout_mode = 0
 offset_top = 24.0
 offset_right = 40.0
@@ -90,7 +124,7 @@ text = "10"
 horizontal_alignment = 2
 vertical_alignment = 2
 
-[node name="Additionals" type="Label" parent="Background"]
+[node name="Additionals" type="Label" parent="Panel/Background"]
 layout_mode = 0
 offset_left = 4.0
 offset_top = 118.0
@@ -100,16 +134,18 @@ theme_override_font_sizes/font_size = 12
 text = "Additional Challenges:"
 vertical_alignment = 1
 
-[node name="AdditionalQuestsContainer" type="VBoxContainer" parent="Background"]
+[node name="AdditionalQuestsContainer" type="VBoxContainer" parent="Panel/Background"]
 layout_mode = 2
 offset_top = 147.0
 offset_right = 188.0
 offset_bottom = 307.0
 
-[node name="Quest1" parent="Background/AdditionalQuestsContainer" instance=ExtResource("2_s4ftv")]
+[node name="Quest1" parent="Panel/Background/AdditionalQuestsContainer" instance=ExtResource("2_s4ftv")]
 layout_mode = 2
 quest = SubResource("Resource_uibx1")
 
-[node name="Quest2" parent="Background/AdditionalQuestsContainer" instance=ExtResource("2_s4ftv")]
+[node name="Quest2" parent="Panel/Background/AdditionalQuestsContainer" instance=ExtResource("2_s4ftv")]
 layout_mode = 2
 quest = SubResource("Resource_dp4qy")
+
+[connection signal="pressed" from="Panel/NextDay" to="Panel/NextDay" method="_on_pressed"]

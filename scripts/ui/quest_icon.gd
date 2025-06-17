@@ -13,7 +13,7 @@ func _ready() -> void:
 	set_label_text()
 	icon.texture = requirement.plant_resource.icon
 	
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	set_label_text()
 	
 func set_label_text():

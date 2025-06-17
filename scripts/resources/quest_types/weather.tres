@@ -5,6 +5,6 @@
 
 [resource]
 script = ExtResource("1_555k3")
-name = "Wather"
+name = "Weather"
 description = "If you complete this quest, you will receive information about the upcoming weather."
 icon = ExtResource("1_brh36")
