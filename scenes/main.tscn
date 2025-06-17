@@ -158,7 +158,7 @@ tonemap_mode = 2
 
 [node name="Main" type="Node3D"]
 
-[node name="GameManger" type="Node" parent="."]
+[node name="GameManger" type="Node" parent="." groups=["GameManager"]]
 script = ExtResource("1_o6xl0")
 structures = Array[PackedScene]([ExtResource("2_ya4ey"), ExtResource("3_eb6dy")])
 default_plants = Dictionary[ExtResource("2_choun"), int]({

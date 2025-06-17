@@ -1,9 +1,14 @@
 extends Node
+class_name GameManager
+
+@export var current_day: int;
 
 @export var structures: Array[PackedScene]
 @export var default_plants: Dictionary[PlantResource, int]
 
 func _ready() -> void:
+	current_day = 1
+	
 	for key in default_plants.keys():
 		Inventory.plants[key].max_seeds = default_plants[key]
 	
@@ -12,6 +17,7 @@ func _ready() -> void:
 	Events.on_next_day.connect(_on_next_day)
 		
 func _on_next_day():
+	current_day += 1
 	_reset_inventory()
 	
 	_remove_random_structure()

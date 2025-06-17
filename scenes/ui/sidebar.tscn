@@ -1,7 +1,8 @@
-[gd_scene load_steps=16 format=3 uid="uid://cd6yn8ep2yldo"]
+[gd_scene load_steps=17 format=3 uid="uid://cd6yn8ep2yldo"]
 
 [ext_resource type="Texture2D" uid="uid://diovv14emeibh" path="res://assets/ui/weather/weather.png" id="1_gydex"]
 [ext_resource type="Texture2D" uid="uid://wjiuk85eafmo" path="res://assets/ui/food/food.png" id="1_kgkxc"]
+[ext_resource type="Script" uid="uid://copxj13kvd3fv" path="res://scripts/ui/day_count.gd" id="1_pqpau"]
 [ext_resource type="Script" uid="uid://cb4ftraq7hg1l" path="res://scripts/ui/next_day.gd" id="1_pwilp"]
 [ext_resource type="PackedScene" uid="uid://3wqm7x704b87" path="res://scenes/ui/quest.tscn" id="2_s4ftv"]
 [ext_resource type="Resource" uid="uid://4ovjpg6b7k1a" path="res://scripts/resources/quest_types/research.tres" id="3_qaetd"]
@@ -58,12 +59,21 @@ offset_left = -199.0
 offset_bottom = 356.0
 grow_horizontal = 0
 
+[node name="DayCount" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 1.0
+offset_right = 47.0
+offset_bottom = 24.0
+text = "Day 1"
+script = ExtResource("1_pqpau")
+
 [node name="CurrentWheater" type="TextureRect" parent="Panel"]
 layout_mode = 1
-offset_left = 5.0
-offset_top = 5.0
-offset_right = 45.0
-offset_bottom = 45.0
+offset_left = 4.0
+offset_top = 15.0
+offset_right = 44.0
+offset_bottom = 55.0
 texture = ExtResource("1_gydex")
 
 [node name="NextDay" type="Button" parent="Panel"]
