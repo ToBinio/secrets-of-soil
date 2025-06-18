@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://cd6yn8ep2yldo"]
+[gd_scene load_steps=22 format=3 uid="uid://cd6yn8ep2yldo"]
 
 [ext_resource type="Texture2D" uid="uid://wjiuk85eafmo" path="res://assets/ui/food/food.png" id="1_kgkxc"]
 [ext_resource type="Script" uid="uid://copxj13kvd3fv" path="res://scripts/ui/day_count.gd" id="1_pqpau"]
@@ -11,8 +11,10 @@
 [ext_resource type="Resource" uid="uid://dl5fl0mgy1sor" path="res://scripts/resources/plants/wheat.tres" id="4_kgkxc"]
 [ext_resource type="Resource" uid="uid://c85nr0tqy0565" path="res://scripts/resources/plants/sunflower.tres" id="5_dp4qy"]
 [ext_resource type="Script" uid="uid://cqwtr73q8nk5c" path="res://scripts/ui/food_requirement.gd" id="5_lftq7"]
-[ext_resource type="Script" path="res://scripts/resources/quest_resource.gd" id="6_wj50s"]
+[ext_resource type="Script" uid="uid://b8nijldcrxc72" path="res://scripts/resources/quest_resource.gd" id="6_wj50s"]
+[ext_resource type="Script" uid="uid://dlah4mp4jl04n" path="res://scripts/ui/quest_list.gd" id="7_wimm1"]
 [ext_resource type="Resource" uid="uid://b7wrrh3s6i7cx" path="res://scripts/resources/quest_types/weather.tres" id="8_kgkxc"]
+[ext_resource type="Script" path="res://scripts/resources/quest_type_resource.gd" id="8_qjh4u"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pqpau"]
 atlas = ExtResource("2_lftq7")
@@ -62,7 +64,7 @@ anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
 offset_left = -199.0
-offset_bottom = 356.0
+offset_bottom = 322.0
 grow_horizontal = 0
 
 [node name="DayCount" type="Label" parent="Panel"]
@@ -156,13 +158,20 @@ vertical_alignment = 1
 layout_mode = 2
 offset_top = 147.0
 offset_right = 188.0
-offset_bottom = 307.0
+offset_bottom = 278.0
+script = ExtResource("7_wimm1")
+quest_scene = ExtResource("2_s4ftv")
+possible_quest_types = Array[ExtResource("8_qjh4u")]([ExtResource("3_qaetd"), ExtResource("8_kgkxc")])
 
 [node name="Quest1" parent="Panel/Background/AdditionalQuestsContainer" instance=ExtResource("2_s4ftv")]
 layout_mode = 2
 quest = SubResource("Resource_uibx1")
 
 [node name="Quest2" parent="Panel/Background/AdditionalQuestsContainer" instance=ExtResource("2_s4ftv")]
+layout_mode = 2
+quest = SubResource("Resource_dp4qy")
+
+[node name="Quest3" parent="Panel/Background/AdditionalQuestsContainer" instance=ExtResource("2_s4ftv")]
 layout_mode = 2
 quest = SubResource("Resource_dp4qy")
 

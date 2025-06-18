@@ -39,7 +39,7 @@ func _ready() -> void:
 	_reset_inventory()
 	
 	Events.on_next_day.connect(_on_next_day)
-		
+
 func _on_next_day():
 	if !_consume_food():
 		death_screen.show()
