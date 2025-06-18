@@ -1,19 +1,23 @@
 extends Control
+class_name PantInfoDisplay
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var label: Label = $Panel/Label
 
-@onready var water_progress_bar: ProgressBar = $Panel/ScrollContainer/VBoxContainer/Water/ProgressBar
 @onready var food_label: Label = $Panel/ScrollContainer/VBoxContainer/Food/Value
+@onready var water_display: Control = $Panel/ScrollContainer/VBoxContainer/Water/WaterDisplay
 
 var _open: bool = false;
+
+var plant: PlantResource
 
 func _ready() -> void:
 	Events.on_plant_show.connect(_on_plant_show)
 
-func _on_plant_show(plant: PlantResource):
+func _on_plant_show(new_plant: PlantResource):
+	plant = new_plant
+	
 	label.text = plant.name
-	water_progress_bar.value = plant.preferred_water
 	food_label.text = str(plant.food)
 	
 	if(_open):
