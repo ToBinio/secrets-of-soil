@@ -64,7 +64,7 @@ anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
 offset_left = -199.0
-offset_bottom = 322.0
+offset_bottom = 330.0
 grow_horizontal = 0
 
 [node name="DayCount" type="Label" parent="Panel"]
@@ -98,67 +98,52 @@ grow_horizontal = 0
 text = "Next Day"
 script = ExtResource("1_pwilp")
 
-[node name="Background" type="Control" parent="Panel"]
+[node name="Background" type="VBoxContainer" parent="Panel"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = 40.0
+offset_top = 60.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = 10
 
 [node name="Quests" type="Label" parent="Panel/Background"]
-layout_mode = 0
-offset_right = 187.0
-offset_bottom = 47.0
+layout_mode = 2
 text = "Quests"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Daily" type="Label" parent="Panel/Background"]
-layout_mode = 0
-offset_left = 4.0
-offset_top = 42.0
-offset_right = 183.0
-offset_bottom = 68.0
+layout_mode = 2
 theme_override_font_sizes/font_size = 12
-text = "Daily Challenge:"
+text = "Food consumption today:"
 vertical_alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="Panel/Background"]
-layout_mode = 0
-offset_left = 76.0
-offset_top = 75.0
-offset_right = 116.0
-offset_bottom = 115.0
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/Background"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Panel/Background/HBoxContainer"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
 texture = ExtResource("1_kgkxc")
 
-[node name="Label" type="Label" parent="Panel/Background/TextureRect"]
-layout_mode = 0
-offset_top = 24.0
-offset_right = 40.0
-offset_bottom = 40.0
-theme_override_font_sizes/font_size = 10
+[node name="Label" type="Label" parent="Panel/Background/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
 text = "10"
-horizontal_alignment = 2
 vertical_alignment = 2
 script = ExtResource("5_lftq7")
 
 [node name="Additionals" type="Label" parent="Panel/Background"]
-layout_mode = 0
-offset_left = 4.0
-offset_top = 118.0
-offset_right = 183.0
-offset_bottom = 144.0
+layout_mode = 2
 theme_override_font_sizes/font_size = 12
 text = "Additional Challenges:"
 vertical_alignment = 1
 
 [node name="AdditionalQuestsContainer" type="VBoxContainer" parent="Panel/Background"]
 layout_mode = 2
-offset_top = 147.0
-offset_right = 188.0
-offset_bottom = 278.0
 script = ExtResource("7_wimm1")
 quest_scene = ExtResource("2_s4ftv")
 possible_quest_types = Array[ExtResource("8_qjh4u")]([ExtResource("3_qaetd"), ExtResource("8_kgkxc")])
