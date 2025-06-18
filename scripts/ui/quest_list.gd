@@ -4,6 +4,7 @@ extends VBoxContainer
 @export var possible_quest_types: Array[QuestTypeResource];
 
 var quest_count = 0;
+var quest_discarded_today = false
 
 func _ready() -> void:
 	for child in get_children():
@@ -16,6 +17,8 @@ func _ready() -> void:
 	Events.on_next_day.connect(_on_next_day)
 
 func _on_next_day():
+	quest_discarded_today = false
+	
 	while quest_count < 3:
 		_add_new_quest()
 
@@ -42,6 +45,10 @@ func _on_quest_done(quest: QuestResource, scene: Quest):
 	quest_count -= 1;
 
 func _on_quest_discard(scene: Quest):
+	if quest_discarded_today:
+		return
+	
+	quest_discarded_today = true
 	scene.queue_free()
 	quest_count -= 1;
 
