@@ -1,31 +1,54 @@
-[gd_scene load_steps=3 format=3 uid="uid://byu3xol58hskj"]
+[gd_scene load_steps=6 format=3 uid="uid://byu3xol58hskj"]
 
 [ext_resource type="Script" uid="uid://ctnoljcbnsjug" path="res://scripts/ui/quest_icon.gd" id="1_iasy3"]
+[ext_resource type="Resource" uid="uid://c85nr0tqy0565" path="res://scripts/resources/plants/sunflower.tres" id="2_gi38p"]
+[ext_resource type="Script" path="res://scripts/resources/quest_requirement_resource.gd" id="3_wbxki"]
+[ext_resource type="Texture2D" uid="uid://bo7abxlejyd25" path="res://assets/plants/sunflower/sunflower.png" id="4_wbxki"]
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_tipki"]
+[sub_resource type="Resource" id="Resource_5hpdf"]
+script = ExtResource("3_wbxki")
+plant_resource = ExtResource("2_gi38p")
+required_amount = 5
+metadata/_custom_type_script = "uid://cjtp7kpgbgy2h"
 
 [node name="QuestIcon" type="Control"]
 custom_minimum_size = Vector2(40, 0)
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
+offset_right = 45.0
+offset_bottom = 45.0
 size_flags_horizontal = 8
 script = ExtResource("1_iasy3")
+requirement = SubResource("Resource_5hpdf")
 
 [node name="Icon" type="TextureRect" parent="."]
-layout_mode = 0
-offset_left = 5.0
-offset_top = 5.0
-offset_right = 35.0
-offset_bottom = 35.0
-texture = SubResource("PlaceholderTexture2D_tipki")
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -15.0
+offset_top = -15.0
+offset_right = 15.0
+offset_bottom = 15.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_wbxki")
 expand_mode = 5
 stretch_mode = 5
 
 [node name="QuantityAmount" type="Label" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -19.0
+offset_top = -17.0
+grow_horizontal = 0
+grow_vertical = 0
 theme_override_font_sizes/font_size = 12
 text = "0/5"
 horizontal_alignment = 2

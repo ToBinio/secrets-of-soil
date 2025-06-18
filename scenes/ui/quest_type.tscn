@@ -12,7 +12,6 @@ texture = SubResource("PlaceholderTexture2D_thvn5")
 script = ExtResource("1_6uuu3")
 
 [node name="Tooltip" type="Panel" parent="."]
-visible = false
 layout_mode = 0
 offset_left = -189.0
 offset_top = -53.0

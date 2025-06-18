@@ -12,15 +12,18 @@ class_name QuestType
 		set_type()
 
 func set_type():
+	if not is_node_ready():
+		return
+	
 	type_name.text = quest_type.name;
 	type_description.text = quest_type.description;
 	texture = quest_type.icon
 
+func _ready() -> void:
+	tooltip.visible = false
+
 func _on_mouse_entered() -> void:
 	tooltip.visible = true
-	pass # Replace with function body.
-
 
 func _on_mouse_exited() -> void:
 	tooltip.visible = false
-	pass # Replace with function body.
