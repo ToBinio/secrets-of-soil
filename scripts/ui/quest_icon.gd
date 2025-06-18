@@ -28,3 +28,8 @@ func _set_label_text():
 		
 	var data = Inventory.plants[requirement.plant_resource];
 	label.text = str(data.harvested)+"/"+str(requirement.required_amount)
+	
+	if requirement.required_amount <= data.harvested:
+		label.set("theme_override_colors/font_color", Color.GREEN)
+	else:
+		label.set("theme_override_colors/font_color", Color.WHITE)

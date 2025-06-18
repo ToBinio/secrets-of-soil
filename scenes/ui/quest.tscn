@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://3wqm7x704b87"]
+[gd_scene load_steps=14 format=3 uid="uid://3wqm7x704b87"]
 
 [ext_resource type="PackedScene" uid="uid://cibn2worqabp7" path="res://scenes/ui/quest_type.tscn" id="1_2voud"]
 [ext_resource type="Script" uid="uid://b3rr8rj3e3vh" path="res://scripts/ui/quest.gd" id="1_t3s0l"]
@@ -28,6 +28,8 @@ type = ExtResource("5_wq01b")
 requirements = Array[ExtResource("2_y8wsr")]([SubResource("Resource_p3ir1"), SubResource("Resource_baqm8")])
 metadata/_custom_type_script = "uid://b8nijldcrxc72"
 
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_wq01b"]
+
 [node name="Quest" type="Control"]
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 3
@@ -38,19 +40,44 @@ script = ExtResource("1_t3s0l")
 requirement_scene = ExtResource("2_wq01b")
 quest = SubResource("Resource_4q3an")
 
-[node name="QuestType" parent="." instance=ExtResource("1_2voud")]
+[node name="CompleteButton" type="Button" parent="."]
+layout_mode = 0
+offset_right = 41.0
+offset_bottom = 41.0
+
+[node name="QuestType" parent="CompleteButton" instance=ExtResource("1_2voud")]
 layout_mode = 1
-anchors_preset = 4
+anchors_preset = 8
+anchor_left = 0.5
 anchor_top = 0.5
+anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 5.0
+offset_left = -20.0
 offset_top = -20.0
-offset_right = 45.0
+grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("7_3d0cb")
 expand_mode = 3
 stretch_mode = 5
 quest_type = ExtResource("5_wq01b")
+
+[node name="DiscardButton" type="Button" parent="CompleteButton"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -13.0
+offset_right = 13.0
+grow_vertical = 0
+
+[node name="TextureRect" type="TextureRect" parent="CompleteButton/DiscardButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("PlaceholderTexture2D_wq01b")
 
 [node name="Requirements" type="HBoxContainer" parent="."]
 custom_minimum_size = Vector2(0, 40)
@@ -66,3 +93,6 @@ offset_bottom = 20.0
 grow_horizontal = 0
 grow_vertical = 2
 alignment = 1
+
+[connection signal="pressed" from="CompleteButton" to="." method="_on_finish_button_pressed"]
+[connection signal="pressed" from="CompleteButton/DiscardButton" to="." method="_on_discard_button_pressed"]
