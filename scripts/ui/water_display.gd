@@ -2,7 +2,7 @@ extends Control
 
 @export var info: PantInfoDisplay
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	queue_redraw()
 
 func _draw():
