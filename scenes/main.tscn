@@ -168,12 +168,16 @@ tonemap_mode = 2
 [node name="GameManger" type="Node" parent="." node_paths=PackedStringArray("death_screen") groups=["GameManager"]]
 script = ExtResource("1_o6xl0")
 possible_weather = Array[ExtResource("2_dp3eg")]([ExtResource("3_0ld40"), ExtResource("4_gqmmt"), ExtResource("5_yc10j"), ExtResource("6_jscy8"), ExtResource("7_pm3ni")])
-structures = Array[PackedScene]([ExtResource("2_ya4ey"), ExtResource("3_eb6dy")])
+houses = Array[PackedScene]([ExtResource("2_ya4ey")])
+housing_radius = 4
+water_sources = Array[PackedScene]([ExtResource("3_eb6dy")])
+water_source_change = 0.4
 default_plants = Dictionary[ExtResource("2_choun"), int]({
 ExtResource("3_ya4ey"): 4,
 ExtResource("4_eb6dy"): 5
 })
 death_screen = NodePath("../Ui/DeathScreen")
+can_die = true
 
 [node name="Environment" type="Node" parent="."]
 script = ExtResource("1_tbgi4")
