@@ -11,10 +11,9 @@ void fragment() {
 
 	ALBEDO = color;
 
-	if (dist > radius - line_width && dist < radius) {
-		ALBEDO = color;
-	} else if (dist < radius) {
-		ALPHA = dist + 0.2;
+
+	if (dist < radius) {
+		ALPHA = (1. - dist) / 2.;
 	} else {
 		ALPHA = 0.;
 	}
