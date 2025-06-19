@@ -6,6 +6,12 @@ extends Camera3D
 @export var max_zoom: float
 @export var min_zoom: float
 
+@export_group("movement")
+@export var max_x: float
+@export var min_x: float
+@export var max_z: float
+@export var min_z: float
+
 var _plane = Plane(Vector3.UP)
 var _prevous_mouse_location: Vector2;
 
@@ -32,6 +38,8 @@ func _unhandled_input(event: InputEvent) -> void:
 				return
 			
 			position -= (_get_3d_mouse_postion(event.position) - _get_3d_mouse_postion(_prevous_mouse_location))
+			position.x = clamp(position.x,min_x, max_x)
+			position.z = clamp(position.z,min_z, max_z)
 			_prevous_mouse_location = event.position
 
 func _get_3d_mouse_postion(postion: Vector2) -> Vector3:

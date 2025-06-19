@@ -223,6 +223,10 @@ zoom_speed = 0.15
 zoom_animation_speed = 10.0
 max_zoom = 10.0
 min_zoom = 3.0
+max_x = 8.0
+min_x = -8.0
+max_z = 10.0
+min_z = -8.0
 
 [node name="World" parent="." instance=ExtResource("1_o5qli")]
 transform = Transform3D(0.999998, -6.69819e-05, 0.0021513, 6.06737e-05, 0.999996, 0.00292027, -0.00215149, -0.00292013, 0.999993, 0, 0, 0)
