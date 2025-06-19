@@ -40,6 +40,8 @@ func _on_quest_done(quest: QuestResource, scene: Quest):
 	
 	scene.queue_free()
 	
+	GameManager.instant(self).stats.quests_completed += 1
+	
 	print("execute quest ", quest.type)
 	
 	quest_count -= 1;

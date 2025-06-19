@@ -60,7 +60,7 @@ func _on_next_day():
 	_try_generate_random_structure()
 	
 	# needed to make sure plants have grown before stuff changes
-	await get_tree().create_timer(day_night_cycle_duration / 2).timeout
+	await get_tree().create_timer(day_night_cycle_duration / 2.).timeout
 	
 	stats.days_survived += 1
 	current_food_requirements = _calc_food_requirement()
@@ -69,7 +69,7 @@ func _on_next_day():
 	
 	_reset_inventory()
 	
-	await get_tree().create_timer(day_night_cycle_duration / 2).timeout
+	await get_tree().create_timer(day_night_cycle_duration / 2.).timeout
 	is_doing_day_night_cycle = false
 
 func _update_weather():
