@@ -10,8 +10,11 @@ point_count = 3
 [resource]
 script = ExtResource("1_3cfa8")
 name = "Sunflower"
+description = "Villagers seem not to very much like it. it Also does not like to very wet or dry land."
 food = 5
 growth_speed = 0.8
 icon = ExtResource("1_tbiuf")
 growth_effecency = SubResource("Curve_tbiuf")
+village_preferance = 0.5
+additional_facts = Array[String]([])
 metadata/_custom_type_script = "uid://c2qk2325ok2gv"

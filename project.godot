@@ -21,6 +21,7 @@ Plants="*res://scenes/autoloads/plants.tscn"
 Grid="*res://scripts/autoloads/grid.gd"
 Inventory="*res://scripts/autoloads/inventory.gd"
 Events="*res://scripts/autoloads/events.gd"
+Knowledge="*res://scripts/autoloads/knowledge.gd"
 
 [display]
 

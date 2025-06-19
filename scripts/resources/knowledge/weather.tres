@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="GeneralKnowledgeResource" load_steps=2 format=3 uid="uid://ds6t2yqfhiiv5"]
+
+[ext_resource type="Script" uid="uid://b1a8omdiw2ayu" path="res://scripts/resources/general_knowledge_resource.gd" id="1_hfhy2"]
+
+[resource]
+script = ExtResource("1_hfhy2")
+name = "Weather"
+description = "There are diffrent types of weather from extrem rain to extrem sun."
+metadata/_custom_type_script = "uid://b1a8omdiw2ayu"

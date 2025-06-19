@@ -10,8 +10,11 @@ point_count = 2
 [resource]
 script = ExtResource("1_g7v3s")
 name = "Wheat"
+description = "Seems to be very tasty and prefer very wet grounds."
 food = 10
 growth_speed = 1.2
 icon = ExtResource("1_li5j2")
 growth_effecency = SubResource("Curve_li5j2")
+village_preferance = 0.8
+additional_facts = Array[String]([])
 metadata/_custom_type_script = "uid://c2qk2325ok2gv"

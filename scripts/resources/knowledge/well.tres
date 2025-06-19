@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="GeneralKnowledgeResource" load_steps=2 format=3 uid="uid://cqm2f44jx2pn1"]
+
+[ext_resource type="Script" uid="uid://b1a8omdiw2ayu" path="res://scripts/resources/general_knowledge_resource.gd" id="1_hc53v"]
+
+[resource]
+script = ExtResource("1_hc53v")
+name = "Well"
+description = "Wells make the ground in there radius more wet...
+"
+metadata/_custom_type_script = "uid://b1a8omdiw2ayu"

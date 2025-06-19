@@ -29,6 +29,8 @@ var is_doing_day_night_cycle: bool
 @export var death_screen: Control
 @export var can_die: bool
 
+@export var weather_knowledge: GeneralKnowledgeResource
+
 static func instant(node: Node) -> GameManager:
 	return node.get_tree().get_first_node_in_group("GameManager") as GameManager
 
@@ -42,6 +44,7 @@ func _ready() -> void:
 	_current_weather = floor(possible_weather.size() / 2.)
 	
 	for key in default_plants.keys():
+		Knowledge.known_plants.push_back(key)
 		Inventory.plants[key].max_seeds = default_plants[key]
 	
 	_reset_inventory()
@@ -82,6 +85,9 @@ func _update_weather():
 		change = clamp(-diff, -1,1)
 			
 	_current_weather = clamp(_current_weather + change, 0, possible_weather.size() - 1)
+	
+	if(_current_weather != center):
+		Knowledge.try_add_general_knowledge(weather_knowledge)
 
 func _calc_food_requirement() -> int:
 	return stats.days_survived * 10

@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://by7b4f5ghov5p"]
+[gd_scene load_steps=9 format=3 uid="uid://by7b4f5ghov5p"]
 
 [ext_resource type="Script" uid="uid://kjfi40nma26x" path="res://scripts/well.gd" id="1_o1ghc"]
+[ext_resource type="Resource" uid="uid://cqm2f44jx2pn1" path="res://scripts/resources/knowledge/well.tres" id="2_hdg57"]
 [ext_resource type="PackedScene" uid="uid://bd00p8h4tp4ej" path="res://scenes/plant/grid_blocker.tscn" id="3_wjoux"]
 [ext_resource type="Shader" uid="uid://llsuepsd4kip" path="res://scripts/WellPreview.gdshader" id="4_0c8da"]
 [ext_resource type="PackedScene" uid="uid://b488agjdbt342" path="res://assets/village/well2/well2.gltf" id="4_o1ghc"]
@@ -20,6 +21,7 @@ size = Vector2(20, 20)
 
 [node name="Well" type="Node3D" groups=["Well"]]
 script = ExtResource("1_o1ghc")
+knowledge = ExtResource("2_hdg57")
 
 [node name="Area3D" type="Area3D" parent="."]
 
