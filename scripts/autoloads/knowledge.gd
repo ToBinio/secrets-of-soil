@@ -1,4 +1,5 @@
 extends Node
+class_name KnowledgeClass
 
 var known_plants: Array[PlantResource] = []
 var plant_knowledge: Dictionary[PlantResource, PlantKnowledge] = {}

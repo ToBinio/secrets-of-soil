@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="QuestTypeResource" load_steps=3 format=3 uid="uid://4ovjpg6b7k1a"]
 
-[ext_resource type="Script" path="res://scripts/resources/quest_type_resource.gd" id="1_uudu1"]
+[ext_resource type="Script" uid="uid://dl7eih8bkdpyl" path="res://scripts/resources/quest_type_resource.gd" id="1_uudu1"]
 [ext_resource type="Texture2D" uid="uid://bp2imwb51d8it" path="res://assets/ui/research/research.png" id="1_ycwfr"]
 
 [resource]
