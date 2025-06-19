@@ -23,6 +23,9 @@ var _current_weather: int
 
 @export var default_plants: Dictionary[PlantResource, int]
 
+@export var day_night_cycle_duration: int = 4
+var is_doing_day_night_cycle: bool
+
 @export var death_screen: Control
 @export var can_die: bool
 
@@ -42,10 +45,13 @@ func _ready() -> void:
 		Inventory.plants[key].max_seeds = default_plants[key]
 	
 	_reset_inventory()
+	is_doing_day_night_cycle = false
 	
 	Events.on_next_day.connect(_on_next_day)
 
 func _on_next_day():
+	is_doing_day_night_cycle = true
+	
 	if !_consume_food() && can_die:
 		death_screen.show()
 		return
@@ -54,7 +60,7 @@ func _on_next_day():
 	_try_generate_random_structure()
 	
 	# needed to make sure plants have grown before stuff changes
-	await get_tree().create_timer(1).timeout
+	await get_tree().create_timer(day_night_cycle_duration / 2).timeout
 	
 	stats.days_survived += 1
 	current_food_requirements = _calc_food_requirement()
@@ -62,6 +68,9 @@ func _on_next_day():
 	_update_weather()
 	
 	_reset_inventory()
+	
+	await get_tree().create_timer(day_night_cycle_duration / 2).timeout
+	is_doing_day_night_cycle = false
 
 func _update_weather():
 	var center = (possible_weather.size() - 1) / 2.0
