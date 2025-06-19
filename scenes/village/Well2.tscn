@@ -1,0 +1,41 @@
+[gd_scene load_steps=8 format=3 uid="uid://by7b4f5ghov5p"]
+
+[ext_resource type="Script" uid="uid://kjfi40nma26x" path="res://scripts/well.gd" id="1_o1ghc"]
+[ext_resource type="PackedScene" uid="uid://bd00p8h4tp4ej" path="res://scenes/plant/grid_blocker.tscn" id="3_wjoux"]
+[ext_resource type="Shader" uid="uid://llsuepsd4kip" path="res://scripts/WellPreview.gdshader" id="4_0c8da"]
+[ext_resource type="PackedScene" uid="uid://b488agjdbt342" path="res://assets/village/well2/well2.gltf" id="4_o1ghc"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_213ai"]
+size = Vector3(0.5, 0.374512, 0.5)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xy6dp"]
+render_priority = 0
+shader = ExtResource("4_0c8da")
+shader_parameter/color = Color(0.162285, 0.45004, 0.638657, 1)
+shader_parameter/alpha_bias = 0.58
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_213ai"]
+material = SubResource("ShaderMaterial_xy6dp")
+size = Vector2(20, 20)
+
+[node name="Well" type="Node3D" groups=["Well"]]
+script = ExtResource("1_o1ghc")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.189213, 0)
+shape = SubResource("BoxShape3D_213ai")
+
+[node name="GridBlocker" parent="." instance=ExtResource("3_wjoux")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.01, 0)
+size = 1
+
+[node name="AffectArea" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.02, 0)
+mesh = SubResource("PlaneMesh_213ai")
+
+[node name="Visual" parent="." instance=ExtResource("4_o1ghc")]
+
+[connection signal="mouse_entered" from="Area3D" to="." method="_mouse_entered"]
+[connection signal="mouse_exited" from="Area3D" to="." method="_mouse_exited"]

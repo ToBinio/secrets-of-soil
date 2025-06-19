@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://suhwudhii5kl"]
+
+[ext_resource type="PackedScene" uid="uid://bd00p8h4tp4ej" path="res://scenes/plant/grid_blocker.tscn" id="1_6kqjl"]
+[ext_resource type="PackedScene" uid="uid://btd84td8unmpo" path="res://assets/village/tempHouse4/TempHouse4.gltf" id="2_6kqjl"]
+
+[node name="House" type="Node3D"]
+
+[node name="GridBlocker" parent="." instance=ExtResource("1_6kqjl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.01, 0)
+size = 1
+
+[node name="Visual" parent="." instance=ExtResource("2_6kqjl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.05, 0, 0)

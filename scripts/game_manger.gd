@@ -117,7 +117,7 @@ func _remove_random_structure():
 	generated.pick_random().queue_free()
 
 func _try_generate_random_structure():
-	for n in 5:
+	for n in 10:
 		if randf() < water_source_change:
 			if _generate_random_water_source(): return
 		else:
@@ -136,7 +136,7 @@ func _generate_random_housing() -> bool:
 	
 	result[1].add_to_group("Generated")
 	
-	for i in 5:
+	for i in 10:
 		var structure_addition = houses.pick_random() as PackedScene;
 		
 		var x_addition = randi_range(x - housing_radius, x + housing_radius)
@@ -177,6 +177,7 @@ func _try_spawn_structure(structure: PackedScene, x: int, z: int, parent: Node):
 	parent.add_child(strucuter_instance)
 	
 	strucuter_instance.global_position = global_position
+	strucuter_instance.rotate_y(PI / 2. * randi_range(0,3))
 	
 	return [true, strucuter_instance]
 
