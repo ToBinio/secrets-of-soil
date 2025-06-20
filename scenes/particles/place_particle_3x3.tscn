@@ -1,6 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://7mmprl7udtce"]
+[gd_scene load_steps=10 format=3 uid="uid://cr0k8b14xsa3h"]
 
-[ext_resource type="PackedScene" uid="uid://cr0k8b14xsa3h" path="res://scenes/place_particle_3x3.tscn" id="1_mrktk"]
+[ext_resource type="Script" uid="uid://bxnt2vad7n1t6" path="res://scripts/particle_auto_start.gd" id="1_jxjen"]
 
 [sub_resource type="Gradient" id="Gradient_xp1ym"]
 colors = PackedColorArray(0.235294, 0.145098, 0.168627, 1, 0.509804, 0.337255, 0.27451, 1)
@@ -18,9 +18,9 @@ curve = SubResource("Curve_xp1ym")
 
 [sub_resource type="CurveTexture" id="CurveTexture_wlqdh"]
 
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_h2wwo"]
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_mw7xd"]
 emission_shape = 3
-emission_box_extents = Vector3(1.25, 0.06, 1.25)
+emission_box_extents = Vector3(1, 0.06, 1)
 direction = Vector3(0, 1, 0)
 spread = 30.0
 initial_velocity_min = 0.5
@@ -32,6 +32,20 @@ scale_min = 0.5
 scale_max = 2.0
 color_initial_ramp = SubResource("GradientTexture1D_wrvwd")
 
-[node name="GPUParticles3D" instance=ExtResource("1_mrktk")]
-amount = 128
-process_material = SubResource("ParticleProcessMaterial_h2wwo")
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wlqdh"]
+vertex_color_use_as_albedo = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_xp1ym"]
+material = SubResource("StandardMaterial3D_wlqdh")
+size = Vector3(0.04, 0.04, 0.04)
+
+[node name="GPUParticles3D" type="GPUParticles3D"]
+emitting = false
+amount = 47
+one_shot = true
+explosiveness = 0.9
+process_material = SubResource("ParticleProcessMaterial_mw7xd")
+draw_pass_1 = SubResource("BoxMesh_xp1ym")
+script = ExtResource("1_jxjen")
+
+[connection signal="finished" from="." to="." method="_on_finished"]

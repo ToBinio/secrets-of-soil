@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://boeiwk7qotto2" path="res://scenes/plant/clicker_area.tscn" id="1_uoh7n"]
 [ext_resource type="Resource" uid="uid://c85nr0tqy0565" path="res://scripts/resources/plants/sunflower.tres" id="2_duwge"]
 [ext_resource type="PackedScene" uid="uid://bd00p8h4tp4ej" path="res://scenes/plant/grid_blocker.tscn" id="4_1v48e"]
-[ext_resource type="PackedScene" uid="uid://7mmprl7udtce" path="res://scenes/place_particle_5x5.tscn" id="7_4crrq"]
+[ext_resource type="PackedScene" uid="uid://7mmprl7udtce" path="res://scenes/particles/place_particle_5x5.tscn" id="7_4crrq"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_40ky6"]
 radius = 0.474813
@@ -16,6 +16,7 @@ height = 1.5629
 script = ExtResource("1_mtwp4")
 plant = ExtResource("2_duwge")
 clicker_area = NodePath("Clicker")
+removal_particles = ExtResource("7_4crrq")
 
 [node name="Growable" parent="." node_paths=PackedStringArray("plant", "visual", "growth_speed_label") instance=ExtResource("1_1v48e")]
 plant = NodePath("..")
@@ -42,3 +43,5 @@ size = 5
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0663506)
 
 [node name="GPUParticles3D" parent="." instance=ExtResource("7_4crrq")]
+
+[connection signal="tree_exiting" from="." to="." method="_on_tree_exiting"]
