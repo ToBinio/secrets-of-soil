@@ -95,17 +95,42 @@ func _calc_food_requirement() -> int:
 func _consume_food() -> bool:
 	var to_eat = current_food_requirements
 	
+	var plant_weight = func(plant: PlantResource) -> float:
+		return plant.village_preferance * (log(Inventory.plants[plant].harvested) + 1.)
+	
 	while to_eat > 0:
 		var plants: Array[PlantResource] = []
 		
 		for plant_key in Inventory.plants.keys():
-			for i in Inventory.plants[plant_key].harvested:
-				plants.push_back(plant_key)
+			if(Inventory.plants[plant_key].harvested <= 0):
+				continue
+			
+			if(plant_key.village_preferance <= 0):
+				continue
+			
+			plants.push_back(plant_key)
 		
 		if plants.is_empty():
 			return false
 		
-		var eat = plants.pick_random() as PlantResource
+		var weight_sum = 0
+		
+		for plant in plants:
+			weight_sum += plant_weight.call(plant)
+		
+		var eat: PlantResource
+		
+		var rand = randf_range(0,weight_sum)
+		var sum = 0;
+		for plant in plants:
+			sum += plant_weight.call(plant)
+			if(rand <= sum):
+				eat = plant
+				break
+		
+		if not eat:
+			printerr("something went wrong while eating")
+			return false
 		
 		to_eat -= eat.food
 		stats.food_consumed += eat.food
