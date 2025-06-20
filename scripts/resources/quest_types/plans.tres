@@ -11,5 +11,5 @@ region = Rect2(32, 0, 16, 16)
 script = ExtResource("2_uuvis")
 name = "Plans"
 difficulty_multiplier = 1.0
-description = "Shows you where the Villagers want to build next"
+description = "Learn where villagers want to construct their next building"
 icon = SubResource("AtlasTexture_uuvis")

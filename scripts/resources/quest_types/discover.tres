@@ -11,5 +11,5 @@ region = Rect2(16, 0, 16, 16)
 script = ExtResource("2_qvys1")
 name = "Discover"
 difficulty_multiplier = 2.0
-description = "Find a new type of seed"
+description = "Uncover a new seed type to grow unique plants"
 icon = SubResource("AtlasTexture_qvys1")

@@ -11,5 +11,5 @@ region = Rect2(48, 0, 16, 16)
 script = ExtResource("2_4dbaw")
 name = "Seeds"
 difficulty_multiplier = 0.5
-description = "Gives you more of a seed you already have"
+description = "Receive extra seeds for a plant you’ve discovered"
 icon = SubResource("AtlasTexture_4dbaw")

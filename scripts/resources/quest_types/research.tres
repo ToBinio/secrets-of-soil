@@ -11,5 +11,5 @@ region = Rect2(0, 0, 16, 16)
 script = ExtResource("1_uudu1")
 name = "Research"
 difficulty_multiplier = 0.5
-description = "Get new information about a known plant"
+description = "Gain fresh insights about a plant you already discovered"
 icon = SubResource("AtlasTexture_ftn84")
