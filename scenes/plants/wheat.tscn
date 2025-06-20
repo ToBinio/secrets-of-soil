@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://kukoxvnrq6e5"]
+[gd_scene load_steps=9 format=3 uid="uid://kukoxvnrq6e5"]
 
 [ext_resource type="Script" uid="uid://kmp8a7og7efk" path="res://scripts/components/plant.gd" id="1_8jru4"]
 [ext_resource type="PackedScene" uid="uid://bbivfwup2rbo2" path="res://scenes/plant/growable.tscn" id="1_coew3"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bwi3piy4f66no" path="res://assets/plants/wheat/wheat.gltf" id="1_yfabo"]
 [ext_resource type="Resource" uid="uid://dl5fl0mgy1sor" path="res://scripts/resources/plants/wheat.tres" id="2_ucxq8"]
 [ext_resource type="PackedScene" uid="uid://bd00p8h4tp4ej" path="res://scenes/plant/grid_blocker.tscn" id="5_yhkry"]
+[ext_resource type="PackedScene" uid="uid://cr0k8b14xsa3h" path="res://scenes/place_particle_3x3.tscn" id="7_475s8"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ucxq8"]
 radius = 0.503301
@@ -37,3 +38,5 @@ text = "Happy: ?"
 [node name="GridBlocker" parent="." instance=ExtResource("5_yhkry")]
 
 [node name="Visual" parent="." instance=ExtResource("1_yfabo")]
+
+[node name="GPUParticles3D" parent="." instance=ExtResource("7_475s8")]

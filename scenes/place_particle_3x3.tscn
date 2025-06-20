@@ -1,0 +1,49 @@
+[gd_scene load_steps=10 format=3 uid="uid://cr0k8b14xsa3h"]
+
+[ext_resource type="Script" uid="uid://bxnt2vad7n1t6" path="res://scripts/particle_auto_start.gd" id="1_xp1ym"]
+
+[sub_resource type="Gradient" id="Gradient_xp1ym"]
+colors = PackedColorArray(0.235294, 0.145098, 0.168627, 1, 0.509804, 0.337255, 0.27451, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_wrvwd"]
+gradient = SubResource("Gradient_xp1ym")
+
+[sub_resource type="Curve" id="Curve_xp1ym"]
+_limits = [-2.0, 2.0, 0.0, 1.0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_wrvwd"]
+curve = SubResource("Curve_xp1ym")
+
+[sub_resource type="CurveTexture" id="CurveTexture_wlqdh"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_mw7xd"]
+emission_shape = 3
+emission_box_extents = Vector3(0.75, 0.06, 0.75)
+direction = Vector3(0, 1, 0)
+spread = 30.0
+initial_velocity_min = 0.5
+initial_velocity_max = 1.0
+orbit_velocity_curve = SubResource("CurveTexture_wrvwd")
+radial_velocity_curve = SubResource("CurveTexture_wlqdh")
+gravity = Vector3(0, -5, 0)
+scale_min = 0.5
+scale_max = 2.0
+color_initial_ramp = SubResource("GradientTexture1D_wrvwd")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wlqdh"]
+vertex_color_use_as_albedo = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_xp1ym"]
+material = SubResource("StandardMaterial3D_wlqdh")
+size = Vector3(0.04, 0.04, 0.04)
+
+[node name="GPUParticles3D" type="GPUParticles3D"]
+emitting = false
+amount = 47
+one_shot = true
+explosiveness = 0.9
+process_material = SubResource("ParticleProcessMaterial_mw7xd")
+draw_pass_1 = SubResource("BoxMesh_xp1ym")
+script = ExtResource("1_xp1ym")
