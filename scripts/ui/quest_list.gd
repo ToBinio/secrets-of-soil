@@ -40,22 +40,44 @@ func _on_quest_done(quest: QuestResource, scene: Quest):
 	
 	scene.queue_free()
 	
-	GameManager.instant(self).stats.quests_completed += 1
-	
 	_exec_quest(quest)
 	
+	GameManager.instant(self).stats.quests_completed += 1
 	quest_count -= 1;
 
 func _exec_quest(quest: QuestResource):
 	match quest.type.name:
 		"Discover":
 			print("execute quest `Discover`")
+			var to_discorver = Inventory.undiscoverd_plants().pick_random()
+			
+			if(not to_discorver):
+				printerr("no Plants left to discover")
+				return
+			
+			Knowledge.try_add_new_plant(to_discorver)
+			
+			var seeds = randi_range(1,3)
+			
+			Inventory.plants[to_discorver].max_seeds = seeds
+			Inventory.plants[to_discorver].seeds = seeds
 		"Plans":
 			print("execute quest `Plans`")
 		"Research":
 			print("execute quest `Research`")
+			Knowledge.disover_random_plant_knowledge()
 		"Seeds":
 			print("execute quest `Seeds`")
+			var plant = Inventory.discoverd_plants().pick_random()
+			
+			if(not plant):
+				printerr("no Plants left to discover")
+				return
+			
+			var seeds = randi_range(2,5)
+			
+			Inventory.plants[plant].max_seeds += seeds
+			Inventory.plants[plant].seeds += seeds
 		"Weather":
 			print("execute quest `Weather`")
 		_:
