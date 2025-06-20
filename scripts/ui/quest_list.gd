@@ -3,8 +3,7 @@ extends VBoxContainer
 @export var quest_scene: PackedScene
 @export var possible_quest_types: Array[QuestTypeResource];
 
-var quest_count = 0;
-var quest_discarded_today = false
+var quests: Array[Quest] = [];
 
 func _ready() -> void:
 	for child in get_children():
@@ -17,9 +16,10 @@ func _ready() -> void:
 	Events.on_next_day.connect(_on_next_day)
 
 func _on_next_day():
-	quest_discarded_today = false
+	for quest in quests:
+		quest.can_trash = true
 	
-	while quest_count < 3:
+	while quests.size() < 3:
 		_add_new_quest()
 
 func _add_new_quest():
@@ -32,7 +32,7 @@ func _add_new_quest():
 	scene.quest = quest
 	
 	add_child(scene)
-	quest_count += 1;
+	quests.push_back(scene)
 
 func _on_quest_done(quest: QuestResource, scene: Quest):
 	for requirement in quest.requirements:
@@ -43,7 +43,9 @@ func _on_quest_done(quest: QuestResource, scene: Quest):
 	_exec_quest(quest)
 	
 	GameManager.instant(self).stats.quests_completed += 1
-	quest_count -= 1;
+	
+	var index = quests.find(scene)
+	quests.remove_at(index)
 
 func _exec_quest(quest: QuestResource):
 	match quest.type.name:
@@ -84,12 +86,12 @@ func _exec_quest(quest: QuestResource):
 			printerr("unknown quest type ", quest.type.name)
 
 func _on_quest_discard(scene: Quest):
-	if quest_discarded_today:
-		return
-	
-	quest_discarded_today = true
+	for quest in quests:
+		quest.can_trash = false
+		
 	scene.queue_free()
-	quest_count -= 1;
+	var index = quests.find(scene)
+	quests.remove_at(index)
 
 func _generate_random_quest() -> QuestResource:
 	var quest = QuestResource.new()

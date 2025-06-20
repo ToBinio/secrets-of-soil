@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://3wqm7x704b87"]
+[gd_scene load_steps=17 format=3 uid="uid://3wqm7x704b87"]
 
 [ext_resource type="PackedScene" uid="uid://cibn2worqabp7" path="res://scenes/ui/quest_type.tscn" id="1_2voud"]
 [ext_resource type="Script" uid="uid://b3rr8rj3e3vh" path="res://scripts/ui/quest.gd" id="1_t3s0l"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://b8nijldcrxc72" path="res://scripts/resources/quest_resource.gd" id="4_oujxp"]
 [ext_resource type="Resource" uid="uid://dl5fl0mgy1sor" path="res://scripts/resources/plants/wheat.tres" id="4_wq01b"]
 [ext_resource type="Resource" uid="uid://4ovjpg6b7k1a" path="res://scripts/resources/quest_types/research.tres" id="5_wq01b"]
+[ext_resource type="Texture2D" uid="uid://cf3talcd5ff6s" path="res://assets/ui/trash.png" id="9_wq01b"]
 
 [sub_resource type="Resource" id="Resource_p3ir1"]
 script = ExtResource("2_y8wsr")
@@ -30,7 +31,17 @@ metadata/_custom_type_script = "uid://b8nijldcrxc72"
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_oujxp"]
 load_path = "res://.godot/imported/research.png-0f4882c3a9ecb3b9e6cd62bd65a7788f.ctex"
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_wq01b"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_wq01b"]
+atlas = ExtResource("9_wq01b")
+region = Rect2(7, 0, 7, 7)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p3ir1"]
+atlas = ExtResource("9_wq01b")
+region = Rect2(14, 0, 7, 7)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4q3an"]
+atlas = ExtResource("9_wq01b")
+region = Rect2(0, 0, 7, 7)
 
 [node name="Quest" type="Control"]
 custom_minimum_size = Vector2(0, 40)
@@ -39,6 +50,7 @@ anchors_preset = 0
 offset_right = 183.0
 offset_bottom = 40.0
 script = ExtResource("1_t3s0l")
+can_trash = true
 requirement_scene = ExtResource("2_wq01b")
 quest = SubResource("Resource_4q3an")
 
@@ -63,23 +75,19 @@ expand_mode = 3
 stretch_mode = 5
 quest_type = ExtResource("5_wq01b")
 
-[node name="DiscardButton" type="Button" parent="CompleteButton"]
+[node name="DiscardButton" type="TextureButton" parent="CompleteButton"]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_top = -13.0
-offset_right = 13.0
+offset_top = -18.0
+offset_right = 18.0
 grow_vertical = 0
-
-[node name="TextureRect" type="TextureRect" parent="CompleteButton/DiscardButton"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = SubResource("PlaceholderTexture2D_wq01b")
+texture_normal = SubResource("AtlasTexture_wq01b")
+texture_pressed = SubResource("AtlasTexture_p3ir1")
+texture_hover = SubResource("AtlasTexture_p3ir1")
+texture_disabled = SubResource("AtlasTexture_4q3an")
+stretch_mode = 0
 
 [node name="Requirements" type="HBoxContainer" parent="."]
 custom_minimum_size = Vector2(0, 40)

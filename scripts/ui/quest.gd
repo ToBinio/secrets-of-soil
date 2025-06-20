@@ -4,12 +4,22 @@ class_name Quest
 signal done
 signal discard
 
+@export var can_trash: bool:
+	set(value):
+		can_trash = value
+		if discard_button:
+			if can_trash:
+				discard_button.show()
+			else:
+				discard_button.hide()
+
 @export var requirement_scene: PackedScene
 
 @export var quest: QuestResource
 
 @onready var quest_type: QuestType = $CompleteButton/QuestType;
 @onready var requirements_parent: HBoxContainer = $Requirements;
+@onready var discard_button: TextureButton = $CompleteButton/DiscardButton
 
 func _ready() -> void:
 	quest_type.quest_type = quest.type;
