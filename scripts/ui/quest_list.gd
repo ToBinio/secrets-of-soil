@@ -82,6 +82,10 @@ func _exec_quest(quest: QuestResource):
 			Inventory.plants[plant].seeds += seeds
 		"Weather":
 			print("execute quest `Weather`")
+			var game_manager = GameManager.instant(self)
+			
+			for i in 5:
+				game_manager.add_weather()
 		_:
 			printerr("unknown quest type ", quest.type.name)
 
