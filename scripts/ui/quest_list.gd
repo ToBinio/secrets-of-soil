@@ -42,9 +42,24 @@ func _on_quest_done(quest: QuestResource, scene: Quest):
 	
 	GameManager.instant(self).stats.quests_completed += 1
 	
-	print("execute quest ", quest.type)
+	_exec_quest(quest)
 	
 	quest_count -= 1;
+
+func _exec_quest(quest: QuestResource):
+	match quest.type.name:
+		"Discover":
+			print("execute quest `Discover`")
+		"Plans":
+			print("execute quest `Plans`")
+		"Research":
+			print("execute quest `Research`")
+		"Seeds":
+			print("execute quest `Seeds`")
+		"Weather":
+			print("execute quest `Weather`")
+		_:
+			printerr("unknown quest type ", quest.type.name)
 
 func _on_quest_discard(scene: Quest):
 	if quest_discarded_today:
@@ -73,7 +88,7 @@ func _generate_random_quest() -> QuestResource:
 		quest_requirement.plant_resource = possible_plants[plant_index]
 		possible_plants.remove_at(plant_index)
 		
-		quest_requirement.required_amount = randi_range(5, 10);
+		quest_requirement.required_amount = randi_range(4, 8) * quest.type.difficulty_multiplier;
 		
 		quest.requirements.push_back(quest_requirement)
 	

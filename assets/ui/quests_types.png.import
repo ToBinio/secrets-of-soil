@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bp2imwb51d8it"
-path="res://.godot/imported/research.png-0f4882c3a9ecb3b9e6cd62bd65a7788f.ctex"
+uid="uid://roildgu5msx3"
+path="res://.godot/imported/quests_types.png-319f8118db40034c5f0b6f3a7c95ac64.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/ui/research/research.png"
-dest_files=["res://.godot/imported/research.png-0f4882c3a9ecb3b9e6cd62bd65a7788f.ctex"]
+source_file="res://assets/ui/quests_types.png"
+dest_files=["res://.godot/imported/quests_types.png-319f8118db40034c5f0b6f3a7c95ac64.ctex"]
 
 [params]
 

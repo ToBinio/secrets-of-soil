@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://cd6yn8ep2yldo"]
+[gd_scene load_steps=25 format=3 uid="uid://cd6yn8ep2yldo"]
 
 [ext_resource type="Texture2D" uid="uid://wjiuk85eafmo" path="res://assets/ui/food/food.png" id="1_kgkxc"]
 [ext_resource type="Script" uid="uid://copxj13kvd3fv" path="res://scripts/ui/day_count.gd" id="1_pqpau"]
@@ -14,7 +14,10 @@
 [ext_resource type="Script" uid="uid://b8nijldcrxc72" path="res://scripts/resources/quest_resource.gd" id="6_wj50s"]
 [ext_resource type="Script" uid="uid://dlah4mp4jl04n" path="res://scripts/ui/quest_list.gd" id="7_wimm1"]
 [ext_resource type="Resource" uid="uid://b7wrrh3s6i7cx" path="res://scripts/resources/quest_types/weather.tres" id="8_kgkxc"]
-[ext_resource type="Script" path="res://scripts/resources/quest_type_resource.gd" id="8_qjh4u"]
+[ext_resource type="Script" uid="uid://dl7eih8bkdpyl" path="res://scripts/resources/quest_type_resource.gd" id="8_qjh4u"]
+[ext_resource type="Resource" uid="uid://bct2l3xjhsjyv" path="res://scripts/resources/quest_types/discover.tres" id="12_mbg3n"]
+[ext_resource type="Resource" uid="uid://ctugeqfxgdhly" path="res://scripts/resources/quest_types/plans.tres" id="13_3yvyw"]
+[ext_resource type="Resource" uid="uid://b6ccda4x73o75" path="res://scripts/resources/quest_types/seeds.tres" id="14_yp0nx"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pqpau"]
 atlas = ExtResource("2_lftq7")
@@ -146,7 +149,7 @@ vertical_alignment = 1
 layout_mode = 2
 script = ExtResource("7_wimm1")
 quest_scene = ExtResource("2_s4ftv")
-possible_quest_types = Array[ExtResource("8_qjh4u")]([ExtResource("3_qaetd"), ExtResource("8_kgkxc")])
+possible_quest_types = Array[ExtResource("8_qjh4u")]([ExtResource("3_qaetd"), ExtResource("8_kgkxc"), ExtResource("12_mbg3n"), ExtResource("13_3yvyw"), ExtResource("14_yp0nx")])
 
 [node name="Quest1" parent="Panel/Background/AdditionalQuestsContainer" instance=ExtResource("2_s4ftv")]
 layout_mode = 2

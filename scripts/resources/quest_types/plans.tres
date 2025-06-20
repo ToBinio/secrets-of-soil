@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="QuestTypeResource" load_steps=4 format=3 uid="uid://ctugeqfxgdhly"]
+
+[ext_resource type="Texture2D" uid="uid://roildgu5msx3" path="res://assets/ui/quests_types.png" id="1_jbvs7"]
+[ext_resource type="Script" uid="uid://dl7eih8bkdpyl" path="res://scripts/resources/quest_type_resource.gd" id="2_uuvis"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uuvis"]
+atlas = ExtResource("1_jbvs7")
+region = Rect2(32, 0, 16, 16)
+
+[resource]
+script = ExtResource("2_uuvis")
+name = "Plans"
+difficulty_multiplier = 1.0
+description = "Shows you where the Villagers want to build next"
+icon = SubResource("AtlasTexture_uuvis")
