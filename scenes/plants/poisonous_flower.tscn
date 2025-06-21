@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://ck84qc8gtv5j2"]
+[gd_scene load_steps=10 format=3 uid="uid://ck84qc8gtv5j2"]
 
 [ext_resource type="Script" uid="uid://kmp8a7og7efk" path="res://scripts/components/plant.gd" id="1_yoh0x"]
 [ext_resource type="Resource" uid="uid://c7kl60m3asbtb" path="res://scripts/resources/plants/pink_cucumber.tres" id="2_yoh0x"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://boeiwk7qotto2" path="res://scenes/plant/clicker_area.tscn" id="5_r4k68"]
 [ext_resource type="PackedScene" uid="uid://bd00p8h4tp4ej" path="res://scenes/plant/grid_blocker.tscn" id="6_p241s"]
 [ext_resource type="PackedScene" uid="uid://b8iyx12c1e47o" path="res://assets/plants/pink_cucumber/pink_cucumber.gltf" id="7_6sjm2"]
+[ext_resource type="PackedScene" uid="uid://b76rcvq2cdxrv" path="res://scenes/plant/growth_label.tscn" id="8_6sjm2"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_40ky6"]
 radius = 0.474813
@@ -18,23 +19,17 @@ plant = ExtResource("2_yoh0x")
 clicker_area = NodePath("Clicker")
 removal_particles = ExtResource("3_indwx")
 
-[node name="Growable" parent="." node_paths=PackedStringArray("plant", "visual", "growth_speed_label") instance=ExtResource("4_60ok1")]
+[node name="Growable" parent="." node_paths=PackedStringArray("plant", "visual") instance=ExtResource("4_60ok1")]
 plant = NodePath("..")
 visual = NodePath("../Visual")
-growth_speed_label = NodePath("../Speed")
 
 [node name="Clicker" parent="." node_paths=PackedStringArray("growable", "hover_label") instance=ExtResource("5_r4k68")]
 growable = NodePath("../Growable")
-hover_label = NodePath("../Speed")
+hover_label = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Clicker"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.774343, 0)
 shape = SubResource("CapsuleShape3D_40ky6")
-
-[node name="Speed" type="Label3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.81374, 0)
-billboard = 1
-text = "Happy: ?"
 
 [node name="GridBlocker" parent="." instance=ExtResource("6_p241s")]
 size = 5
@@ -42,5 +37,9 @@ size = 5
 [node name="GPUParticles3D" parent="." instance=ExtResource("3_indwx")]
 
 [node name="Visual" parent="." instance=ExtResource("7_6sjm2")]
+
+[node name="GrowthLabel" parent="." node_paths=PackedStringArray("growable") instance=ExtResource("8_6sjm2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3275, 0)
+growable = NodePath("../Growable")
 
 [connection signal="tree_exiting" from="." to="." method="_on_tree_exiting"]
