@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://j44ffnel0ai6" path="res://assets/plants/ancient_rose/ancient_rose.png" id="1_f2dcb"]
 
 [sub_resource type="Curve" id="Curve_tuibv"]
-_data = [Vector2(0, 0.102339), 0.0, 0.0, 0, 0, Vector2(0.198413, 0.900585), 0.0, 0.0, 0, 0, Vector2(0.497354, 1), 0.0, 0.0, 0, 0, Vector2(0.801587, 0.900585), 0.0, 0.0, 0, 0, Vector2(1, 0.0964912), 0.0, 0.0, 0, 0]
+_data = [Vector2(0, 0.102339), 0.0, 0.0, 0, 0, Vector2(0.1875, 0.711269), 2.15402, 2.15402, 0, 0, Vector2(0.497354, 1), 0.0, 0.0, 0, 0, Vector2(0.78799, 0.858001), -1.21389, -1.21389, 0, 0, Vector2(1, 0.484071), 0.0, 0.0, 0, 0]
 point_count = 5
 
 [resource]

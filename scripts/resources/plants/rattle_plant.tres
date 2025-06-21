@@ -4,8 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://dsry8287u8iuw" path="res://assets/plants/rattle_plant/rattle_plant.png" id="1_dvsip"]
 
 [sub_resource type="Curve" id="Curve_85iyc"]
-_data = [Vector2(0, 0.494152), 0.0, 0.0, 0, 0, Vector2(0.140212, 0.833333), 0.0, 0.0, 0, 0, Vector2(0.309524, 0.988304), 0.0, 0.0, 0, 0, Vector2(0.507936, 0.483735), 0.0, 0.0, 0, 0, Vector2(0.642857, 0.114035), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
-point_count = 6
+_data = [Vector2(0, 0.494152), 0.0, 0.0, 0, 0, Vector2(0.309524, 0.988304), 0.0, 0.0, 0, 0, Vector2(0.642857, 0.114035), -0.741414, -0.741414, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
 
 [resource]
 script = ExtResource("1_b4hi3")

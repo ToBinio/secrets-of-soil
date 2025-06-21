@@ -4,8 +4,8 @@
 [ext_resource type="Script" uid="uid://c2qk2325ok2gv" path="res://scripts/resources/plant_resource.gd" id="1_x74kv"]
 
 [sub_resource type="Curve" id="Curve_qam56"]
-_data = [Vector2(0, 0.146199), 0.0, 0.0, 0, 0, Vector2(0.380952, 0.277778), 0.0, 0.0, 0, 0, Vector2(0.502645, 0.748538), 0.0, 0.0, 0, 0, Vector2(0.603175, 1), 0.0, 0.0, 0, 0, Vector2(0.701058, 0.748538), 0.0, 0.0, 0, 0, Vector2(0.875661, 0.385965), 0.0, 0.0, 0, 0, Vector2(1, 0.292398), 0.0, 0.0, 0, 0]
-point_count = 7
+_data = [Vector2(0, 0.146199), 0.0, 0.0, 0, 0, Vector2(0.380952, 0.277778), 1.31229, 1.31229, 0, 0, Vector2(0.506127, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.777535), 0.0, 0.0, 0, 0]
+point_count = 4
 
 [resource]
 script = ExtResource("1_x74kv")

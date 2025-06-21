@@ -4,8 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://c2oos46lgaq28" path="res://assets/plants/fairy_plant/fairy_plant.png" id="1_rokg7"]
 
 [sub_resource type="Curve" id="Curve_ghy5a"]
-_data = [Vector2(0, 0.176172), 0.0, 0.0, 0, 0, Vector2(0.148148, 0.432748), 0.0, 0.0, 0, 0, Vector2(0.330688, 0.324561), 0.0494892, 0.0494892, 0, 0, Vector2(0.396825, 0.611111), 0.0, 0.0, 0, 0, Vector2(0.619048, 0.45614), 0.0, 0.0, 0, 0, Vector2(0.703704, 0.836257), 0.0, 0.0, 0, 0, Vector2(0.878307, 0.660819), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
-point_count = 8
+_data = [Vector2(0, 0), 0.0, 0.861606, 0, 0, Vector2(1, 1), 1.04977, 0.0, 0, 0]
+point_count = 2
 
 [resource]
 script = ExtResource("1_gtoq8")

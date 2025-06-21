@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="PlantResource" load_steps=4 format=3 uid="uid://c85nr0tqy0565"]
+[gd_resource type="Resource" script_class="PlantResource" load_steps=4 format=3 uid="uid://dnq4bvasyu22c"]
 
 [ext_resource type="Script" uid="uid://c2qk2325ok2gv" path="res://scripts/resources/plant_resource.gd" id="1_3cfa8"]
 [ext_resource type="Texture2D" uid="uid://bo7abxlejyd25" path="res://assets/plants/sunflower/sunflower.png" id="1_tbiuf"]

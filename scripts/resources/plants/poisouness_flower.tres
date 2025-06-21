@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dg0mq85ibfw8g" path="res://assets/plants/poisouness_flower/poisouness_flower.png" id="1_do6m8"]
 
 [sub_resource type="Curve" id="Curve_4s567"]
-_data = [Vector2(0.497354, 0.483735), 0.0, 0.0, 0, 0, Vector2(0.637566, 0.880117), 0.0, 0.0, 0, 0, Vector2(1, 0.982456), 0.0, 0.0, 0, 0]
+_data = [Vector2(0.491422, 0.507737), 0.0, 0.0, 0, 0, Vector2(0.637566, 0.880117), 1.2263, 1.2263, 0, 0, Vector2(1, 0.982456), 0.0, 0.0, 0, 0]
 point_count = 3
 
 [resource]

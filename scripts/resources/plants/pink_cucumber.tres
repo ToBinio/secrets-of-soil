@@ -4,8 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://ca6sujvx3tjje" path="res://assets/plants/pink_cucumber/pink_cucumber.png" id="1_xonin"]
 
 [sub_resource type="Curve" id="Curve_hkmb7"]
-_data = [Vector2(0, 0.494719), 0.0, 0.0, 0, 0, Vector2(0.148148, 0.695906), 0.0, 0.0, 0, 0, Vector2(0.261905, 0.988304), 0.0, 0.0, 0, 0, Vector2(0.761905, 0.994152), 0.0, 0.0, 0, 0, Vector2(1, 0.491228), 0.0, 0.0, 0, 0]
-point_count = 5
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.265931, 1), 0.0, 0.0, 0, 0, Vector2(0.758578, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
 
 [resource]
 script = ExtResource("1_uiksw")

@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://c2qk2325ok2gv" path="res://scripts/resources/plant_resource.gd" id="1_iy2up"]
 
 [sub_resource type="Curve" id="Curve_un1f4"]
-_data = [Vector2(0, 0.152047), 0.0, 0.0, 0, 0, Vector2(0.328042, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.0964912), 0.0, 0.0, 0, 0]
+_data = [Vector2(0, 0.827212), 0.0, 0.0, 0, 0, Vector2(0.243873, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.0964912), 0.0, 0.0, 0, 0]
 point_count = 3
 
 [resource]

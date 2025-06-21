@@ -4,8 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://b46dufu4ampus" path="res://assets/plants/water_princess/water_princess.png" id="1_nhumh"]
 
 [sub_resource type="Curve" id="Curve_ececa"]
-_data = [Vector2(0.00264551, 0.148711), 0.0, 0.0, 0, 0, Vector2(0.637566, 0.131579), 0.0, 0.0, 0, 0, Vector2(0.753968, 0.473684), 0.0, 0.0, 0, 0, Vector2(0.846561, 0.94152), 0.0, 0.0, 0, 0, Vector2(0.992063, 1), 0.0, 0.0, 0, 0]
-point_count = 5
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.756127, 0.507737), 2.22379, 2.22379, 0, 0, Vector2(0.992063, 1), 0.0, 0.0, 0, 0]
+point_count = 3
 
 [resource]
 script = ExtResource("1_5r05g")
