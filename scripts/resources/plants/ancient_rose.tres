@@ -4,15 +4,15 @@
 [ext_resource type="Texture2D" uid="uid://j44ffnel0ai6" path="res://assets/plants/ancient_rose/ancient_rose.png" id="1_f2dcb"]
 
 [sub_resource type="Curve" id="Curve_tuibv"]
-_data = [Vector2(0, 0.102339), 0.0, 0.0, 0, 0, Vector2(0.1875, 0.711269), 2.15402, 2.15402, 0, 0, Vector2(0.497354, 1), 0.0, 0.0, 0, 0, Vector2(0.78799, 0.858001), -1.21389, -1.21389, 0, 0, Vector2(1, 0.484071), 0.0, 0.0, 0, 0]
+_data = [Vector2(0, 0.102339), 0.0, 0.0, 0, 0, Vector2(0.116422, 0.772802), 2.15402, 2.15402, 0, 0, Vector2(0.332108, 1), 0.0, 0.0, 0, 0, Vector2(0.73652, 0.673403), -1.21389, -1.21389, 0, 0, Vector2(1, 0.484071), 0.0, 0.0, 0, 0]
 point_count = 5
 
 [resource]
 script = ExtResource("1_2lv7i")
 name = "Ancient Rose"
 description = "This rose is over 1000 years old and represents the knowledge of the whole past."
-food = 10
-growth_speed = 0.75
+food = 25
+growth_speed = 0.7
 icon = ExtResource("1_f2dcb")
 growth_effecency = SubResource("Curve_tuibv")
 village_preferance = 0.1

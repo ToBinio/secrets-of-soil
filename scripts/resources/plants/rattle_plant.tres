@@ -15,6 +15,6 @@ food = 50
 growth_speed = 0.6
 icon = ExtResource("1_dvsip")
 growth_effecency = SubResource("Curve_85iyc")
-village_preferance = 0.705
+village_preferance = 0.7
 additional_facts = Array[String]([])
 metadata/_custom_type_script = "uid://c2qk2325ok2gv"

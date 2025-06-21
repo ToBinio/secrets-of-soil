@@ -4,15 +4,15 @@
 [ext_resource type="Texture2D" uid="uid://efgjhtq0gf3v" path="res://assets/plants/mysterious_grass/mysterious_grass.png" id="1_w5eid"]
 
 [sub_resource type="Curve" id="Curve_ywg31"]
-_data = [Vector2(0.170343, 0.829601), 0.0, 0.0, 0, 0, Vector2(0.567402, 0.228473), 0.0, 0.0, 0, 0, Vector2(0.832108, 1), 0.0, 0.0, 0, 0]
+_data = [Vector2(0.243873, 0.695348), 0.0, 0.0, 0, 0, Vector2(0.501225, 0.323139), 0.0, 0.0, 0, 0, Vector2(0.832108, 1), 0.0, 0.0, 0, 0]
 point_count = 3
 
 [resource]
 script = ExtResource("1_0icul")
 name = "Mysterious Grass"
 description = "This grass has been known long before, but no one every knew its capabilities."
-food = 30
-growth_speed = 0.6
+food = 15
+growth_speed = 1.2
 icon = ExtResource("1_w5eid")
 growth_effecency = SubResource("Curve_ywg31")
 village_preferance = 0.8

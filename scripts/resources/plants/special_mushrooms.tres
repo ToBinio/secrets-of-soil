@@ -4,15 +4,15 @@
 [ext_resource type="Script" uid="uid://c2qk2325ok2gv" path="res://scripts/resources/plant_resource.gd" id="1_x74kv"]
 
 [sub_resource type="Curve" id="Curve_qam56"]
-_data = [Vector2(0, 0.146199), 0.0, 0.0, 0, 0, Vector2(0.380952, 0.277778), 1.31229, 1.31229, 0, 0, Vector2(0.506127, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.777535), 0.0, 0.0, 0, 0]
+_data = [Vector2(0, 0.146199), 0.0, 0.0, 0, 0, Vector2(0.380952, 0.277778), 1.31229, 1.31229, 0, 0, Vector2(0.506127, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.858001), 0.0, 0.0, 0, 0]
 point_count = 4
 
 [resource]
 script = ExtResource("1_x74kv")
 name = "Special Mushrooms"
 description = "The villagers love these muschrooms."
-food = 75
-growth_speed = 0.26
+food = 10
+growth_speed = 1.5
 icon = ExtResource("1_agrfn")
 growth_effecency = SubResource("Curve_qam56")
 village_preferance = 1.0

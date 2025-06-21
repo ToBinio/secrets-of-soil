@@ -22,10 +22,10 @@
 [ext_resource type="PackedScene" uid="uid://by7b4f5ghov5p" path="res://scenes/village/Well2.tscn" id="11_yc10j"]
 [ext_resource type="PackedScene" uid="uid://c5cppmo6xfg4h" path="res://scenes/village/TempHouse5.tscn" id="12_y6deb"]
 [ext_resource type="PackedScene" uid="uid://l1bnxdwqgv4n" path="res://scenes/ui/death_screen.tscn" id="17_0ld40"]
+[ext_resource type="Resource" uid="uid://kkrue7ik5pmi" path="res://scripts/resources/plants/special_mushrooms.tres" id="17_fv21b"]
 [ext_resource type="Resource" uid="uid://ds6t2yqfhiiv5" path="res://scripts/resources/knowledge/weather.tres" id="18_og1vs"]
-[ext_resource type="Resource" uid="uid://xkdf6rxcb28b" path="res://scripts/resources/plants/moon_flower.tres" id="18_yq6so"]
+[ext_resource type="Resource" uid="uid://t2whhx1uy52j" path="res://scripts/resources/plants/water_princess.tres" id="18_tel4y"]
 [ext_resource type="Resource" uid="uid://b0ancyse4leen" path="res://scripts/resources/knowledge/turorial.tres" id="19_fv21b"]
-[ext_resource type="Resource" uid="uid://dhco72g0cokei" path="res://scripts/resources/plants/ancient_rose.tres" id="19_yq6so"]
 [ext_resource type="Resource" uid="uid://dwtk7swnc2nrm" path="res://scripts/resources/plants/mysterious_grass.tres" id="20_fv21b"]
 [ext_resource type="Resource" uid="uid://dvxeunxfrhuf1" path="res://scripts/resources/knowledge/building.tres" id="20_tel4y"]
 [ext_resource type="PackedScene" uid="uid://3vywj2fmfnsf" path="res://scenes/ui/knowledge_book.tscn" id="24_2wyq8"]
@@ -184,8 +184,8 @@ housing_radius = 4
 water_sources = Array[PackedScene]([ExtResource("3_eb6dy"), ExtResource("11_yc10j")])
 water_source_change = 0.4
 default_plants = Dictionary[ExtResource("2_choun"), int]({
-ExtResource("18_yq6so"): 3,
-ExtResource("19_yq6so"): 3,
+ExtResource("17_fv21b"): 3,
+ExtResource("18_tel4y"): 3,
 ExtResource("20_fv21b"): 3
 })
 death_screen = NodePath("../Ui/DeathScreen")

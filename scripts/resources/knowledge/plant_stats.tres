@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="GeneralKnowledgeResource" load_steps=2 format=3 uid="uid://da7dwqjnydsi6"]
+
+[ext_resource type="Script" uid="uid://b1a8omdiw2ayu" path="res://scripts/resources/general_knowledge_resource.gd" id="1_1t5yu"]
+
+[resource]
+script = ExtResource("1_1t5yu")
+name = "Plants"
+description = "Plants dont talk that much.
+But they can tell you roughly how much they like the wettness of the ground you placed them in.
+
+they will also tell you how much they have grown.
+So dont forget them to harvest when fully grown!"
+metadata/_custom_type_script = "uid://b1a8omdiw2ayu"

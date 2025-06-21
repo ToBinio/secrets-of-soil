@@ -226,6 +226,7 @@ size = Vector3(7.13245, 2.22406, 3.41864)
 
 [node name="villager" parent="MainVillage" instance=ExtResource("2_4wyf3")]
 transform = Transform3D(-0.942519, 0, 0.334152, -0.0661677, 0.980199, -0.186634, -0.327536, -0.198017, -0.923856, -0.504695, -0.050001, -0.419574)
+visible = false
 
 [node name="Well" parent="MainVillage" instance=ExtResource("3_k0juu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.38419e-07, 0)

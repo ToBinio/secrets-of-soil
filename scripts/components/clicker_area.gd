@@ -6,6 +6,8 @@ signal on_click
 @export var growable: Growable
 @export var hover_label: Node3D
 
+const PLANT_STATS = preload("res://scripts/resources/knowledge/plant_stats.tres")
+
 var fully_grown = false
 
 func _ready() -> void:
@@ -24,6 +26,7 @@ func _on_input_event(_camera: Node, event: InputEvent, _event_position: Vector3,
 
 func _on_mouse_entered() -> void:
 	if hover_label:
+		Knowledge.try_add_general_knowledge(PLANT_STATS)
 		hover_label.show()
 
 func _on_mouse_exited() -> void:
