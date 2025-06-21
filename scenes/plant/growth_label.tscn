@@ -1,0 +1,70 @@
+[gd_scene load_steps=14 format=3 uid="uid://b76rcvq2cdxrv"]
+
+[ext_resource type="Texture2D" uid="uid://dgjb08kv4t786" path="res://assets/ui/growth_speed.png" id="1_4hvak"]
+[ext_resource type="Script" uid="uid://diums36vfh44b" path="res://scripts/components/growth_label.gd" id="1_wdwk1"]
+[ext_resource type="Texture2D" uid="uid://b1k03xoaxabhe" path="res://assets/ui/growth_state.png" id="2_wdwk1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wdwk1"]
+atlas = ExtResource("2_wdwk1")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uqkpc"]
+atlas = ExtResource("2_wdwk1")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ns5k0"]
+atlas = ExtResource("2_wdwk1")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c5ufl"]
+atlas = ExtResource("2_wdwk1")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_enyn1"]
+atlas = ExtResource("1_4hvak")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_orio0"]
+atlas = ExtResource("1_4hvak")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6vvpx"]
+atlas = ExtResource("1_4hvak")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ha3i0"]
+atlas = ExtResource("1_4hvak")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ccrg6"]
+atlas = ExtResource("1_4hvak")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ssdi"]
+atlas = ExtResource("2_wdwk1")
+region = Rect2(48, 0, 16, 16)
+
+[node name="GrowthLabel" type="Node3D"]
+script = ExtResource("1_wdwk1")
+fully_grown = SubResource("AtlasTexture_wdwk1")
+partialy_grown = SubResource("AtlasTexture_uqkpc")
+slightly_grown = SubResource("AtlasTexture_ns5k0")
+not_grown = SubResource("AtlasTexture_c5ufl")
+full_speed = SubResource("AtlasTexture_enyn1")
+partialy_speed = SubResource("AtlasTexture_orio0")
+slightly_speed = SubResource("AtlasTexture_6vvpx")
+not_speed = SubResource("AtlasTexture_ha3i0")
+
+[node name="GrowthSpeed" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2, 0, 0)
+pixel_size = 0.03
+billboard = 1
+texture_filter = 0
+texture = SubResource("AtlasTexture_ccrg6")
+
+[node name="GrowthState" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, 0, 0)
+pixel_size = 0.03
+billboard = 1
+texture_filter = 0
+texture = SubResource("AtlasTexture_2ssdi")
