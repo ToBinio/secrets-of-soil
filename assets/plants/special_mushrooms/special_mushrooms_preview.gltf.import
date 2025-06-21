@@ -1,0 +1,44 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://chan148556xac"
+path="res://.godot/imported/special_mushrooms_preview.gltf-123d4b3bf0415117c304f530fb6fa945.scn"
+
+[deps]
+
+source_file="res://assets/plants/special_mushrooms/special_mushrooms_preview.gltf"
+dest_files=["res://.godot/imported/special_mushrooms_preview.gltf-123d4b3bf0415117c304f530fb6fa945.scn"]
+
+[params]
+
+nodes/root_type=""
+nodes/root_name=""
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+nodes/import_as_skeleton_bones=false
+nodes/use_node_type_suffixes=true
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=true
+meshes/light_baking=1
+meshes/lightmap_texel_size=0.2
+meshes/force_disable_compression=false
+skins/use_named_skins=true
+animation/import=true
+animation/fps=30
+animation/trimming=false
+animation/remove_immutable_tracks=true
+animation/import_rest_as_RESET=false
+import_script/path=""
+_subresources={
+"materials": {
+"material_0": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/plants/special_mushrooms/material_0.tres"
+}
+}
+}
+gltf/naming_version=1
+gltf/embedded_image_handling=3

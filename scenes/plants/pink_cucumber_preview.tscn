@@ -5,7 +5,7 @@
 [ext_resource type="Material" uid="uid://c2b7xbyr3tcvu" path="res://assets/plants/wheat/preview.tres" id="3_a2w20"]
 [ext_resource type="Material" uid="uid://ctdmilrs7sdou" path="res://assets/grid_blocker_preview.tres" id="4_7r5v8"]
 [ext_resource type="PackedScene" uid="uid://bd00p8h4tp4ej" path="res://scenes/plant/grid_blocker.tscn" id="5_xd8d0"]
-[ext_resource type="PackedScene" uid="uid://b8iyx12c1e47o" path="res://assets/plants/pink_cucumber/pink_cucumber.gltf" id="6_kgw3l"]
+[ext_resource type="PackedScene" uid="uid://b8mkb7w5dp8vx" path="res://assets/plants/pink_cucumber/pink_cucumber_preview.gltf" id="6_r4fyc"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_73vo3"]
 resource_local_to_scene = true
@@ -24,6 +24,6 @@ size = 5
 [node name="Mesh" parent="GridBlocker" index="0"]
 mesh = SubResource("PlaneMesh_73vo3")
 
-[node name="Visual" parent="." instance=ExtResource("6_kgw3l")]
+[node name="blockbench_export" parent="." instance=ExtResource("6_r4fyc")]
 
 [editable path="GridBlocker"]

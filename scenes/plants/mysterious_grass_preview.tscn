@@ -5,7 +5,7 @@
 [ext_resource type="Material" uid="uid://cdxhr3dvt28vk" path="res://assets/plants/sunflower/preview.tres" id="3_jj65g"]
 [ext_resource type="Material" uid="uid://ctdmilrs7sdou" path="res://assets/grid_blocker_preview.tres" id="4_ab57g"]
 [ext_resource type="PackedScene" uid="uid://bd00p8h4tp4ej" path="res://scenes/plant/grid_blocker.tscn" id="5_0mhr6"]
-[ext_resource type="PackedScene" uid="uid://cirfiarljgyyd" path="res://assets/plants/mysterious_grass/mysterious_grass.gltf" id="6_twdpq"]
+[ext_resource type="PackedScene" uid="uid://c7gwpepxoa7ga" path="res://assets/plants/mysterious_grass/mysterious_grass_preview.gltf" id="6_yi6vc"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_pmwg7"]
 resource_local_to_scene = true
@@ -24,6 +24,6 @@ size = 5
 [node name="Mesh" parent="GridBlocker" index="0"]
 mesh = SubResource("PlaneMesh_pmwg7")
 
-[node name="Visual" parent="." instance=ExtResource("6_twdpq")]
+[node name="blockbench_export" parent="." instance=ExtResource("6_yi6vc")]
 
 [editable path="GridBlocker"]

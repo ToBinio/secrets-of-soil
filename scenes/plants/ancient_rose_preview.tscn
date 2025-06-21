@@ -5,7 +5,7 @@
 [ext_resource type="Material" uid="uid://cdxhr3dvt28vk" path="res://assets/plants/sunflower/preview.tres" id="3_ctjra"]
 [ext_resource type="Material" uid="uid://ctdmilrs7sdou" path="res://assets/grid_blocker_preview.tres" id="4_66a28"]
 [ext_resource type="PackedScene" uid="uid://bd00p8h4tp4ej" path="res://scenes/plant/grid_blocker.tscn" id="5_l5v0m"]
-[ext_resource type="PackedScene" uid="uid://b7js0h8xvwiqu" path="res://assets/plants/ancient_rose/ancient_rose.gltf" id="6_uxwn5"]
+[ext_resource type="PackedScene" uid="uid://b1tpofyuwtnd" path="res://assets/plants/ancient_rose/ancient_rose_preview.gltf" id="6_uxwn5"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_pmwg7"]
 resource_local_to_scene = true
@@ -23,6 +23,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.05, 0)
 [node name="Mesh" parent="GridBlocker" index="0"]
 mesh = SubResource("PlaneMesh_pmwg7")
 
-[node name="Visual" parent="." instance=ExtResource("6_uxwn5")]
+[node name="blockbench_export" parent="." instance=ExtResource("6_uxwn5")]
 
 [editable path="GridBlocker"]

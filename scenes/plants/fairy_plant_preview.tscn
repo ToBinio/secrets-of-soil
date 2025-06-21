@@ -5,7 +5,7 @@
 [ext_resource type="Material" uid="uid://c2b7xbyr3tcvu" path="res://assets/plants/wheat/preview.tres" id="3_3fo2k"]
 [ext_resource type="Material" uid="uid://ctdmilrs7sdou" path="res://assets/grid_blocker_preview.tres" id="4_3d8n0"]
 [ext_resource type="PackedScene" uid="uid://bd00p8h4tp4ej" path="res://scenes/plant/grid_blocker.tscn" id="5_2gpxo"]
-[ext_resource type="PackedScene" uid="uid://bmv0wbdutwlk1" path="res://assets/plants/fairy_plant/fairy.gltf" id="6_tweei"]
+[ext_resource type="PackedScene" uid="uid://ceroi13il0e36" path="res://assets/plants/fairy_plant/fairy_preview.gltf" id="6_tweei"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_73vo3"]
 resource_local_to_scene = true
@@ -24,6 +24,6 @@ size = 5
 [node name="Mesh" parent="GridBlocker" index="0"]
 mesh = SubResource("PlaneMesh_73vo3")
 
-[node name="blockbench_export" parent="." instance=ExtResource("6_tweei")]
+[node name="blockbench_export2" parent="." instance=ExtResource("6_tweei")]
 
 [editable path="GridBlocker"]
