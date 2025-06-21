@@ -12,6 +12,7 @@ var plant_knowledge: KnowledgeClass.PlantKnowledge;
 @onready var plant_icon: TextureRect = $"../../../PlantKnowledgeContainer/Icon";
 @onready var water_graph: WaterGraph = $"../../../PlantKnowledgeContainer/WaterGraph";
 @onready var food: Label = $"../../../PlantKnowledgeContainer/Food";
+@onready var days: Label = $"../../../PlantKnowledgeContainer/Days";
 @onready var villager_preference: Label = $"../../../PlantKnowledgeContainer/VillagerPreference";
 
 func _on_button_down() -> void:
@@ -31,5 +32,10 @@ func _on_button_down() -> void:
 		villager_preference.text = "Villager Preference: " + str(plant.village_preferance)
 	else:
 		villager_preference.text = "Villager Preference: Currently unknown, must be researched!"
+		
+	if plant_knowledge.growth_speed:
+		days.text = "Expected Days: " + str(plant.growth_speed)
+	else:
+		days.text = "Expected Days: Currently unknown, must be researched!"
 
 	
