@@ -213,7 +213,6 @@ shadow_enabled = true
 visible = false
 
 [node name="PlantSelector" parent="Ui" instance=ExtResource("4_tefeu")]
-visible = false
 
 [node name="Sidebar" parent="Ui" instance=ExtResource("5_85g3d")]
 mouse_filter = 2
