@@ -3,6 +3,7 @@ extends Control
 @onready var buttons: VBoxContainer = $Background/GeneralKnowledge/KnowledgeSelector;
 @export var GeneralButtonScene: PackedScene
 @export var PlantButtonScene: PackedScene
+@export var click_sound: AudioStream;
 @onready var types: OptionButton = $Background/KnowledgeType;
 @onready var plant_panel: Panel = $Background/PlantKnowledgeContainer;
 @onready var general_panel: Panel = $Background/GeneralKnowlegeContainer;
@@ -44,3 +45,9 @@ func _process(_delta: float) -> void:
 func _on_knowledge_type_item_selected(index: int) -> void:
 	general = index == 0
 	changed = true
+	
+	var player = AudioStreamPlayer2D.new();
+	player.volume_db = -10;
+	player.stream = click_sound;
+	get_tree().root.add_child(player)
+	player.playing = true

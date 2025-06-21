@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://dpg1chidhkvy3"]
+[gd_scene load_steps=6 format=3 uid="uid://dpg1chidhkvy3"]
 
 [ext_resource type="Script" uid="uid://c6qxasibnqplc" path="res://scripts/field.gd" id="1_6pmjc"]
 [ext_resource type="Material" uid="uid://b74s5muwu387y" path="res://scenes/field_material.tres" id="2_ttalb"]
+[ext_resource type="AudioStream" uid="uid://j2to16preqrs" path="res://assets/music/place.wav" id="3_lptdg"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ycb0e"]
 size = Vector3(20, 0.1, 20)
@@ -15,6 +16,7 @@ script = ExtResource("1_6pmjc")
 preview_color = Color(4.33177e-07, 0.408298, 0.164424, 0.588235)
 invalid_preview_color = Color(1, 0, 0, 0.588235)
 ground_material = ExtResource("2_ttalb")
+place_sound = ExtResource("3_lptdg")
 
 [node name="Area3D" type="Area3D" parent="."]
 
@@ -23,6 +25,9 @@ shape = SubResource("BoxShape3D_ycb0e")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("BoxMesh_6pmjc")
+
+[node name="AudioPlayer" type="AudioStreamPlayer2D" parent="."]
+volume_db = -10.0
 
 [connection signal="input_event" from="Area3D" to="." method="_on_input_event"]
 [connection signal="mouse_entered" from="Area3D" to="." method="_on_mouse_entered"]

@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://3wqm7x704b87"]
+[gd_scene load_steps=11 format=3 uid="uid://3wqm7x704b87"]
 
 [ext_resource type="PackedScene" uid="uid://cibn2worqabp7" path="res://scenes/ui/quest_type.tscn" id="1_2voud"]
 [ext_resource type="Script" uid="uid://b3rr8rj3e3vh" path="res://scripts/ui/quest.gd" id="1_t3s0l"]
 [ext_resource type="PackedScene" uid="uid://byu3xol58hskj" path="res://scenes/ui/quest_icon.tscn" id="2_wq01b"]
+[ext_resource type="AudioStream" uid="uid://dxv3y7in3sx2v" path="res://assets/music/delete_quest.mp3" id="3_3d0cb"]
 [ext_resource type="Resource" uid="uid://4ovjpg6b7k1a" path="res://scripts/resources/quest_types/research.tres" id="5_wq01b"]
 [ext_resource type="Texture2D" uid="uid://cf3talcd5ff6s" path="res://assets/ui/trash.png" id="9_wq01b"]
 
@@ -30,6 +31,7 @@ offset_bottom = 40.0
 script = ExtResource("1_t3s0l")
 can_trash = true
 requirement_scene = ExtResource("2_wq01b")
+discard_sound = ExtResource("3_3d0cb")
 
 [node name="CompleteButton" type="Button" parent="."]
 layout_mode = 0

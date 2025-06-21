@@ -12,6 +12,13 @@ func _on_click():
 	Inventory.plants[plant].harvested += 1
 	GameManager.instant(self).stats.plants_harvested += 1
 	
+	var stream = load("res://assets/music/destroy.wav")
+	var player = AudioStreamPlayer2D.new()
+	player.stream = stream
+	player.volume_db = -10
+	get_tree().root.add_child(player)
+	player.play()
+	
 	queue_free()
 
 func _notification(what):
