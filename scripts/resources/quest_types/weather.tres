@@ -10,5 +10,6 @@ region = Rect2(0, 0, 16, 16)
 [resource]
 script = ExtResource("1_555k3")
 name = "Weather"
-description = "If you complete this quest, you will receive information about the upcoming weather."
+difficulty_multiplier = 1.0
+description = "Reveal the forecast for upcoming weather"
 icon = SubResource("AtlasTexture_brh36")

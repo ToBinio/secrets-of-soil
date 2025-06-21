@@ -1,9 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://suhwudhii5kl"]
+[gd_scene load_steps=5 format=3 uid="uid://suhwudhii5kl"]
 
 [ext_resource type="PackedScene" uid="uid://bd00p8h4tp4ej" path="res://scenes/plant/grid_blocker.tscn" id="1_6kqjl"]
+[ext_resource type="Script" uid="uid://ccgjuu7ydk2a" path="res://scripts/house.gd" id="1_vw8n8"]
 [ext_resource type="PackedScene" uid="uid://btd84td8unmpo" path="res://assets/village/tempHouse4/TempHouse4.gltf" id="2_6kqjl"]
+[ext_resource type="PackedScene" uid="uid://cx2fhswkjb1aj" path="res://scenes/particles/place_particle_1x1.tscn" id="3_ixn0o"]
 
 [node name="House" type="Node3D"]
+script = ExtResource("1_vw8n8")
+removal_particles = ExtResource("3_ixn0o")
 
 [node name="GridBlocker" parent="." instance=ExtResource("1_6kqjl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.01, 0)
@@ -11,3 +15,5 @@ size = 1
 
 [node name="Visual" parent="." instance=ExtResource("2_6kqjl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.05, 0, 0)
+
+[node name="GPUParticles3D" parent="." instance=ExtResource("3_ixn0o")]

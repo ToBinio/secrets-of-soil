@@ -12,11 +12,15 @@ texture = SubResource("PlaceholderTexture2D_thvn5")
 script = ExtResource("1_6uuu3")
 
 [node name="Tooltip" type="Panel" parent="."]
-layout_mode = 0
-offset_left = -189.0
-offset_top = -53.0
-offset_right = -26.0
-offset_bottom = 72.0
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -174.0
+offset_top = -38.0
+offset_right = -11.0
+offset_bottom = 39.0
+grow_vertical = 2
 
 [node name="Name" type="Label" parent="Tooltip"]
 layout_mode = 0
@@ -31,9 +35,9 @@ layout_mode = 0
 offset_left = 4.0
 offset_top = 36.0
 offset_right = 158.0
-offset_bottom = 121.0
+offset_bottom = 72.0
 theme_override_font_sizes/font_size = 9
-text = "Description of type"
+text = "Description of typeDescription of type"
 autowrap_mode = 2
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://cd6yn8ep2yldo"]
+[gd_scene load_steps=25 format=3 uid="uid://cd6yn8ep2yldo"]
 
 [ext_resource type="Texture2D" uid="uid://wjiuk85eafmo" path="res://assets/ui/food/food.png" id="1_kgkxc"]
 [ext_resource type="Script" uid="uid://copxj13kvd3fv" path="res://scripts/ui/day_count.gd" id="1_pqpau"]
@@ -14,7 +14,10 @@
 [ext_resource type="Script" uid="uid://b8nijldcrxc72" path="res://scripts/resources/quest_resource.gd" id="6_wj50s"]
 [ext_resource type="Script" uid="uid://dlah4mp4jl04n" path="res://scripts/ui/quest_list.gd" id="7_wimm1"]
 [ext_resource type="Resource" uid="uid://b7wrrh3s6i7cx" path="res://scripts/resources/quest_types/weather.tres" id="8_kgkxc"]
-[ext_resource type="Script" path="res://scripts/resources/quest_type_resource.gd" id="8_qjh4u"]
+[ext_resource type="Script" uid="uid://dl7eih8bkdpyl" path="res://scripts/resources/quest_type_resource.gd" id="8_qjh4u"]
+[ext_resource type="Resource" uid="uid://bct2l3xjhsjyv" path="res://scripts/resources/quest_types/discover.tres" id="12_mbg3n"]
+[ext_resource type="Resource" uid="uid://ctugeqfxgdhly" path="res://scripts/resources/quest_types/plans.tres" id="13_3yvyw"]
+[ext_resource type="Resource" uid="uid://b6ccda4x73o75" path="res://scripts/resources/quest_types/seeds.tres" id="14_yp0nx"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pqpau"]
 atlas = ExtResource("2_lftq7")
@@ -67,23 +70,87 @@ offset_left = -199.0
 offset_bottom = 330.0
 grow_horizontal = 0
 
-[node name="DayCount" type="Label" parent="Panel"]
-layout_mode = 0
-offset_left = 4.0
-offset_top = 1.0
-offset_right = 47.0
-offset_bottom = 24.0
+[node name="Control" type="Control" parent="Panel"]
+custom_minimum_size = Vector2(48.76, 55.35)
+layout_mode = 2
+anchors_preset = 0
+offset_right = 48.76
+offset_bottom = 55.35
+
+[node name="DayCount" type="Label" parent="Panel/Control"]
+layout_mode = 1
+offset_left = 3.0
+offset_right = 46.0
+offset_bottom = 23.0
 text = "Day 1"
 script = ExtResource("1_pqpau")
 
-[node name="CurrentWheater" type="TextureRect" parent="Panel"]
+[node name="CurrentWeather" type="TextureRect" parent="Panel/Control"]
 layout_mode = 1
-offset_left = 4.0
-offset_top = 15.0
-offset_right = 44.0
-offset_bottom = 55.0
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 3.0
+offset_top = -40.35
+offset_right = 43.0
+offset_bottom = -0.349998
+grow_vertical = 0
 texture = SubResource("AtlasTexture_pqpau")
 script = ExtResource("3_fool0")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel"]
+layout_direction = 2
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -240.0
+offset_top = 15.0
+offset_right = -200.0
+offset_bottom = 55.0
+grow_horizontal = 0
+pivot_offset = Vector2(-14, 6)
+alignment = 2
+
+[node name="CurrentWeather" type="TextureRect" parent="Panel/HBoxContainer"]
+modulate = Color(1, 1, 1, 0.196078)
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+texture = SubResource("AtlasTexture_pqpau")
+script = ExtResource("3_fool0")
+day_offset = 5
+
+[node name="CurrentWeather2" type="TextureRect" parent="Panel/HBoxContainer"]
+modulate = Color(1, 1, 1, 0.313726)
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+texture = SubResource("AtlasTexture_pqpau")
+script = ExtResource("3_fool0")
+day_offset = 4
+
+[node name="CurrentWeather3" type="TextureRect" parent="Panel/HBoxContainer"]
+modulate = Color(1, 1, 1, 0.431373)
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+texture = SubResource("AtlasTexture_pqpau")
+script = ExtResource("3_fool0")
+day_offset = 3
+
+[node name="CurrentWeather4" type="TextureRect" parent="Panel/HBoxContainer"]
+modulate = Color(1, 1, 1, 0.588235)
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+texture = SubResource("AtlasTexture_pqpau")
+script = ExtResource("3_fool0")
+day_offset = 2
+
+[node name="CurrentWeather5" type="TextureRect" parent="Panel/HBoxContainer"]
+modulate = Color(1, 1, 1, 0.784314)
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+texture = SubResource("AtlasTexture_pqpau")
+script = ExtResource("3_fool0")
+day_offset = 1
 
 [node name="NextDay" type="Button" parent="Panel"]
 layout_mode = 1
@@ -146,7 +213,7 @@ vertical_alignment = 1
 layout_mode = 2
 script = ExtResource("7_wimm1")
 quest_scene = ExtResource("2_s4ftv")
-possible_quest_types = Array[ExtResource("8_qjh4u")]([ExtResource("3_qaetd"), ExtResource("8_kgkxc")])
+possible_quest_types = Array[ExtResource("8_qjh4u")]([ExtResource("3_qaetd"), ExtResource("8_kgkxc"), ExtResource("12_mbg3n"), ExtResource("13_3yvyw"), ExtResource("14_yp0nx")])
 
 [node name="Quest1" parent="Panel/Background/AdditionalQuestsContainer" instance=ExtResource("2_s4ftv")]
 layout_mode = 2

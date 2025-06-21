@@ -63,6 +63,10 @@ func _on_input_event(_camera: Node, event: InputEvent, event_position: Vector3, 
 		
 		preview.set_color(invalid_preview_color)
 		Inventory.plants[Events.selected_plant].seeds -= 1
+		
+		if(Inventory.plants[Events.selected_plant].seeds <= 0):
+			Events.selected_plant = null
+		
 		plant_instance.position = Grid.to_grid_cord(event_position)  
 		plant_instance.position.y = 0.05
 		

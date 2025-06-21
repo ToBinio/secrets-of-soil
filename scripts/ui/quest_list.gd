@@ -3,8 +3,7 @@ extends VBoxContainer
 @export var quest_scene: PackedScene
 @export var possible_quest_types: Array[QuestTypeResource];
 
-var quest_count = 0;
-var quest_discarded_today = false
+var quests: Array[Quest] = [];
 
 func _ready() -> void:
 	for child in get_children():
@@ -17,9 +16,10 @@ func _ready() -> void:
 	Events.on_next_day.connect(_on_next_day)
 
 func _on_next_day():
-	quest_discarded_today = false
+	for quest in quests:
+		quest.can_trash = true
 	
-	while quest_count < 3:
+	while quests.size() < 3:
 		_add_new_quest()
 
 func _add_new_quest():
@@ -32,7 +32,7 @@ func _add_new_quest():
 	scene.quest = quest
 	
 	add_child(scene)
-	quest_count += 1;
+	quests.push_back(scene)
 
 func _on_quest_done(quest: QuestResource, scene: Quest):
 	for requirement in quest.requirements:
@@ -40,19 +40,62 @@ func _on_quest_done(quest: QuestResource, scene: Quest):
 	
 	scene.queue_free()
 	
+	_exec_quest(quest)
+	
 	GameManager.instant(self).stats.quests_completed += 1
 	
-	print("execute quest ", quest.type)
-	
-	quest_count -= 1;
+	var index = quests.find(scene)
+	quests.remove_at(index)
+
+func _exec_quest(quest: QuestResource):
+	match quest.type.name:
+		"Discover":
+			print("execute quest `Discover`")
+			var to_discorver = Inventory.undiscoverd_plants().pick_random()
+			
+			if(not to_discorver):
+				printerr("no Plants left to discover")
+				return
+			
+			Knowledge.try_add_new_plant(to_discorver)
+			
+			var seeds = randi_range(1,3)
+			
+			Inventory.plants[to_discorver].max_seeds = seeds
+			Inventory.plants[to_discorver].seeds = seeds
+		"Plans":
+			print("execute quest `Plans`")
+		"Research":
+			print("execute quest `Research`")
+			Knowledge.disover_random_plant_knowledge()
+		"Seeds":
+			print("execute quest `Seeds`")
+			var plant = Inventory.discoverd_plants().pick_random()
+			
+			if(not plant):
+				printerr("no Plants left to discover")
+				return
+			
+			var seeds = randi_range(2,5)
+			
+			Inventory.plants[plant].max_seeds += seeds
+			Inventory.plants[plant].seeds += seeds
+		"Weather":
+			print("execute quest `Weather`")
+			var game_manager = GameManager.instant(self)
+			
+			for i in 5:
+				game_manager.add_weather()
+		_:
+			printerr("unknown quest type ", quest.type.name)
 
 func _on_quest_discard(scene: Quest):
-	if quest_discarded_today:
-		return
-	
-	quest_discarded_today = true
+	for quest in quests:
+		quest.can_trash = false
+		
 	scene.queue_free()
-	quest_count -= 1;
+	var index = quests.find(scene)
+	quests.remove_at(index)
 
 func _generate_random_quest() -> QuestResource:
 	var quest = QuestResource.new()
@@ -73,7 +116,7 @@ func _generate_random_quest() -> QuestResource:
 		quest_requirement.plant_resource = possible_plants[plant_index]
 		possible_plants.remove_at(plant_index)
 		
-		quest_requirement.required_amount = randi_range(5, 10);
+		quest_requirement.required_amount = randi_range(4, 8) * quest.type.difficulty_multiplier;
 		
 		quest.requirements.push_back(quest_requirement)
 	

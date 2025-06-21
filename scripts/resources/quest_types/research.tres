@@ -1,10 +1,15 @@
-[gd_resource type="Resource" script_class="QuestTypeResource" load_steps=3 format=3 uid="uid://4ovjpg6b7k1a"]
+[gd_resource type="Resource" script_class="QuestTypeResource" load_steps=4 format=3 uid="uid://4ovjpg6b7k1a"]
 
 [ext_resource type="Script" uid="uid://dl7eih8bkdpyl" path="res://scripts/resources/quest_type_resource.gd" id="1_uudu1"]
-[ext_resource type="Texture2D" uid="uid://bp2imwb51d8it" path="res://assets/ui/research/research.png" id="1_ycwfr"]
+[ext_resource type="Texture2D" uid="uid://roildgu5msx3" path="res://assets/ui/quests_types.png" id="1_ycwfr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ftn84"]
+atlas = ExtResource("1_ycwfr")
+region = Rect2(0, 0, 16, 16)
 
 [resource]
 script = ExtResource("1_uudu1")
 name = "Research"
-description = "If you complete this kind of quest, you will receive new information about a certain plant."
-icon = ExtResource("1_ycwfr")
+difficulty_multiplier = 0.5
+description = "Gain fresh insights about a plant you already discovered"
+icon = SubResource("AtlasTexture_ftn84")
