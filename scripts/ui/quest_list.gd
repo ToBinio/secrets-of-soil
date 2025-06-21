@@ -102,7 +102,7 @@ func _generate_random_quest() -> QuestResource:
 	
 	quest.type = possible_quest_types.pick_random()
 	
-	var possible_plants = Plants.all_plants()
+	var possible_plants = Inventory.plants_with_seeds()
 	
 	var number_of_requirements = randi_range(1,3)
 	for i in number_of_requirements:
@@ -116,7 +116,7 @@ func _generate_random_quest() -> QuestResource:
 		quest_requirement.plant_resource = possible_plants[plant_index]
 		possible_plants.remove_at(plant_index)
 		
-		quest_requirement.required_amount = randi_range(4, 8) * quest.type.difficulty_multiplier;
+		quest_requirement.required_amount = randi_range(2, 4) * quest.type.difficulty_multiplier;
 		
 		quest.requirements.push_back(quest_requirement)
 	

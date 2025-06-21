@@ -14,6 +14,17 @@ func discoverd_plants() -> Array[PlantResource]:
 		if data.max_seeds != 0:
 			discovered.append(plant)
 	return discovered
+	
+func plants_with_seeds() -> Array[PlantResource]:
+	var list: Array[PlantResource] = []
+	
+	for plant in plants.keys():
+		if plants[plant].max_seeds == 0:
+			continue
+		
+		list.push_back(plant)
+	
+	return list
 
 func undiscoverd_plants() -> Array[PlantResource]:
 	var undiscovered: Array[PlantResource] = []

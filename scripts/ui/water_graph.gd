@@ -20,8 +20,6 @@ func _draw() -> void:
 	if not curve:
 		return
 	
-	print(draw)
-	
 	var width = size.x
 	var height = size.y
 	var points = []

@@ -24,47 +24,43 @@ func _ready() -> void:
 func disover_random_plant_knowledge():
 	var plants = known_plants.duplicate()
 	
-	var new_found = false
-	
 	while not plants.is_empty():
 		plants.shuffle()
 		var plant = plants.pop_front()
-		var knowledge = plant_knowledge[plant]
 		
-		if not knowledge.food:
-			knowledge.food = true
-			new_found = true
-			break
-			
-		if not knowledge.growth_speed:
-			knowledge.growth_speed = true
-			new_found = true
-			break
-		
-		if not knowledge.village_preferance:
-			knowledge.village_preferance = true
-			new_found = true
-			break
-			
-		if not knowledge.water:
-			knowledge.water = true
-			new_found = true
-			break
-		
-		var index = knowledge.additional.find(false)
-		
-		if (index == -1):
-			continue
-		
-		knowledge.additional[index] = true
-		new_found = true
-		break
+		if discover_knowledge_for_plant(plant):
+			print("learned something new about a plant")
+			GameManager.instant(self).stats.knowledge_gathered += 1
+			return
 	
-	if(new_found):
-		print("learned something new about a plant")
-		GameManager.instant(self).stats.knowledge_gathered += 1
-	else:
-		printerr("nothing to learn anymore :(")
+	printerr("nothing to learn anymore :(")
+
+func discover_knowledge_for_plant(plant: PlantResource):
+	var knowledge = plant_knowledge[plant]
+	
+	if not knowledge.food:
+		knowledge.food = true
+		return true
+		
+	if not knowledge.water:
+		knowledge.water = true
+		return true
+		
+	if not knowledge.growth_speed:
+		knowledge.growth_speed = true
+		return true
+	
+	if not knowledge.village_preferance:
+		knowledge.village_preferance = true
+		return true
+	
+	var index = knowledge.additional.find(false)
+	
+	if (index == -1):
+		return false
+	
+	knowledge.additional[index] = true
+	return true
 
 func try_add_new_plant(plant: PlantResource):
 	if known_plants.has(plant):

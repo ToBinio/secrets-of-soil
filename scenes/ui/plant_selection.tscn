@@ -14,7 +14,7 @@ bg_color = Color(0.176419, 0.176419, 0.176419, 1)
 
 [node name="Panel" type="Button"]
 clip_contents = true
-custom_minimum_size = Vector2(39, 39)
+custom_minimum_size = Vector2(55, 55)
 offset_right = 39.0
 offset_bottom = 39.0
 size_flags_vertical = 4
@@ -26,13 +26,10 @@ inactive_pannel_state = SubResource("StyleBoxFlat_grkfj")
 [node name="Icon" type="TextureRect" parent="."]
 clip_contents = true
 layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = 2.0
-offset_top = -17.5
-offset_right = 37.0
-offset_bottom = 17.5
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("PlaceholderTexture2D_q1j3t")
 expand_mode = 1
@@ -40,13 +37,15 @@ stretch_mode = 5
 
 [node name="Harvested" type="Label" parent="."]
 layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_top = 6.5
-offset_right = 38.0
-offset_bottom = 18.5
-grow_vertical = 2
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -38.0
+offset_top = -12.0
+grow_horizontal = 0
+grow_vertical = 0
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4
 theme_override_font_sizes/font_size = 8
@@ -56,13 +55,12 @@ vertical_alignment = 1
 
 [node name="Seeds" type="Label" parent="."]
 layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_top = -18.5
-offset_right = 38.0
-offset_bottom = -6.5
-grow_vertical = 2
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -38.0
+offset_bottom = 12.0
+grow_horizontal = 0
 theme_override_constants/outline_size = 4
 theme_override_font_sizes/font_size = 8
 text = "0/0"

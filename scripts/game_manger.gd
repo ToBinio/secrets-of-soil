@@ -22,6 +22,7 @@ var _weather: Array[int] = [0]
 @export_range(0,1) var water_source_change: float
 
 @export var default_plants: Dictionary[PlantResource, int]
+@export var number_of_default_plants: int = 2
 
 @export var day_night_cycle_duration: int = 4
 var is_doing_day_night_cycle: bool
@@ -49,9 +50,19 @@ func _ready() -> void:
 	current_food_requirements = _calc_food_requirement()
 	_weather[0] = possible_weather.size() / 2
 	
-	for key in default_plants.keys():
-		Knowledge.known_plants.push_back(key)
-		Inventory.plants[key].max_seeds = default_plants[key]
+	var plants = default_plants.keys().duplicate()
+	
+	for i in number_of_default_plants:
+		var plant = plants.pick_random()
+		
+		Knowledge.try_add_new_plant(plant)
+		
+		Knowledge.discover_knowledge_for_plant(plant)
+		Knowledge.discover_knowledge_for_plant(plant)
+		
+		Inventory.plants[plant].max_seeds = default_plants[plant]
+		
+		plants.remove_at(plants.find(plant))
 	
 	_reset_inventory()
 	is_doing_day_night_cycle = false
