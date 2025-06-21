@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="GeneralKnowledgeResource" load_steps=2 format=3 uid="uid://dvxeunxfrhuf1"]
+
+[ext_resource type="Script" uid="uid://b1a8omdiw2ayu" path="res://scripts/resources/general_knowledge_resource.gd" id="1_faqhp"]
+
+[resource]
+script = ExtResource("1_faqhp")
+name = "Buildings"
+description = "It seems like the villagers are just building where every they want. ignoring the plants you have planted for them."
+metadata/_custom_type_script = "uid://b1a8omdiw2ayu"

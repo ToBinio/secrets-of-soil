@@ -31,8 +31,12 @@ var weather_bias_duration: int = 0
 var is_doing_day_night_cycle: bool
 
 @export var death_screen: Control
+@onready var knowledge_book: Control = $"../Ui/KnowledgeBook"
+
 @export var can_die: bool
 
+@export var story_knowledge: GeneralKnowledgeResource
+@export var building_knowledge: GeneralKnowledgeResource
 @export var weather_knowledge: GeneralKnowledgeResource
 
 static func instant(node: Node) -> GameManager:
@@ -48,6 +52,9 @@ func weather_at(offset: int) -> WeatherResource:
 	return possible_weather[_weather[offset]]
 
 func _ready() -> void:
+	Knowledge.try_add_general_knowledge(story_knowledge)
+	knowledge_book.show()
+	
 	death_screen.hide()
 	
 	current_food_requirements = _calc_food_requirement()
@@ -80,7 +87,10 @@ func _on_next_day():
 		return
 	
 	_remove_random_structure()
-	_try_generate_random_structure()
+	
+	if(stats.days_survived > 2):
+		Knowledge.try_add_general_knowledge(building_knowledge)
+		_try_generate_random_structure()
 	
 	# needed to make sure plants have grown before stuff changes
 	await get_tree().create_timer(day_night_cycle_duration / 2.).timeout

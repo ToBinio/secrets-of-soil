@@ -6,7 +6,7 @@ extends Control
 @onready var types: OptionButton = $Background/KnowledgeType;
 @onready var plant_panel: Panel = $Background/PlantKnowledgeContainer;
 @onready var general_panel: Panel = $Background/GeneralKnowlegeContainer;
-var changed = false;
+var changed = true;
 
 var general = true;
 

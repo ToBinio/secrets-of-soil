@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://c4l41075qhjsw"]
+[gd_scene load_steps=37 format=3 uid="uid://c4l41075qhjsw"]
 
 [ext_resource type="Script" uid="uid://ck4nxaeidpcxl" path="res://scripts/camera.gd" id="1_0wfyh"]
 [ext_resource type="PackedScene" uid="uid://22wsbw7e8njp" path="res://scenes/world.tscn" id="1_o5qli"]
@@ -24,8 +24,10 @@
 [ext_resource type="PackedScene" uid="uid://l1bnxdwqgv4n" path="res://scenes/ui/death_screen.tscn" id="17_0ld40"]
 [ext_resource type="Resource" uid="uid://ds6t2yqfhiiv5" path="res://scripts/resources/knowledge/weather.tres" id="18_og1vs"]
 [ext_resource type="Resource" uid="uid://xkdf6rxcb28b" path="res://scripts/resources/plants/moon_flower.tres" id="18_yq6so"]
+[ext_resource type="Resource" uid="uid://b0ancyse4leen" path="res://scripts/resources/knowledge/turorial.tres" id="19_fv21b"]
 [ext_resource type="Resource" uid="uid://dhco72g0cokei" path="res://scripts/resources/plants/ancient_rose.tres" id="19_yq6so"]
 [ext_resource type="Resource" uid="uid://dwtk7swnc2nrm" path="res://scripts/resources/plants/mysterious_grass.tres" id="20_fv21b"]
+[ext_resource type="Resource" uid="uid://dvxeunxfrhuf1" path="res://scripts/resources/knowledge/building.tres" id="20_tel4y"]
 [ext_resource type="PackedScene" uid="uid://3vywj2fmfnsf" path="res://scenes/ui/knowledge_book.tscn" id="24_2wyq8"]
 [ext_resource type="Script" path="res://scripts/ui/knowledge_book_button.gd" id="25_vxglm"]
 
@@ -188,6 +190,8 @@ ExtResource("20_fv21b"): 3
 })
 death_screen = NodePath("../Ui/DeathScreen")
 can_die = true
+story_knowledge = ExtResource("19_fv21b")
+building_knowledge = ExtResource("20_tel4y")
 weather_knowledge = ExtResource("18_og1vs")
 
 [node name="Environment" type="Node" parent="."]
