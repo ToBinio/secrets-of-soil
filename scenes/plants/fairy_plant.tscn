@@ -1,0 +1,46 @@
+[gd_scene load_steps=9 format=3 uid="uid://dxtwxelcvebk5"]
+
+[ext_resource type="Script" uid="uid://kmp8a7og7efk" path="res://scripts/components/plant.gd" id="1_21mav"]
+[ext_resource type="Resource" uid="uid://b17yuikrtn2db" path="res://scripts/resources/plants/fairy_plant.tres" id="2_21mav"]
+[ext_resource type="PackedScene" uid="uid://7mmprl7udtce" path="res://scenes/particles/place_particle_5x5.tscn" id="3_24acx"]
+[ext_resource type="PackedScene" uid="uid://bbivfwup2rbo2" path="res://scenes/plant/growable.tscn" id="4_lqyuo"]
+[ext_resource type="PackedScene" uid="uid://boeiwk7qotto2" path="res://scenes/plant/clicker_area.tscn" id="5_12x7e"]
+[ext_resource type="PackedScene" uid="uid://bd00p8h4tp4ej" path="res://scenes/plant/grid_blocker.tscn" id="6_8jgsh"]
+[ext_resource type="PackedScene" uid="uid://bmv0wbdutwlk1" path="res://assets/plants/fairy_plant/fairy.gltf" id="7_u6t40"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_40ky6"]
+radius = 0.474813
+height = 1.5629
+
+[node name="MoonFlower" type="Node3D" node_paths=PackedStringArray("clicker_area") groups=["Plant"]]
+script = ExtResource("1_21mav")
+plant = ExtResource("2_21mav")
+clicker_area = NodePath("Clicker")
+removal_particles = ExtResource("3_24acx")
+
+[node name="Growable" parent="." node_paths=PackedStringArray("plant", "visual", "growth_speed_label") instance=ExtResource("4_lqyuo")]
+plant = NodePath("..")
+visual = NodePath("../Visual")
+growth_speed_label = NodePath("../Speed")
+
+[node name="Clicker" parent="." node_paths=PackedStringArray("growable", "hover_label") instance=ExtResource("5_12x7e")]
+growable = NodePath("../Growable")
+hover_label = NodePath("../Speed")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Clicker"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.774343, 0)
+shape = SubResource("CapsuleShape3D_40ky6")
+
+[node name="Speed" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.81374, 0)
+billboard = 1
+text = "Happy: ?"
+
+[node name="GridBlocker" parent="." instance=ExtResource("6_8jgsh")]
+size = 5
+
+[node name="GPUParticles3D" parent="." instance=ExtResource("3_24acx")]
+
+[node name="Visual" parent="." instance=ExtResource("7_u6t40")]
+
+[connection signal="tree_exiting" from="." to="." method="_on_tree_exiting"]

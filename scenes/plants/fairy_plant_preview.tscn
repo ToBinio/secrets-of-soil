@@ -1,0 +1,29 @@
+[gd_scene load_steps=8 format=3 uid="uid://35hnwp8faio2"]
+
+[ext_resource type="Script" uid="uid://c0ja0jhsr5ruk" path="res://scripts/components/plant_preview.gd" id="1_evrgv"]
+[ext_resource type="Resource" uid="uid://b17yuikrtn2db" path="res://scripts/resources/plants/fairy_plant.tres" id="2_tweei"]
+[ext_resource type="Material" uid="uid://c2b7xbyr3tcvu" path="res://assets/plants/wheat/preview.tres" id="3_3fo2k"]
+[ext_resource type="Material" uid="uid://ctdmilrs7sdou" path="res://assets/grid_blocker_preview.tres" id="4_3d8n0"]
+[ext_resource type="PackedScene" uid="uid://bd00p8h4tp4ej" path="res://scenes/plant/grid_blocker.tscn" id="5_2gpxo"]
+[ext_resource type="PackedScene" uid="uid://bmv0wbdutwlk1" path="res://assets/plants/fairy_plant/fairy.gltf" id="6_tweei"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_73vo3"]
+resource_local_to_scene = true
+material = ExtResource("4_3d8n0")
+size = Vector2(2.52, 2.52)
+
+[node name="FairyPlant" type="Node3D" groups=["Plant"]]
+script = ExtResource("1_evrgv")
+plant = ExtResource("2_tweei")
+preview_materials = Array[StandardMaterial3D]([ExtResource("3_3fo2k"), ExtResource("4_3d8n0")])
+
+[node name="GridBlocker" parent="." groups=["Preview"] instance=ExtResource("5_2gpxo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.05, 0)
+size = 5
+
+[node name="Mesh" parent="GridBlocker" index="0"]
+mesh = SubResource("PlaneMesh_73vo3")
+
+[node name="blockbench_export" parent="." instance=ExtResource("6_tweei")]
+
+[editable path="GridBlocker"]

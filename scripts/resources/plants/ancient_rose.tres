@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="PlantResource" load_steps=4 format=3 uid="uid://dhco72g0cokei"]
+
+[ext_resource type="Script" uid="uid://c2qk2325ok2gv" path="res://scripts/resources/plant_resource.gd" id="1_2lv7i"]
+[ext_resource type="Texture2D" uid="uid://j44ffnel0ai6" path="res://assets/plants/ancient_rose/ancient_rose.png" id="1_f2dcb"]
+
+[sub_resource type="Curve" id="Curve_tuibv"]
+_data = [Vector2(0, 0.102339), 0.0, 0.0, 0, 0, Vector2(0.198413, 0.900585), 0.0, 0.0, 0, 0, Vector2(0.497354, 1), 0.0, 0.0, 0, 0, Vector2(0.801587, 0.900585), 0.0, 0.0, 0, 0, Vector2(1, 0.0964912), 0.0, 0.0, 0, 0]
+point_count = 5
+
+[resource]
+script = ExtResource("1_2lv7i")
+name = "Ancient Rose"
+description = "This rose is over 1000 years old and represents the knowledge of the whole past."
+food = 10
+growth_speed = 0.75
+icon = ExtResource("1_f2dcb")
+growth_effecency = SubResource("Curve_tuibv")
+village_preferance = 0.1
+additional_facts = Array[String]([])
+metadata/_custom_type_script = "uid://c2qk2325ok2gv"

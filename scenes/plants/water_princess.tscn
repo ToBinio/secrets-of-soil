@@ -1,0 +1,43 @@
+[gd_scene load_steps=9 format=3 uid="uid://cu0yee6hjssi5"]
+
+[ext_resource type="Script" uid="uid://kmp8a7og7efk" path="res://scripts/components/plant.gd" id="1_f31sf"]
+[ext_resource type="Resource" uid="uid://t2whhx1uy52j" path="res://scripts/resources/plants/water_princess.tres" id="2_f31sf"]
+[ext_resource type="PackedScene" uid="uid://cr0k8b14xsa3h" path="res://scenes/particles/place_particle_3x3.tscn" id="3_csp85"]
+[ext_resource type="PackedScene" uid="uid://bbivfwup2rbo2" path="res://scenes/plant/growable.tscn" id="4_2dpu3"]
+[ext_resource type="PackedScene" uid="uid://boeiwk7qotto2" path="res://scenes/plant/clicker_area.tscn" id="5_uxxqb"]
+[ext_resource type="PackedScene" uid="uid://bd00p8h4tp4ej" path="res://scenes/plant/grid_blocker.tscn" id="6_7kcty"]
+[ext_resource type="PackedScene" uid="uid://lyrxqo5r3y10" path="res://assets/plants/water_princess/water_princess.gltf" id="7_ng0i0"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ucxq8"]
+radius = 0.503301
+height = 1.26241
+
+[node name="WaterPrincess" type="Node3D" node_paths=PackedStringArray("clicker_area") groups=["Plant"]]
+script = ExtResource("1_f31sf")
+plant = ExtResource("2_f31sf")
+clicker_area = NodePath("Clicker")
+removal_particles = ExtResource("3_csp85")
+
+[node name="Growable" parent="." node_paths=PackedStringArray("plant", "visual", "growth_speed_label") instance=ExtResource("4_2dpu3")]
+plant = NodePath("..")
+visual = NodePath("../Visual")
+growth_speed_label = NodePath("../Speed")
+
+[node name="Clicker" parent="." node_paths=PackedStringArray("growable", "hover_label") instance=ExtResource("5_uxxqb")]
+growable = NodePath("../Growable")
+hover_label = NodePath("../Speed")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Clicker"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.631755, 0)
+shape = SubResource("CapsuleShape3D_ucxq8")
+
+[node name="Speed" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.18939, 0)
+billboard = 1
+text = "Happy: ?"
+
+[node name="GridBlocker" parent="." instance=ExtResource("6_7kcty")]
+
+[node name="GPUParticles3D" parent="." instance=ExtResource("3_csp85")]
+
+[node name="Visual" parent="." instance=ExtResource("7_ng0i0")]

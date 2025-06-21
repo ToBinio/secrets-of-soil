@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="PlantResource" load_steps=4 format=3 uid="uid://7p0pv58eosok"]
+
+[ext_resource type="Script" uid="uid://c2qk2325ok2gv" path="res://scripts/resources/plant_resource.gd" id="1_bi6sw"]
+[ext_resource type="Texture2D" uid="uid://dg0mq85ibfw8g" path="res://assets/plants/poisouness_flower/poisouness_flower.png" id="1_do6m8"]
+
+[sub_resource type="Curve" id="Curve_4s567"]
+_data = [Vector2(0.497354, 0.483735), 0.0, 0.0, 0, 0, Vector2(0.637566, 0.880117), 0.0, 0.0, 0, 0, Vector2(1, 0.982456), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[resource]
+script = ExtResource("1_bi6sw")
+name = "Poisonous Flower"
+description = "This flower is extremely poisounes and enables advanced research"
+food = -20
+growth_speed = 0.3
+icon = ExtResource("1_do6m8")
+growth_effecency = SubResource("Curve_4s567")
+village_preferance = 0.2
+additional_facts = Array[String]([])
+metadata/_custom_type_script = "uid://c2qk2325ok2gv"

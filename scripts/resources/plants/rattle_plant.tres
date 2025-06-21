@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="PlantResource" load_steps=4 format=3 uid="uid://djvqxdmaa6qps"]
+
+[ext_resource type="Script" uid="uid://c2qk2325ok2gv" path="res://scripts/resources/plant_resource.gd" id="1_b4hi3"]
+[ext_resource type="Texture2D" uid="uid://dsry8287u8iuw" path="res://assets/plants/rattle_plant/rattle_plant.png" id="1_dvsip"]
+
+[sub_resource type="Curve" id="Curve_85iyc"]
+_data = [Vector2(0, 0.494152), 0.0, 0.0, 0, 0, Vector2(0.140212, 0.833333), 0.0, 0.0, 0, 0, Vector2(0.309524, 0.988304), 0.0, 0.0, 0, 0, Vector2(0.507936, 0.483735), 0.0, 0.0, 0, 0, Vector2(0.642857, 0.114035), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 6
+
+[resource]
+script = ExtResource("1_b4hi3")
+name = "Rattle Plant"
+description = "This plant consists of extremely hard shells that contain the natures most nutritous mater."
+food = 50
+growth_speed = 0.6
+icon = ExtResource("1_dvsip")
+growth_effecency = SubResource("Curve_85iyc")
+village_preferance = 0.705
+additional_facts = Array[String]([])
+metadata/_custom_type_script = "uid://c2qk2325ok2gv"

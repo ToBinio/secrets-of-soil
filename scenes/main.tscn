@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://c4l41075qhjsw"]
+[gd_scene load_steps=37 format=3 uid="uid://c4l41075qhjsw"]
 
 [ext_resource type="Script" uid="uid://ck4nxaeidpcxl" path="res://scripts/camera.gd" id="1_0wfyh"]
 [ext_resource type="PackedScene" uid="uid://22wsbw7e8njp" path="res://scenes/world.tscn" id="1_o5qli"]
@@ -10,7 +10,6 @@
 [ext_resource type="PackedScene" uid="uid://dr6245qmuh6f8" path="res://scenes/village/Well.tscn" id="3_eb6dy"]
 [ext_resource type="PackedScene" uid="uid://cec3esephtkpq" path="res://scenes/ui/info.tscn" id="3_sugp2"]
 [ext_resource type="Resource" uid="uid://c85nr0tqy0565" path="res://scripts/resources/plants/sunflower.tres" id="3_ya4ey"]
-[ext_resource type="Resource" uid="uid://dl5fl0mgy1sor" path="res://scripts/resources/plants/wheat.tres" id="4_eb6dy"]
 [ext_resource type="Resource" uid="uid://bqfxk0a6xvf1t" path="res://scripts/resources/weather/sun.tres" id="4_gqmmt"]
 [ext_resource type="PackedScene" uid="uid://cheyy73j6p542" path="res://scenes/ui/plant_list.tscn" id="4_tefeu"]
 [ext_resource type="PackedScene" uid="uid://cd6yn8ep2yldo" path="res://scenes/ui/sidebar.tscn" id="5_85g3d"]
@@ -24,7 +23,11 @@
 [ext_resource type="PackedScene" uid="uid://by7b4f5ghov5p" path="res://scenes/village/Well2.tscn" id="11_yc10j"]
 [ext_resource type="PackedScene" uid="uid://c5cppmo6xfg4h" path="res://scenes/village/TempHouse5.tscn" id="12_y6deb"]
 [ext_resource type="PackedScene" uid="uid://l1bnxdwqgv4n" path="res://scenes/ui/death_screen.tscn" id="17_0ld40"]
+[ext_resource type="Resource" uid="uid://dl5fl0mgy1sor" path="res://scripts/resources/plants/wheat.tres" id="17_2f3dj"]
 [ext_resource type="Resource" uid="uid://ds6t2yqfhiiv5" path="res://scripts/resources/knowledge/weather.tres" id="18_og1vs"]
+[ext_resource type="Resource" uid="uid://xkdf6rxcb28b" path="res://scripts/resources/plants/moon_flower.tres" id="18_yq6so"]
+[ext_resource type="Resource" uid="uid://dhco72g0cokei" path="res://scripts/resources/plants/ancient_rose.tres" id="19_yq6so"]
+[ext_resource type="Resource" uid="uid://dwtk7swnc2nrm" path="res://scripts/resources/plants/mysterious_grass.tres" id="20_fv21b"]
 [ext_resource type="PackedScene" uid="uid://3vywj2fmfnsf" path="res://scenes/ui/knowledge_book.tscn" id="24_2wyq8"]
 [ext_resource type="Script" uid="uid://ibfusfkao4ot" path="res://scripts/ui/knowledge_book_button.gd" id="25_vxglm"]
 
@@ -182,7 +185,10 @@ water_sources = Array[PackedScene]([ExtResource("3_eb6dy"), ExtResource("11_yc10
 water_source_change = 0.4
 default_plants = Dictionary[ExtResource("2_choun"), int]({
 ExtResource("3_ya4ey"): 4,
-ExtResource("4_eb6dy"): 5
+ExtResource("17_2f3dj"): 5,
+ExtResource("18_yq6so"): 1,
+ExtResource("19_yq6so"): 4,
+ExtResource("20_fv21b"): 1
 })
 death_screen = NodePath("../Ui/DeathScreen")
 can_die = true

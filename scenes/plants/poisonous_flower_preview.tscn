@@ -1,0 +1,29 @@
+[gd_scene load_steps=8 format=3 uid="uid://cuhx8qvkerwqq"]
+
+[ext_resource type="Script" uid="uid://c0ja0jhsr5ruk" path="res://scripts/components/plant_preview.gd" id="1_rpxpw"]
+[ext_resource type="Resource" uid="uid://7p0pv58eosok" path="res://scripts/resources/plants/poisouness_flower.tres" id="2_rpxpw"]
+[ext_resource type="Material" uid="uid://c2b7xbyr3tcvu" path="res://assets/plants/wheat/preview.tres" id="3_i0t77"]
+[ext_resource type="Material" uid="uid://ctdmilrs7sdou" path="res://assets/grid_blocker_preview.tres" id="4_pudce"]
+[ext_resource type="PackedScene" uid="uid://bd00p8h4tp4ej" path="res://scenes/plant/grid_blocker.tscn" id="5_k3lk1"]
+[ext_resource type="PackedScene" uid="uid://bhdolss4ea4lo" path="res://assets/plants/poisouness_flower/poisouness_flower.gltf" id="6_mbnsn"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_73vo3"]
+resource_local_to_scene = true
+material = ExtResource("4_pudce")
+size = Vector2(2.52, 2.52)
+
+[node name="Wheat" type="Node3D" groups=["Plant"]]
+script = ExtResource("1_rpxpw")
+plant = ExtResource("2_rpxpw")
+preview_materials = Array[StandardMaterial3D]([ExtResource("3_i0t77"), ExtResource("4_pudce")])
+
+[node name="GridBlocker" parent="." groups=["Preview"] instance=ExtResource("5_k3lk1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.05, 0)
+size = 5
+
+[node name="Mesh" parent="GridBlocker" index="0"]
+mesh = SubResource("PlaneMesh_73vo3")
+
+[node name="Visual" parent="." instance=ExtResource("6_mbnsn")]
+
+[editable path="GridBlocker"]

@@ -1,21 +1,66 @@
-[gd_scene load_steps=9 format=3 uid="uid://bybivuxciy03"]
+[gd_scene load_steps=36 format=3 uid="uid://bybivuxciy03"]
 
 [ext_resource type="Script" uid="uid://csdy82sgjaft3" path="res://scripts/autoloads/plants.gd" id="1_8iq2k"]
 [ext_resource type="Script" uid="uid://c2qk2325ok2gv" path="res://scripts/resources/plant_resource.gd" id="2_gr704"]
 [ext_resource type="Resource" uid="uid://c85nr0tqy0565" path="res://scripts/resources/plants/sunflower.tres" id="3_len5x"]
 [ext_resource type="PackedScene" uid="uid://bfvklom7mvg26" path="res://scenes/plants/sunflower.tscn" id="4_7l04h"]
 [ext_resource type="Resource" uid="uid://dl5fl0mgy1sor" path="res://scripts/resources/plants/wheat.tres" id="5_0s0gj"]
-[ext_resource type="PackedScene" uid="uid://kukoxvnrq6e5" path="res://scenes/plants/wheat.tscn" id="6_brlw5"]
+[ext_resource type="PackedScene" uid="uid://kukoxvnrq6e5" path="res://scenes/plants/wheat.tscn" id="6_len5x"]
+[ext_resource type="Resource" uid="uid://xkdf6rxcb28b" path="res://scripts/resources/plants/moon_flower.tres" id="7_0s0gj"]
 [ext_resource type="PackedScene" uid="uid://qssn3lf4dkgf" path="res://scenes/plants/wheat_preview.tscn" id="7_gr704"]
 [ext_resource type="PackedScene" uid="uid://b02xejo14xqvk" path="res://scenes/plants/sunflower_preview.tscn" id="7_len5x"]
+[ext_resource type="PackedScene" uid="uid://e1sp2iw1fqg2" path="res://scenes/plants/moon_flower.tscn" id="8_brlw5"]
+[ext_resource type="PackedScene" uid="uid://cho6mbw8jncch" path="res://scenes/plants/ancient_rose.tscn" id="10_jxn73"]
+[ext_resource type="PackedScene" uid="uid://bjuyx6rm0scc2" path="res://scenes/plants/moon_flower_preview.tscn" id="11_brlw5"]
+[ext_resource type="Resource" uid="uid://dwtk7swnc2nrm" path="res://scripts/resources/plants/mysterious_grass.tres" id="11_vllom"]
+[ext_resource type="Resource" uid="uid://dhco72g0cokei" path="res://scripts/resources/plants/ancient_rose.tres" id="12_ia801"]
+[ext_resource type="PackedScene" uid="uid://b84s382r6gga2" path="res://scenes/plants/mysterious_grass.tscn" id="12_rxjhl"]
+[ext_resource type="Resource" uid="uid://b17yuikrtn2db" path="res://scripts/resources/plants/fairy_plant.tres" id="13_58v7x"]
+[ext_resource type="PackedScene" uid="uid://1c3p11om140f" path="res://scenes/plants/ancient_rose_preview.tscn" id="13_jxn73"]
+[ext_resource type="PackedScene" uid="uid://dxtwxelcvebk5" path="res://scenes/plants/fairy_plant.tscn" id="14_10bq8"]
+[ext_resource type="Resource" uid="uid://7p0pv58eosok" path="res://scripts/resources/plants/poisouness_flower.tres" id="15_xvqmm"]
+[ext_resource type="PackedScene" uid="uid://ck84qc8gtv5j2" path="res://scenes/plants/poisonous_flower.tscn" id="16_haxce"]
+[ext_resource type="Resource" uid="uid://djvqxdmaa6qps" path="res://scripts/resources/plants/rattle_plant.tres" id="17_7mc5t"]
+[ext_resource type="PackedScene" uid="uid://vqroy0r87qib" path="res://scenes/plants/mysterious_grass_preview.tscn" id="17_ok6dx"]
+[ext_resource type="PackedScene" uid="uid://ddsq1ik8ugeu2" path="res://scenes/plants/rattle_plant.tscn" id="18_kgvvr"]
+[ext_resource type="Resource" uid="uid://c7kl60m3asbtb" path="res://scripts/resources/plants/pink_cucumber.tres" id="19_w5ret"]
+[ext_resource type="PackedScene" uid="uid://drqjf7yh1h2a6" path="res://scenes/plants/pink_cucumber.tscn" id="20_5ms0f"]
+[ext_resource type="PackedScene" uid="uid://35hnwp8faio2" path="res://scenes/plants/fairy_plant_preview.tscn" id="20_ikun2"]
+[ext_resource type="Resource" uid="uid://t2whhx1uy52j" path="res://scripts/resources/plants/water_princess.tres" id="21_jprlc"]
+[ext_resource type="PackedScene" uid="uid://cu0yee6hjssi5" path="res://scenes/plants/water_princess.tscn" id="22_k4etj"]
+[ext_resource type="Resource" uid="uid://kkrue7ik5pmi" path="res://scripts/resources/plants/special_mushrooms.tres" id="23_2q54k"]
+[ext_resource type="PackedScene" uid="uid://cuhx8qvkerwqq" path="res://scenes/plants/poisonous_flower_preview.tscn" id="23_gtcsi"]
+[ext_resource type="PackedScene" uid="uid://b62hke1e41t03" path="res://scenes/plants/special_mushrooms.tscn" id="24_3jdu1"]
+[ext_resource type="PackedScene" uid="uid://dqccda0rre6q4" path="res://scenes/plants/rattle_plant_preview.tscn" id="26_ydlw5"]
+[ext_resource type="PackedScene" uid="uid://duaj0ophvlrdt" path="res://scenes/plants/pink_cucumber_preview.tscn" id="29_1vn0c"]
+[ext_resource type="PackedScene" uid="uid://b5oknw3s6jw37" path="res://scenes/plants/water_princess_preview.tscn" id="34_vey77"]
+[ext_resource type="PackedScene" uid="uid://dpbry8yv2qufq" path="res://scenes/plants/special_mushrooms_preview.tscn" id="35_ba0vv"]
 
 [node name="Plants" type="Node"]
 script = ExtResource("1_8iq2k")
 plants = Dictionary[ExtResource("2_gr704"), PackedScene]({
 ExtResource("3_len5x"): ExtResource("4_7l04h"),
-ExtResource("5_0s0gj"): ExtResource("6_brlw5")
+ExtResource("5_0s0gj"): ExtResource("6_len5x"),
+ExtResource("7_0s0gj"): ExtResource("8_brlw5"),
+ExtResource("12_ia801"): ExtResource("10_jxn73"),
+ExtResource("11_vllom"): ExtResource("12_rxjhl"),
+ExtResource("13_58v7x"): ExtResource("14_10bq8"),
+ExtResource("15_xvqmm"): ExtResource("16_haxce"),
+ExtResource("17_7mc5t"): ExtResource("18_kgvvr"),
+ExtResource("19_w5ret"): ExtResource("20_5ms0f"),
+ExtResource("21_jprlc"): ExtResource("22_k4etj"),
+ExtResource("23_2q54k"): ExtResource("24_3jdu1")
 })
 plants_previews = Dictionary[ExtResource("2_gr704"), PackedScene]({
 ExtResource("3_len5x"): ExtResource("7_len5x"),
-ExtResource("5_0s0gj"): ExtResource("7_gr704")
+ExtResource("5_0s0gj"): ExtResource("7_gr704"),
+ExtResource("7_0s0gj"): ExtResource("11_brlw5"),
+ExtResource("12_ia801"): ExtResource("13_jxn73"),
+ExtResource("11_vllom"): ExtResource("17_ok6dx"),
+ExtResource("13_58v7x"): ExtResource("20_ikun2"),
+ExtResource("15_xvqmm"): ExtResource("23_gtcsi"),
+ExtResource("17_7mc5t"): ExtResource("26_ydlw5"),
+ExtResource("19_w5ret"): ExtResource("29_1vn0c"),
+ExtResource("21_jprlc"): ExtResource("34_vey77"),
+ExtResource("23_2q54k"): ExtResource("35_ba0vv")
 })

@@ -1,0 +1,28 @@
+[gd_scene load_steps=8 format=3 uid="uid://dpbry8yv2qufq"]
+
+[ext_resource type="Script" uid="uid://c0ja0jhsr5ruk" path="res://scripts/components/plant_preview.gd" id="1_bhba3"]
+[ext_resource type="Resource" uid="uid://kkrue7ik5pmi" path="res://scripts/resources/plants/special_mushrooms.tres" id="2_bhba3"]
+[ext_resource type="Material" uid="uid://c2b7xbyr3tcvu" path="res://assets/plants/wheat/preview.tres" id="3_my27t"]
+[ext_resource type="Material" uid="uid://ctdmilrs7sdou" path="res://assets/grid_blocker_preview.tres" id="4_uo1b4"]
+[ext_resource type="PackedScene" uid="uid://bd00p8h4tp4ej" path="res://scenes/plant/grid_blocker.tscn" id="5_hvhnp"]
+[ext_resource type="PackedScene" uid="uid://cx4haskcpvdds" path="res://assets/plants/special_mushrooms/special_mushrooms.gltf" id="6_6etsm"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_73vo3"]
+resource_local_to_scene = true
+material = ExtResource("4_uo1b4")
+size = Vector2(1.52, 1.52)
+
+[node name="SpecialMushrooms" type="Node3D" groups=["Plant"]]
+script = ExtResource("1_bhba3")
+plant = ExtResource("2_bhba3")
+preview_materials = Array[StandardMaterial3D]([ExtResource("3_my27t"), ExtResource("4_uo1b4")])
+
+[node name="GridBlocker" parent="." groups=["Preview"] instance=ExtResource("5_hvhnp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.05, 0)
+
+[node name="Mesh" parent="GridBlocker" index="0"]
+mesh = SubResource("PlaneMesh_73vo3")
+
+[node name="Visual" parent="." instance=ExtResource("6_6etsm")]
+
+[editable path="GridBlocker"]

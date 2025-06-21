@@ -106,6 +106,7 @@ theme_override_font_sizes/font_size = 14
 text = "Food: Currently unknown, must be researched!"
 
 [node name="Days" type="Label" parent="Background/PlantKnowledgeContainer"]
+layout_mode = 0
 offset_left = 11.0
 offset_top = 146.0
 offset_right = 484.0

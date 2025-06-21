@@ -1,0 +1,28 @@
+[gd_scene load_steps=8 format=3 uid="uid://1c3p11om140f"]
+
+[ext_resource type="Script" uid="uid://c0ja0jhsr5ruk" path="res://scripts/components/plant_preview.gd" id="1_uxwn5"]
+[ext_resource type="Resource" uid="uid://dhco72g0cokei" path="res://scripts/resources/plants/ancient_rose.tres" id="2_uxwn5"]
+[ext_resource type="Material" uid="uid://cdxhr3dvt28vk" path="res://assets/plants/sunflower/preview.tres" id="3_ctjra"]
+[ext_resource type="Material" uid="uid://ctdmilrs7sdou" path="res://assets/grid_blocker_preview.tres" id="4_66a28"]
+[ext_resource type="PackedScene" uid="uid://bd00p8h4tp4ej" path="res://scenes/plant/grid_blocker.tscn" id="5_l5v0m"]
+[ext_resource type="PackedScene" uid="uid://b7js0h8xvwiqu" path="res://assets/plants/ancient_rose/ancient_rose.gltf" id="6_uxwn5"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_pmwg7"]
+resource_local_to_scene = true
+material = ExtResource("4_66a28")
+size = Vector2(1.52, 1.52)
+
+[node name="AncientRose" type="Node3D" groups=["Plant"]]
+script = ExtResource("1_uxwn5")
+plant = ExtResource("2_uxwn5")
+preview_materials = Array[StandardMaterial3D]([ExtResource("3_ctjra"), ExtResource("4_66a28")])
+
+[node name="GridBlocker" parent="." groups=["Preview"] instance=ExtResource("5_l5v0m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.05, 0)
+
+[node name="Mesh" parent="GridBlocker" index="0"]
+mesh = SubResource("PlaneMesh_pmwg7")
+
+[node name="Visual" parent="." instance=ExtResource("6_uxwn5")]
+
+[editable path="GridBlocker"]
