@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://qssn3lf4dkgf"]
 
 [ext_resource type="Script" uid="uid://c0ja0jhsr5ruk" path="res://scripts/components/plant_preview.gd" id="1_1j8jd"]
-[ext_resource type="Resource" uid="uid://dl5fl0mgy1sor" path="res://scripts/resources/plants/wheat.tres" id="2_73vo3"]
+[ext_resource type="Resource" uid="uid://iatdjwp2323c" path="res://scripts/resources/plants/wheat.tres" id="2_73vo3"]
 [ext_resource type="Material" uid="uid://c2b7xbyr3tcvu" path="res://assets/plants/wheat/preview.tres" id="3_gbn4v"]
 [ext_resource type="Material" uid="uid://ctdmilrs7sdou" path="res://assets/grid_blocker_preview.tres" id="4_gbn4v"]
 [ext_resource type="PackedScene" uid="uid://wv2jpsiiw5oh" path="res://assets/plants/wheat/wheat_preview.gltf" id="4_wxyu5"]

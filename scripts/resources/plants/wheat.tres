@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="PlantResource" load_steps=4 format=3 uid="uid://dl5fl0mgy1sor"]
+[gd_resource type="Resource" script_class="PlantResource" load_steps=4 format=3 uid="uid://iatdjwp2323c"]
 
 [ext_resource type="Script" uid="uid://c2qk2325ok2gv" path="res://scripts/resources/plant_resource.gd" id="1_g7v3s"]
 [ext_resource type="Texture2D" uid="uid://ctxxc2rnuonn5" path="res://assets/plants/wheat/wheat.png" id="1_li5j2"]

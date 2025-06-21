@@ -1,14 +1,8 @@
-[gd_scene load_steps=36 format=3 uid="uid://bybivuxciy03"]
+[gd_scene load_steps=30 format=3 uid="uid://bybivuxciy03"]
 
 [ext_resource type="Script" uid="uid://csdy82sgjaft3" path="res://scripts/autoloads/plants.gd" id="1_8iq2k"]
 [ext_resource type="Script" uid="uid://c2qk2325ok2gv" path="res://scripts/resources/plant_resource.gd" id="2_gr704"]
-[ext_resource type="Resource" uid="uid://c85nr0tqy0565" path="res://scripts/resources/plants/sunflower.tres" id="3_len5x"]
-[ext_resource type="PackedScene" uid="uid://bfvklom7mvg26" path="res://scenes/plants/sunflower.tscn" id="4_7l04h"]
-[ext_resource type="Resource" uid="uid://dl5fl0mgy1sor" path="res://scripts/resources/plants/wheat.tres" id="5_0s0gj"]
-[ext_resource type="PackedScene" uid="uid://kukoxvnrq6e5" path="res://scenes/plants/wheat.tscn" id="6_len5x"]
 [ext_resource type="Resource" uid="uid://xkdf6rxcb28b" path="res://scripts/resources/plants/moon_flower.tres" id="7_0s0gj"]
-[ext_resource type="PackedScene" uid="uid://qssn3lf4dkgf" path="res://scenes/plants/wheat_preview.tscn" id="7_gr704"]
-[ext_resource type="PackedScene" uid="uid://b02xejo14xqvk" path="res://scenes/plants/sunflower_preview.tscn" id="7_len5x"]
 [ext_resource type="PackedScene" uid="uid://e1sp2iw1fqg2" path="res://scenes/plants/moon_flower.tscn" id="8_brlw5"]
 [ext_resource type="PackedScene" uid="uid://cho6mbw8jncch" path="res://scenes/plants/ancient_rose.tscn" id="10_jxn73"]
 [ext_resource type="PackedScene" uid="uid://bjuyx6rm0scc2" path="res://scenes/plants/moon_flower_preview.tscn" id="11_brlw5"]
@@ -39,8 +33,6 @@
 [node name="Plants" type="Node"]
 script = ExtResource("1_8iq2k")
 plants = Dictionary[ExtResource("2_gr704"), PackedScene]({
-ExtResource("3_len5x"): ExtResource("4_7l04h"),
-ExtResource("5_0s0gj"): ExtResource("6_len5x"),
 ExtResource("7_0s0gj"): ExtResource("8_brlw5"),
 ExtResource("12_ia801"): ExtResource("10_jxn73"),
 ExtResource("11_vllom"): ExtResource("12_rxjhl"),
@@ -52,8 +44,6 @@ ExtResource("21_jprlc"): ExtResource("22_k4etj"),
 ExtResource("23_2q54k"): ExtResource("24_3jdu1")
 })
 plants_previews = Dictionary[ExtResource("2_gr704"), PackedScene]({
-ExtResource("3_len5x"): ExtResource("7_len5x"),
-ExtResource("5_0s0gj"): ExtResource("7_gr704"),
 ExtResource("7_0s0gj"): ExtResource("11_brlw5"),
 ExtResource("12_ia801"): ExtResource("13_jxn73"),
 ExtResource("11_vllom"): ExtResource("17_ok6dx"),

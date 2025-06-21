@@ -29,12 +29,12 @@ func _on_button_down() -> void:
 		food.text = "Food: Currently unknown, must be researched!"
 		
 	if plant_knowledge.village_preferance:
-		villager_preference.text = "Villager Preference: " + str(plant.village_preferance)
+		villager_preference.text = "Villager Preference: %.2f" % plant.village_preferance
 	else:
 		villager_preference.text = "Villager Preference: Currently unknown, must be researched!"
 		
 	if plant_knowledge.growth_speed:
-		days.text = "Expected Days: " + str(plant.growth_speed)
+		days.text = "Expected Days: %.2f" % (1. / plant.growth_speed)
 	else:
 		days.text = "Expected Days: Currently unknown, must be researched!"
 

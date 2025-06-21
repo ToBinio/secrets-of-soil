@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://cd6yn8ep2yldo"]
+[gd_scene load_steps=17 format=3 uid="uid://cd6yn8ep2yldo"]
 
 [ext_resource type="Texture2D" uid="uid://wjiuk85eafmo" path="res://assets/ui/food/food.png" id="1_kgkxc"]
 [ext_resource type="Script" uid="uid://copxj13kvd3fv" path="res://scripts/ui/day_count.gd" id="1_pqpau"]
@@ -7,11 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://3wqm7x704b87" path="res://scenes/ui/quest.tscn" id="2_s4ftv"]
 [ext_resource type="Script" uid="uid://bv3ctkv746ps6" path="res://scripts/ui/current_wheater.gd" id="3_fool0"]
 [ext_resource type="Resource" uid="uid://4ovjpg6b7k1a" path="res://scripts/resources/quest_types/research.tres" id="3_qaetd"]
-[ext_resource type="Script" path="res://scripts/resources/quest_requirement_resource.gd" id="3_s0wcl"]
-[ext_resource type="Resource" uid="uid://dl5fl0mgy1sor" path="res://scripts/resources/plants/wheat.tres" id="4_kgkxc"]
-[ext_resource type="Resource" uid="uid://c85nr0tqy0565" path="res://scripts/resources/plants/sunflower.tres" id="5_dp4qy"]
 [ext_resource type="Script" uid="uid://cqwtr73q8nk5c" path="res://scripts/ui/food_requirement.gd" id="5_lftq7"]
-[ext_resource type="Script" uid="uid://b8nijldcrxc72" path="res://scripts/resources/quest_resource.gd" id="6_wj50s"]
 [ext_resource type="Script" uid="uid://dlah4mp4jl04n" path="res://scripts/ui/quest_list.gd" id="7_wimm1"]
 [ext_resource type="Resource" uid="uid://b7wrrh3s6i7cx" path="res://scripts/resources/quest_types/weather.tres" id="8_kgkxc"]
 [ext_resource type="Script" uid="uid://dl7eih8bkdpyl" path="res://scripts/resources/quest_type_resource.gd" id="8_qjh4u"]
@@ -23,36 +19,6 @@
 [sub_resource type="AtlasTexture" id="AtlasTexture_pqpau"]
 atlas = ExtResource("2_lftq7")
 region = Rect2(0, 0, 16, 16)
-
-[sub_resource type="Resource" id="Resource_ft74a"]
-script = ExtResource("3_s0wcl")
-plant_resource = ExtResource("4_kgkxc")
-required_amount = 5
-metadata/_custom_type_script = "uid://cjtp7kpgbgy2h"
-
-[sub_resource type="Resource" id="Resource_vasou"]
-script = ExtResource("3_s0wcl")
-plant_resource = ExtResource("5_dp4qy")
-required_amount = 3
-metadata/_custom_type_script = "uid://cjtp7kpgbgy2h"
-
-[sub_resource type="Resource" id="Resource_uibx1"]
-script = ExtResource("6_wj50s")
-type = ExtResource("3_qaetd")
-requirements = Array[ExtResource("3_s0wcl")]([SubResource("Resource_ft74a"), SubResource("Resource_vasou")])
-metadata/_custom_type_script = "uid://b8nijldcrxc72"
-
-[sub_resource type="Resource" id="Resource_kgkxc"]
-script = ExtResource("3_s0wcl")
-plant_resource = ExtResource("5_dp4qy")
-required_amount = 10
-metadata/_custom_type_script = "uid://cjtp7kpgbgy2h"
-
-[sub_resource type="Resource" id="Resource_dp4qy"]
-script = ExtResource("6_wj50s")
-type = ExtResource("8_kgkxc")
-requirements = Array[ExtResource("3_s0wcl")]([SubResource("Resource_kgkxc")])
-metadata/_custom_type_script = "uid://b8nijldcrxc72"
 
 [node name="Sidebar" type="Control"]
 layout_mode = 3
@@ -215,17 +181,5 @@ layout_mode = 2
 script = ExtResource("7_wimm1")
 quest_scene = ExtResource("2_s4ftv")
 possible_quest_types = Array[ExtResource("8_qjh4u")]([ExtResource("3_qaetd"), ExtResource("8_kgkxc"), ExtResource("12_mbg3n"), ExtResource("13_3yvyw"), ExtResource("14_gt72t"), ExtResource("14_yp0nx")])
-
-[node name="Quest1" parent="Panel/Background/AdditionalQuestsContainer" instance=ExtResource("2_s4ftv")]
-layout_mode = 2
-quest = SubResource("Resource_uibx1")
-
-[node name="Quest2" parent="Panel/Background/AdditionalQuestsContainer" instance=ExtResource("2_s4ftv")]
-layout_mode = 2
-quest = SubResource("Resource_dp4qy")
-
-[node name="Quest3" parent="Panel/Background/AdditionalQuestsContainer" instance=ExtResource("2_s4ftv")]
-layout_mode = 2
-quest = SubResource("Resource_dp4qy")
 
 [connection signal="pressed" from="Panel/NextDay" to="Panel/NextDay" method="_on_pressed"]

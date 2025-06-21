@@ -103,6 +103,8 @@ func set_weather_bias(bias: int):
 	
 	for index in _weather.size():
 		_weather[index] = _weather[index] + weather_bias
+		_weather[index] = clamp(_weather[index], 0, possible_weather.size() - 1)
+		
 		weather_bias_duration -= 1
 
 func add_weather():
