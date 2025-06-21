@@ -10,8 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://b76rcvq2cdxrv" path="res://scenes/plant/growth_label.tscn" id="8_urcye"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_40ky6"]
-radius = 0.474813
-height = 1.5629
+radius = 0.503409
+height = 1.78676
 
 [node name="MoonFlower" type="Node3D" node_paths=PackedStringArray("clicker_area") groups=["Plant"]]
 script = ExtResource("1_jn3vu")

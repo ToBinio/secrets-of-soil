@@ -14,7 +14,7 @@ func _ready() -> void:
 	types.add_item("General")
 	types.add_item("Plants")
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	for child in buttons.get_children():
 		buttons.remove_child(child);
 	

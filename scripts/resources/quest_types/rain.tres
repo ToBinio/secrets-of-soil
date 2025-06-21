@@ -9,7 +9,7 @@ region = Rect2(64, 0, 16, 16)
 
 [resource]
 script = ExtResource("2_48kod")
-name = "Weather"
+name = "Rain Dance"
 difficulty_multiplier = 1.0
 description = "Make the next days wetter"
 icon = SubResource("AtlasTexture_brh36")

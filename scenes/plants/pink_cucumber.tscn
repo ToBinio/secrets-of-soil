@@ -6,12 +6,12 @@
 [ext_resource type="PackedScene" uid="uid://bbivfwup2rbo2" path="res://scenes/plant/growable.tscn" id="4_tfsgy"]
 [ext_resource type="PackedScene" uid="uid://boeiwk7qotto2" path="res://scenes/plant/clicker_area.tscn" id="5_4b4vv"]
 [ext_resource type="PackedScene" uid="uid://bd00p8h4tp4ej" path="res://scenes/plant/grid_blocker.tscn" id="6_1e4go"]
-[ext_resource type="PackedScene" uid="uid://bhdolss4ea4lo" path="res://assets/plants/poisouness_flower/poisouness_flower.gltf" id="7_aym7u"]
+[ext_resource type="PackedScene" uid="uid://b8iyx12c1e47o" path="res://assets/plants/pink_cucumber/pink_cucumber.gltf" id="8_ajop6"]
 [ext_resource type="PackedScene" uid="uid://b76rcvq2cdxrv" path="res://scenes/plant/growth_label.tscn" id="8_djk26"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_40ky6"]
-radius = 0.474813
-height = 1.5629
+radius = 0.570869
+height = 1.46799
 
 [node name="PoisonousFlower" type="Node3D" node_paths=PackedStringArray("clicker_area") groups=["Plant"]]
 script = ExtResource("1_xepcj")
@@ -28,7 +28,7 @@ growable = NodePath("../Growable")
 hover_label = NodePath("../GrowthLabel")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Clicker"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.774343, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.421467, 0)
 shape = SubResource("CapsuleShape3D_40ky6")
 
 [node name="GridBlocker" parent="." instance=ExtResource("6_1e4go")]
@@ -36,10 +36,10 @@ size = 5
 
 [node name="GPUParticles3D" parent="." instance=ExtResource("3_ajop6")]
 
-[node name="Visual" parent="." instance=ExtResource("7_aym7u")]
-
 [node name="GrowthLabel" parent="." node_paths=PackedStringArray("growable") instance=ExtResource("8_djk26")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3275, 0)
 growable = NodePath("../Growable")
+
+[node name="Visual" parent="." instance=ExtResource("8_ajop6")]
 
 [connection signal="tree_exiting" from="." to="." method="_on_tree_exiting"]

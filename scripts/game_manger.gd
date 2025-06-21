@@ -14,6 +14,9 @@ var stats: Stats = Stats.new()
 var current_food_requirements: int;
 var _weather: Array[int] = [0]
 
+var weather_bias: int = 0
+var weather_bias_duration: int = 0
+
 @export var possible_weather: Array[WeatherResource]
 
 @export var houses: Array[PackedScene]
@@ -94,11 +97,23 @@ func _on_next_day():
 	await get_tree().create_timer(day_night_cycle_duration / 2.).timeout
 	is_doing_day_night_cycle = false
 
+func set_weather_bias(bias: int):
+	weather_bias = bias
+	weather_bias_duration = 5
+	
+	for index in _weather.size():
+		_weather[index] = _weather[index] + weather_bias
+		weather_bias_duration -= 1
+
 func add_weather():
 	var current_weather = _weather[0]
 	
-	var center = (possible_weather.size() - 1) / 2.0
+	var center = ((possible_weather.size() - 1) / 2.) + weather_bias
 	var diff = current_weather - center
+
+	weather_bias_duration -= 1;
+	if weather_bias_duration <= 0:
+		weather_bias = 0
 
 	var change = randi_range(-1,1)
 	

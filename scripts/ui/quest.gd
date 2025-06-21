@@ -47,6 +47,5 @@ func _on_finish_button_pressed() -> void:
 	
 	done.emit()
 
-
 func _on_discard_button_pressed() -> void:
 	discard.emit()

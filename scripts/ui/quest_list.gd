@@ -63,8 +63,12 @@ func _exec_quest(quest: QuestResource):
 			
 			Inventory.plants[to_discorver].max_seeds = seeds
 			Inventory.plants[to_discorver].seeds = seeds
-		"Plans":
-			print("execute quest `Plans`")
+		"Sun Dance":
+			print("execute quest `Sun Dance`")
+			GameManager.instant(self).set_weather_bias(-1)
+		"Rain Dance":
+			print("execute quest `Rain Dance`")
+			GameManager.instant(self).set_weather_bias(1)
 		"Research":
 			print("execute quest `Research`")
 			Knowledge.disover_random_plant_knowledge()
