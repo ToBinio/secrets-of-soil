@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="PlantResource" load_steps=4 format=3 uid="uid://t2whhx1uy52j"]
+
+[ext_resource type="Script" uid="uid://c2qk2325ok2gv" path="res://scripts/resources/plant_resource.gd" id="1_5r05g"]
+[ext_resource type="Texture2D" uid="uid://b46dufu4ampus" path="res://assets/plants/water_princess/water_princess.png" id="1_nhumh"]
+
+[sub_resource type="Curve" id="Curve_ececa"]
+_data = [Vector2(0.00264551, 0.148711), 0.0, 0.0, 0, 0, Vector2(0.637566, 0.131579), 0.0, 0.0, 0, 0, Vector2(0.753968, 0.473684), 0.0, 0.0, 0, 0, Vector2(0.846561, 0.94152), 0.0, 0.0, 0, 0, Vector2(0.992063, 1), 0.0, 0.0, 0, 0]
+point_count = 5
+
+[resource]
+script = ExtResource("1_5r05g")
+name = "Water Princess"
+description = "This plant has an abnormal water contents."
+food = 20
+growth_speed = 8.0
+icon = ExtResource("1_nhumh")
+growth_effecency = SubResource("Curve_ececa")
+village_preferance = 0.35
+additional_facts = Array[String]([])
+metadata/_custom_type_script = "uid://c2qk2325ok2gv"

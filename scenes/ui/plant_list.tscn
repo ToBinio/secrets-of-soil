@@ -14,18 +14,19 @@ mouse_filter = 2
 script = ExtResource("1_n7jw7")
 plant_container = ExtResource("2_ryk2w")
 
-[node name="ScrollContainer" type="ScrollContainer" parent="."]
-layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -81.0
-offset_bottom = -1.0
-grow_horizontal = 2
-grow_vertical = 0
+[node name="Background" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 954.0
+offset_top = 355.0
+offset_right = 1151.0
+offset_bottom = 549.0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
+[node name="GridContainer" type="GridContainer" parent="Background"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 188.0
+offset_bottom = 185.0
+theme_override_constants/h_separation = 8
+theme_override_constants/v_separation = 8
+columns = 4

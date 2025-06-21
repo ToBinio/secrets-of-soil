@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://lxyvgwch1vkp"]
+
+[ext_resource type="Script" uid="uid://bqwdefuk5yatr" path="res://scripts/ui/general_knowledge_button.gd" id="1_aci6n"]
+
+[node name="KnowledgeButton" type="Button"]
+script = ExtResource("1_aci6n")
+
+[connection signal="button_down" from="." to="." method="_on_button_down"]
+[connection signal="pressed" from="." to="." method="_on_pressed"]

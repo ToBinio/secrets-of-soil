@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="PlantResource" load_steps=4 format=3 uid="uid://c7kl60m3asbtb"]
+
+[ext_resource type="Script" uid="uid://c2qk2325ok2gv" path="res://scripts/resources/plant_resource.gd" id="1_uiksw"]
+[ext_resource type="Texture2D" uid="uid://ca6sujvx3tjje" path="res://assets/plants/pink_cucumber/pink_cucumber.png" id="1_xonin"]
+
+[sub_resource type="Curve" id="Curve_hkmb7"]
+_data = [Vector2(0, 0.494719), 0.0, 0.0, 0, 0, Vector2(0.148148, 0.695906), 0.0, 0.0, 0, 0, Vector2(0.261905, 0.988304), 0.0, 0.0, 0, 0, Vector2(0.761905, 0.994152), 0.0, 0.0, 0, 0, Vector2(1, 0.491228), 0.0, 0.0, 0, 0]
+point_count = 5
+
+[resource]
+script = ExtResource("1_uiksw")
+name = "Pink Cucumber"
+description = "The villagers are affraid of this plant."
+food = 5
+growth_speed = 1.3
+icon = ExtResource("1_xonin")
+growth_effecency = SubResource("Curve_hkmb7")
+village_preferance = 0.071
+additional_facts = Array[String]([])
+metadata/_custom_type_script = "uid://c2qk2325ok2gv"

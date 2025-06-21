@@ -1,4 +1,5 @@
 extends Node
+class_name KnowledgeClass
 
 var known_plants: Array[PlantResource] = []
 var plant_knowledge: Dictionary[PlantResource, PlantKnowledge] = {}
@@ -8,6 +9,7 @@ class PlantKnowledge:
 	var water: bool = false
 	var food: bool = false
 	var village_preferance: bool = false
+	var growth_speed: bool = false
 	var additional: Array[bool] = []
 
 func _ready() -> void:
@@ -29,18 +31,23 @@ func disover_random_plant_knowledge():
 		var plant = plants.pop_front()
 		var knowledge = plant_knowledge[plant]
 		
-		if not knowledge.water:
-			knowledge.water = true
-			new_found = true
-			break
-		
 		if not knowledge.food:
 			knowledge.food = true
+			new_found = true
+			break
+			
+		if not knowledge.growth_speed:
+			knowledge.growth_speed = true
 			new_found = true
 			break
 		
 		if not knowledge.village_preferance:
 			knowledge.village_preferance = true
+			new_found = true
+			break
+			
+		if not knowledge.water:
+			knowledge.water = true
 			new_found = true
 			break
 		

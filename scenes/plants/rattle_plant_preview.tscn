@@ -1,0 +1,29 @@
+[gd_scene load_steps=8 format=3 uid="uid://dqccda0rre6q4"]
+
+[ext_resource type="Script" uid="uid://c0ja0jhsr5ruk" path="res://scripts/components/plant_preview.gd" id="1_vg4ym"]
+[ext_resource type="Resource" uid="uid://djvqxdmaa6qps" path="res://scripts/resources/plants/rattle_plant.tres" id="2_vg4ym"]
+[ext_resource type="Material" uid="uid://c2b7xbyr3tcvu" path="res://assets/plants/wheat/preview.tres" id="3_nb6e7"]
+[ext_resource type="Material" uid="uid://ctdmilrs7sdou" path="res://assets/grid_blocker_preview.tres" id="4_lsv44"]
+[ext_resource type="PackedScene" uid="uid://bd00p8h4tp4ej" path="res://scenes/plant/grid_blocker.tscn" id="5_1pqmd"]
+[ext_resource type="PackedScene" uid="uid://c7wexux6xr7xv" path="res://assets/plants/rattle_plant/rattle_plant.gltf" id="6_s3kcx"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_73vo3"]
+resource_local_to_scene = true
+material = ExtResource("4_lsv44")
+size = Vector2(2.52, 2.52)
+
+[node name="RattlePlant" type="Node3D" groups=["Plant"]]
+script = ExtResource("1_vg4ym")
+plant = ExtResource("2_vg4ym")
+preview_materials = Array[StandardMaterial3D]([ExtResource("3_nb6e7"), ExtResource("4_lsv44")])
+
+[node name="GridBlocker" parent="." groups=["Preview"] instance=ExtResource("5_1pqmd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.05, 0)
+size = 5
+
+[node name="Mesh" parent="GridBlocker" index="0"]
+mesh = SubResource("PlaneMesh_73vo3")
+
+[node name="Visual" parent="." instance=ExtResource("6_s3kcx")]
+
+[editable path="GridBlocker"]

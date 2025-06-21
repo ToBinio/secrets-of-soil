@@ -25,6 +25,7 @@ Knowledge="*res://scripts/autoloads/knowledge.gd"
 
 [display]
 
+window/size/mode=2
 window/stretch/mode="canvas_items"
 
 [file_customization]

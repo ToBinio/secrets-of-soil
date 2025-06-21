@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="PlantResource" load_steps=4 format=3 uid="uid://kkrue7ik5pmi"]
+
+[ext_resource type="Texture2D" uid="uid://c8vn03ipl7hk3" path="res://assets/plants/special_mushrooms/special_mushrooms.png" id="1_agrfn"]
+[ext_resource type="Script" uid="uid://c2qk2325ok2gv" path="res://scripts/resources/plant_resource.gd" id="1_x74kv"]
+
+[sub_resource type="Curve" id="Curve_qam56"]
+_data = [Vector2(0, 0.146199), 0.0, 0.0, 0, 0, Vector2(0.380952, 0.277778), 0.0, 0.0, 0, 0, Vector2(0.502645, 0.748538), 0.0, 0.0, 0, 0, Vector2(0.603175, 1), 0.0, 0.0, 0, 0, Vector2(0.701058, 0.748538), 0.0, 0.0, 0, 0, Vector2(0.875661, 0.385965), 0.0, 0.0, 0, 0, Vector2(1, 0.292398), 0.0, 0.0, 0, 0]
+point_count = 7
+
+[resource]
+script = ExtResource("1_x74kv")
+name = "Special Mushrooms"
+description = "The villagers love these muschrooms."
+food = 75
+growth_speed = 0.26
+icon = ExtResource("1_agrfn")
+growth_effecency = SubResource("Curve_qam56")
+village_preferance = 1.0
+additional_facts = Array[String]([])
+metadata/_custom_type_script = "uid://c2qk2325ok2gv"

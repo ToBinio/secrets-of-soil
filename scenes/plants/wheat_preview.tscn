@@ -19,7 +19,6 @@ preview_materials = Array[StandardMaterial3D]([ExtResource("3_gbn4v"), ExtResour
 
 [node name="GridBlocker" parent="." groups=["Preview"] instance=ExtResource("5_s8mqj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.05, 0)
-size = 3
 
 [node name="Mesh" parent="GridBlocker" index="0"]
 mesh = SubResource("PlaneMesh_73vo3")
