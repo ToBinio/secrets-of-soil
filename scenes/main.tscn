@@ -8,7 +8,6 @@
 [ext_resource type="Script" uid="uid://bgxl72c8kwoty" path="res://scripts/resources/weather_resource.gd" id="2_dp3eg"]
 [ext_resource type="Resource" uid="uid://ccvwysdh2srdo" path="res://scripts/resources/weather/extreme_sun.tres" id="3_0ld40"]
 [ext_resource type="PackedScene" uid="uid://dr6245qmuh6f8" path="res://scenes/village/Well.tscn" id="3_eb6dy"]
-[ext_resource type="PackedScene" uid="uid://cec3esephtkpq" path="res://scenes/ui/info.tscn" id="3_sugp2"]
 [ext_resource type="Resource" uid="uid://bqfxk0a6xvf1t" path="res://scripts/resources/weather/sun.tres" id="4_gqmmt"]
 [ext_resource type="PackedScene" uid="uid://cheyy73j6p542" path="res://scenes/ui/plant_list.tscn" id="4_tefeu"]
 [ext_resource type="PackedScene" uid="uid://cd6yn8ep2yldo" path="res://scenes/ui/sidebar.tscn" id="5_85g3d"]
@@ -31,6 +30,7 @@
 [ext_resource type="PackedScene" uid="uid://3vywj2fmfnsf" path="res://scenes/ui/knowledge_book.tscn" id="24_2wyq8"]
 [ext_resource type="Script" uid="uid://ibfusfkao4ot" path="res://scripts/ui/knowledge_book_button.gd" id="25_vxglm"]
 [ext_resource type="AudioStream" uid="uid://deemq57yaju52" path="res://assets/music/ui_click.mp3" id="30_qkpxi"]
+[ext_resource type="Texture2D" uid="uid://kj2lithyev31" path="res://assets/ui/book.png" id="31_5q0nq"]
 [ext_resource type="AudioStream" uid="uid://boxt4emo50bei" path="res://assets/music/backgroung.mp3" id="31_tel4y"]
 
 [sub_resource type="Animation" id="Animation_sugp2"]
@@ -223,27 +223,41 @@ shadow_enabled = true
 
 [node name="Ui" type="Node" parent="."]
 
-[node name="Info" parent="Ui" instance=ExtResource("3_sugp2")]
-visible = false
-
 [node name="PlantSelector" parent="Ui" instance=ExtResource("4_tefeu")]
 
 [node name="Sidebar" parent="Ui" instance=ExtResource("5_85g3d")]
 mouse_filter = 2
 
 [node name="DeathScreen" parent="Ui" instance=ExtResource("17_0ld40")]
-
-[node name="KnowledgeBook" parent="Ui" instance=ExtResource("24_2wyq8")]
 visible = false
 
 [node name="KnowledgeBookButton" type="Button" parent="Ui"]
-offset_left = 1080.0
-offset_top = 598.0
-offset_right = 1128.0
-offset_bottom = 629.0
-text = "Book"
+custom_minimum_size = Vector2(40, 50)
+offset_left = 1106.0
+offset_top = 6.0
+offset_right = 1146.0
+offset_bottom = 56.0
 script = ExtResource("25_vxglm")
 click_sound = ExtResource("30_qkpxi")
+
+[node name="TextureRect" type="TextureRect" parent="Ui/KnowledgeBookButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -22.0
+offset_top = -20.0
+offset_right = 18.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(35, -77)
+texture = ExtResource("31_5q0nq")
+
+[node name="KnowledgeBook" parent="Ui" instance=ExtResource("24_2wyq8")]
+visible = false
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.32608, 0.945342, 0, -0.945342, 0.32608, 0.131146, 6.20349, 7.31348)

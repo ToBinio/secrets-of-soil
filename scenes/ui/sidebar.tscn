@@ -36,7 +36,7 @@ anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
 offset_left = -199.0
-offset_bottom = 330.0
+offset_bottom = 309.0
 grow_horizontal = 0
 
 [node name="Control" type="Control" parent="Panel"]
@@ -60,9 +60,9 @@ anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
 offset_left = 3.0
-offset_top = -40.35
+offset_top = -35.35
 offset_right = 43.0
-offset_bottom = -0.349998
+offset_bottom = 4.65
 grow_vertical = 0
 texture = SubResource("AtlasTexture_pqpau")
 script = ExtResource("3_fool0")
@@ -73,10 +73,10 @@ layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -240.0
-offset_top = 15.0
+offset_left = -416.0
+offset_top = 20.0
 offset_right = -200.0
-offset_bottom = 55.0
+offset_bottom = 60.0
 grow_horizontal = 0
 pivot_offset = Vector2(-14, 6)
 alignment = 2
@@ -122,16 +122,19 @@ script = ExtResource("3_fool0")
 day_offset = 1
 
 [node name="NextDay" type="Button" parent="Panel"]
+custom_minimum_size = Vector2(0, 50)
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -100.0
-offset_top = 4.0
-offset_right = -4.0
-offset_bottom = 43.0
+offset_left = -147.0
+offset_top = 6.0
+offset_right = -51.0
+offset_bottom = 56.0
 grow_horizontal = 0
-text = "Next Day"
+pivot_offset = Vector2(21, 30)
+theme_override_font_sizes/font_size = 22
+text = "End Day"
 script = ExtResource("1_pwilp")
 click_sound = ExtResource("5_p8ohf")
 
@@ -140,21 +143,16 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = 60.0
+offset_left = 4.0
+offset_top = 75.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 10
-
-[node name="Quests" type="Label" parent="Panel/Background"]
-layout_mode = 2
-text = "Quests"
-horizontal_alignment = 1
-vertical_alignment = 1
+theme_override_constants/separation = 0
 
 [node name="Daily" type="Label" parent="Panel/Background"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 12
-text = "Food consumption today:"
+text = "Food needed today"
 vertical_alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Panel/Background"]
@@ -173,11 +171,12 @@ text = "10"
 vertical_alignment = 2
 script = ExtResource("5_lftq7")
 
-[node name="Additionals" type="Label" parent="Panel/Background"]
+[node name="Quests" type="Label" parent="Panel/Background"]
+custom_minimum_size = Vector2(0, 45)
 layout_mode = 2
-theme_override_font_sizes/font_size = 12
-text = "Additional Challenges:"
-vertical_alignment = 1
+theme_override_font_sizes/font_size = 20
+text = "Quests"
+vertical_alignment = 2
 
 [node name="AdditionalQuestsContainer" type="VBoxContainer" parent="Panel/Background"]
 layout_mode = 2

@@ -15,11 +15,16 @@ script = ExtResource("1_n7jw7")
 plant_container = ExtResource("2_ryk2w")
 
 [node name="Background" type="Panel" parent="."]
-layout_mode = 0
-offset_left = 954.0
-offset_top = 355.0
-offset_right = 1154.0
-offset_bottom = 555.0
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -200.0
+offset_top = -200.0
+grow_horizontal = 0
+grow_vertical = 0
 
 [node name="GridContainer" type="GridContainer" parent="Background"]
 layout_mode = 1
