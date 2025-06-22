@@ -5,8 +5,15 @@
 [resource]
 script = ExtResource("1_lrgf8")
 name = "Village"
-description = "The Village needs your help!
-you need to plant some seeds and help the villagers eat something else they will starve.
+description = "The village needs food. Fast.
+If I don’t help, they’ll starve.
 
-So go plant your seed and keep your plants happy they propably want to be near the village well"
+First step: pick some seeds and plant them where the soil feels right.
+Plants grow better if they like the spot — somewhere damp, near the well maybe.
+
+I should check that book — it’s got some facts on each type.
+Could help me figure out what grows best where.
+Some villagers might share extra info too… if I bring them the right plants.
+
+Alright, get planting. Keep them happy. Watch them grow."
 metadata/_custom_type_script = "uid://b1a8omdiw2ayu"

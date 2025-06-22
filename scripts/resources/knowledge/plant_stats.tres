@@ -5,9 +5,8 @@
 [resource]
 script = ExtResource("1_1t5yu")
 name = "Plants"
-description = "Plants dont talk that much.
-But they can tell you roughly how much they like the wettness of the ground you placed them in.
-
-they will also tell you how much they have grown.
-So dont forget them to harvest when fully grown!"
+description = "Plants don’t say much, but they do seem to react to the ground.
+If it’s too dry or too wet, they won’t grow well.
+They’ll also show how much they’ve grown — so I can tell when they’re ready.
+I should not forget to harvest once they’re fully grown!"
 metadata/_custom_type_script = "uid://b1a8omdiw2ayu"

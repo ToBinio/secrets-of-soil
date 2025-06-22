@@ -5,5 +5,8 @@
 [resource]
 script = ExtResource("1_hfhy2")
 name = "Weather"
-description = "There are diffrent types of weather from extrem rain to extrem sun."
+description = "Weather shifts a lot.
+Sometimes heavy rain, sometimes burning sun.
+It changes how wet the ground is — rain soaks everything, sun dries it out fast.
+Need to plan for both — crops might not handle the extremes well."
 metadata/_custom_type_script = "uid://b1a8omdiw2ayu"
