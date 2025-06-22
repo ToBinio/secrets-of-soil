@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://c4l41075qhjsw"]
+[gd_scene load_steps=42 format=3 uid="uid://c4l41075qhjsw"]
 
 [ext_resource type="Script" uid="uid://ck4nxaeidpcxl" path="res://scripts/camera.gd" id="1_0wfyh"]
 [ext_resource type="PackedScene" uid="uid://22wsbw7e8njp" path="res://scenes/world.tscn" id="1_o5qli"]
@@ -29,6 +29,7 @@
 [ext_resource type="Resource" uid="uid://dvxeunxfrhuf1" path="res://scripts/resources/knowledge/building.tres" id="20_tel4y"]
 [ext_resource type="PackedScene" uid="uid://3vywj2fmfnsf" path="res://scenes/ui/knowledge_book.tscn" id="24_2wyq8"]
 [ext_resource type="Script" uid="uid://ibfusfkao4ot" path="res://scripts/ui/knowledge_book_button.gd" id="25_vxglm"]
+[ext_resource type="AudioStream" uid="uid://bxfqlicgxairj" path="res://assets/music/notification.wav" id="29_dgi5k"]
 [ext_resource type="Texture2D" uid="uid://bsab6fx77n27i" path="res://assets/ui/star.png" id="30_5q0nq"]
 [ext_resource type="AudioStream" uid="uid://deemq57yaju52" path="res://assets/music/ui_click.mp3" id="30_qkpxi"]
 [ext_resource type="Texture2D" uid="uid://kj2lithyev31" path="res://assets/ui/book.png" id="31_5q0nq"]
@@ -243,6 +244,7 @@ offset_right = 1146.0
 offset_bottom = 56.0
 script = ExtResource("25_vxglm")
 click_sound = ExtResource("30_qkpxi")
+notification_sound = ExtResource("29_dgi5k")
 
 [node name="TextureRect" type="TextureRect" parent="Ui/KnowledgeBookButton"]
 layout_mode = 1

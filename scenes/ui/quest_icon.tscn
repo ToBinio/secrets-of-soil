@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://ctnoljcbnsjug" path="res://scripts/ui/quest_icon.gd" id="1_iasy3"]
 [ext_resource type="Resource" uid="uid://dnq4bvasyu22c" path="res://scripts/resources/plants/sunflower.tres" id="2_gi38p"]
-[ext_resource type="Script" path="res://scripts/resources/quest_requirement_resource.gd" id="3_wbxki"]
+[ext_resource type="Script" uid="uid://cjtp7kpgbgy2h" path="res://scripts/resources/quest_requirement_resource.gd" id="3_wbxki"]
 [ext_resource type="Texture2D" uid="uid://bo7abxlejyd25" path="res://assets/plants/sunflower/sunflower.png" id="4_wbxki"]
 
 [sub_resource type="Resource" id="Resource_5hpdf"]
