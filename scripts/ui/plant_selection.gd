@@ -6,10 +6,14 @@ extends Button
 var plant: PlantResource
 
 @onready var harvested: Label = $Harvested
+var previus_harvested = 0;
+
 @onready var seeds: Label = $Seeds
 @onready var plant_icon: TextureRect = $Icon;
 
 @export var click_sound: AudioStream;
+
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 func _ready() -> void:
 	plant_icon.texture = plant.icon
@@ -19,6 +23,11 @@ func _process(_delta: float) -> void:
 		add_theme_stylebox_override("normal", active_pannel_state)
 	else:
 		add_theme_stylebox_override("normal", inactive_pannel_state)
+	
+	if (previus_harvested != Inventory.plants[plant].harvested):
+		previus_harvested = Inventory.plants[plant].harvested
+		
+		animation_player.play("pop")
 	
 	harvested.text = str(Inventory.plants[plant].harvested)
 	seeds.text = str(Inventory.plants[plant].seeds) + "/" + str(Inventory.plants[plant].max_seeds)

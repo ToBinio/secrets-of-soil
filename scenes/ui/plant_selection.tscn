@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://drq48tovhsxqs"]
+[gd_scene load_steps=10 format=3 uid="uid://drq48tovhsxqs"]
 
 [ext_resource type="Script" uid="uid://ihbn2sth3yml" path="res://scripts/ui/plant_selection.gd" id="1_i7dau"]
 [ext_resource type="AudioStream" uid="uid://deemq57yaju52" path="res://assets/music/ui_click.mp3" id="2_siwpg"]
@@ -12,6 +12,43 @@ bg_color = Color(0.627228, 0.627228, 0.627227, 1)
 bg_color = Color(0.176419, 0.176419, 0.176419, 1)
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_q1j3t"]
+
+[sub_resource type="Animation" id="Animation_siwpg"]
+resource_name = "pop"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Harvested:theme_override_font_sizes/font_size")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.7, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [14, 18, 18, 14]
+}
+
+[sub_resource type="Animation" id="Animation_grkfj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Harvested:theme_override_font_sizes/font_size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [14]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_y46dn"]
+_data = {
+&"RESET": SubResource("Animation_grkfj"),
+&"pop": SubResource("Animation_siwpg")
+}
 
 [node name="Panel" type="Button"]
 clip_contents = true
@@ -44,13 +81,14 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -38.0
-offset_top = -12.0
+offset_left = -41.0
+offset_top = -20.0
+offset_right = -3.0
 grow_horizontal = 0
 grow_vertical = 0
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 4
-theme_override_font_sizes/font_size = 8
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 14
 text = "10"
 horizontal_alignment = 2
 vertical_alignment = 1
@@ -60,13 +98,19 @@ layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -38.0
-offset_bottom = 12.0
+offset_left = -40.0
+offset_right = -2.0
+offset_bottom = 20.0
 grow_horizontal = 0
-theme_override_constants/outline_size = 4
-theme_override_font_sizes/font_size = 8
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 14
 text = "0/0"
 horizontal_alignment = 2
 vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_y46dn")
+}
 
 [connection signal="pressed" from="." to="." method="_on_pressed"]
