@@ -3,6 +3,9 @@ extends VBoxContainer
 @export var quest_scene: PackedScene
 @export var possible_quest_types: Array[QuestTypeResource];
 
+@export var discovery_quest_type: QuestTypeResource
+@export var research_quest_type: QuestTypeResource
+
 @onready var player: AudioStreamPlayer2D = $"../../../AudioStreamPlayer2D";
 @export var quest_complete: AudioStream;
 
@@ -54,9 +57,6 @@ func _on_quest_done(quest: QuestResource, scene: Quest):
 	player.playing = true
 
 func _exec_quest(quest: QuestResource):
-	
-	
-	
 	match quest.type.name:
 		"Discover":
 			print("execute quest `Discover`")
@@ -72,6 +72,14 @@ func _exec_quest(quest: QuestResource):
 			
 			Inventory.plants[to_discorver].max_seeds = seeds
 			Inventory.plants[to_discorver].seeds = seeds
+			
+			if(Inventory.undiscoverd_plants().is_empty()):
+				possible_quest_types.remove_at(possible_quest_types.find(discovery_quest_type))
+				_reduce_quests()
+				
+			if not possible_quest_types.has(research_quest_type):
+				possible_quest_types.push_back(research_quest_type)
+			
 		"Sun Dance":
 			print("execute quest `Sun Dance`")
 			GameManager.instant(self).set_weather_bias(-1)
@@ -81,6 +89,11 @@ func _exec_quest(quest: QuestResource):
 		"Research":
 			print("execute quest `Research`")
 			Knowledge.disover_random_plant_knowledge()
+			Knowledge.disover_random_plant_knowledge()
+			
+			if(not Knowledge.has_plant_to_research()):
+				possible_quest_types.remove_at(possible_quest_types.find(research_quest_type))
+				_reduce_quests()
 		"Seeds":
 			print("execute quest `Seeds`")
 			var plant = Inventory.discoverd_plants().pick_random()
@@ -109,6 +122,14 @@ func _on_quest_discard(scene: Quest):
 	scene.queue_free()
 	var index = quests.find(scene)
 	quests.remove_at(index)
+
+func _reduce_quests():
+	for i in range(quests.size() - 1, -1, -1):
+		print(i)
+		var quest = quests[i] as Quest
+		if not possible_quest_types.has(quest.quest.type):
+			quest.queue_free()
+			quests.remove_at(i)
 
 func _generate_random_quest() -> QuestResource:
 	var quest = QuestResource.new()

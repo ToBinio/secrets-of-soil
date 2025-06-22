@@ -188,6 +188,8 @@ layout_mode = 2
 script = ExtResource("7_wimm1")
 quest_scene = ExtResource("2_s4ftv")
 possible_quest_types = Array[ExtResource("8_qjh4u")]([ExtResource("3_qaetd"), ExtResource("8_kgkxc"), ExtResource("12_mbg3n"), ExtResource("13_3yvyw"), ExtResource("14_gt72t"), ExtResource("14_yp0nx")])
+discovery_quest_type = ExtResource("12_mbg3n")
+research_quest_type = ExtResource("3_qaetd")
 quest_complete = ExtResource("16_xmiiw")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]

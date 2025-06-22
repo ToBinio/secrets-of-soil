@@ -37,6 +37,15 @@ func disover_random_plant_knowledge():
 	
 	printerr("nothing to learn anymore :(")
 
+func has_plant_to_research() -> bool:
+	for plant in known_plants:
+		var knowledge = plant_knowledge[plant]
+		
+		if(not knowledge.food || not knowledge.growth_speed || not knowledge.village_preferance || not knowledge.village_preferance):
+			return true
+	
+	return false
+
 func discover_knowledge_for_plant(plant: PlantResource):
 	var knowledge = plant_knowledge[plant]
 	
@@ -56,13 +65,7 @@ func discover_knowledge_for_plant(plant: PlantResource):
 		knowledge.village_preferance = true
 		return true
 	
-	var index = knowledge.additional.find(false)
-	
-	if (index == -1):
-		return false
-	
-	knowledge.additional[index] = true
-	return true
+	return false
 
 func try_add_new_plant(plant: PlantResource):
 	if known_plants.has(plant):
