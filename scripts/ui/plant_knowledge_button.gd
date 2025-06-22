@@ -7,13 +7,14 @@ var plant: PlantResource:
 		text = plant.name
 var plant_knowledge: KnowledgeClass.PlantKnowledge;
 		
-@onready var title: Label = $"../../../KnowledgeTitle";
-@onready var description: Label = $"../../../PlantKnowledgeContainer/Description";
-@onready var plant_icon: TextureRect = $"../../../PlantKnowledgeContainer/Icon";
-@onready var water_graph: WaterGraph = $"../../../PlantKnowledgeContainer/WaterGraph";
-@onready var food: Label = $"../../../PlantKnowledgeContainer/Food";
-@onready var days: Label = $"../../../PlantKnowledgeContainer/Days";
-@onready var villager_preference: Label = $"../../../PlantKnowledgeContainer/VillagerPreference";
+@onready var title: Label = $"../../../../KnowledgeTitle";
+@onready var description: Label = $"../../../../PlantKnowledgeContainer/Description";
+@onready var plant_icon: TextureRect = $"../../../../PlantKnowledgeContainer/Icon";
+@onready var water: Control = $"../../../../PlantKnowledgeContainer/Water";
+@onready var water_graph: WaterGraph = $"../../../../PlantKnowledgeContainer/Water/WaterGraph";
+@onready var food: Label = $"../../../../PlantKnowledgeContainer/Food";
+@onready var days: Label = $"../../../../PlantKnowledgeContainer/Days";
+@onready var villager_preference: Label = $"../../../../PlantKnowledgeContainer/VillagerPreference";
 @export var click_sound: AudioStream;
 
 func _on_button_down() -> void:
@@ -29,21 +30,27 @@ func _on_button_down() -> void:
 	plant_icon.texture = plant.icon
 	
 	if plant_knowledge.water:
+		water.show()
 		water_graph.curve = plant.growth_effecency
-	
+	else:
+		water.hide()
+		
 	if plant_knowledge.food:
+		food.show()
 		food.text = "Food: " + str(plant.food)
 	else:
-		food.text = "Food: Currently unknown, must be researched!"
+		food.hide()
 		
 	if plant_knowledge.village_preferance:
+		villager_preference.show()
 		villager_preference.text = "Villager Preference: %.2f" % plant.village_preferance
 	else:
-		villager_preference.text = "Villager Preference: Currently unknown, must be researched!"
+		villager_preference.hide()
 		
 	if plant_knowledge.growth_speed:
+		days.show()
 		days.text = "Expected Days: %.2f" % (1. / plant.growth_speed)
 	else:
-		days.text = "Expected Days: Currently unknown, must be researched!"
+		days.hide()
 
 	

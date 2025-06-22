@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://3vywj2fmfnsf"]
+[gd_scene load_steps=8 format=3 uid="uid://3vywj2fmfnsf"]
 
 [ext_resource type="PackedScene" uid="uid://lxyvgwch1vkp" path="res://scenes/ui/general_knowledge_button.tscn" id="1_myjw5"]
 [ext_resource type="Script" uid="uid://br1f5ycx6a5aq" path="res://scenes/ui/knowledge_book.gd" id="1_wvykr"]
@@ -12,6 +12,8 @@ corner_radius_top_left = 8
 corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_bakcb"]
 
 [node name="KnowledgeBook" type="Panel"]
 anchors_preset = 15
@@ -32,61 +34,91 @@ offset_right = 937.0
 offset_bottom = 614.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_bakcb")
 
-[node name="Knowledge Book" type="Label" parent="Background"]
-layout_mode = 0
+[node name="Sidebar" type="Control" parent="Background"]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
 offset_left = 1.0
-offset_right = 721.0
-offset_bottom = 105.0
-theme_override_font_sizes/font_size = 40
-text = "Knowledge Book"
+offset_right = 207.0
+grow_vertical = 2
+
+[node name="Knowledge Book" type="Label" parent="Background/Sidebar"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 13.0
+offset_bottom = 100.0
+grow_horizontal = 2
+theme_override_constants/line_spacing = -70
+theme_override_font_sizes/font_size = 30
+text = "Book
+of
+Knowledge"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="KnowledgeType" type="OptionButton" parent="Background"]
-layout_mode = 0
-offset_left = 40.0
-offset_top = 107.0
-offset_right = 186.0
-offset_bottom = 147.0
+[node name="KnowledgeType" type="OptionButton" parent="Background/Sidebar"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -73.0
+offset_top = 110.0
+offset_right = 73.0
+offset_bottom = 150.0
+grow_horizontal = 2
 theme_override_font_sizes/font_size = 18
 
-[node name="GeneralKnowledge" type="ScrollContainer" parent="Background"]
+[node name="GeneralKnowledge" type="ScrollContainer" parent="Background/Sidebar"]
 custom_minimum_size = Vector2(150, 0)
-layout_mode = 0
-offset_left = 36.0
-offset_top = 156.0
-offset_right = 186.0
-offset_bottom = 551.0
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -75.0
+offset_top = 162.0
+offset_right = 75.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 2
 horizontal_scroll_mode = 0
 
-[node name="KnowledgeSelector" type="VBoxContainer" parent="Background/GeneralKnowledge"]
+[node name="KnowledgeSelector" type="VBoxContainer" parent="Background/Sidebar/GeneralKnowledge"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 10
 
-[node name="KnowledgeButton" parent="Background/GeneralKnowledge/KnowledgeSelector" instance=ExtResource("1_myjw5")]
+[node name="KnowledgeButton" parent="Background/Sidebar/GeneralKnowledge/KnowledgeSelector" instance=ExtResource("1_myjw5")]
 layout_mode = 2
 
-[node name="KnowledgeButton2" parent="Background/GeneralKnowledge/KnowledgeSelector" instance=ExtResource("1_myjw5")]
+[node name="KnowledgeButton2" parent="Background/Sidebar/GeneralKnowledge/KnowledgeSelector" instance=ExtResource("1_myjw5")]
 layout_mode = 2
 
 [node name="KnowledgeTitle" type="Label" parent="Background"]
 layout_mode = 0
-offset_left = 220.0
-offset_top = 109.0
-offset_right = 685.0
-offset_bottom = 140.0
-theme_override_font_sizes/font_size = 20
+offset_left = 232.0
+offset_top = 9.0
+offset_right = 697.0
+offset_bottom = 40.0
+theme_override_font_sizes/font_size = 24
 text = "Please select something..."
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="PlantKnowledgeContainer" type="Panel" parent="Background"]
-layout_mode = 0
-offset_left = 219.0
-offset_top = 150.0
-offset_right = 686.0
-offset_bottom = 546.0
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -508.0
+offset_top = -528.0
+offset_right = -8.0
+offset_bottom = -8.0
+grow_horizontal = 0
+grow_vertical = 0
 
 [node name="Description" type="Label" parent="Background/PlantKnowledgeContainer"]
 layout_mode = 0
@@ -94,16 +126,21 @@ offset_left = 11.0
 offset_top = 9.0
 offset_right = 357.0
 offset_bottom = 114.0
-theme_override_font_sizes/font_size = 14
+theme_override_font_sizes/font_size = 16
 text = "Description"
 autowrap_mode = 2
 
 [node name="Icon" type="TextureRect" parent="Background/PlantKnowledgeContainer"]
-layout_mode = 0
-offset_left = 370.0
-offset_top = 17.0
-offset_right = 453.0
-offset_bottom = 97.0
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -108.0
+offset_top = 8.0
+offset_right = -8.0
+offset_bottom = 108.0
+grow_horizontal = 0
+texture = SubResource("PlaceholderTexture2D_bakcb")
 expand_mode = 3
 stretch_mode = 5
 
@@ -119,40 +156,49 @@ text = "Food: Currently unknown, must be researched!"
 [node name="Days" type="Label" parent="Background/PlantKnowledgeContainer"]
 layout_mode = 0
 offset_left = 11.0
-offset_top = 146.0
+offset_top = 359.0
 offset_right = 484.0
-offset_bottom = 175.0
+offset_bottom = 388.0
 theme_override_font_sizes/font_size = 14
 text = "Expected Days: Currently unknown, must be researched!"
 
 [node name="VillagerPreference" type="Label" parent="Background/PlantKnowledgeContainer"]
 layout_mode = 0
 offset_left = 12.0
-offset_top = 173.0
+offset_top = 388.0
 offset_right = 424.0
-offset_bottom = 202.0
+offset_bottom = 417.0
 theme_override_font_sizes/font_size = 14
 text = "Villager Preference: Currently unknown, must be researched!"
 
-[node name="Water" type="Label" parent="Background/PlantKnowledgeContainer"]
-layout_mode = 0
+[node name="Water" type="Control" parent="Background/PlantKnowledgeContainer"]
+anchors_preset = 0
 offset_left = 12.0
-offset_top = 198.0
-offset_right = 330.0
-offset_bottom = 227.0
+offset_top = 144.0
+offset_right = 512.0
+offset_bottom = 338.0
+
+[node name="Water" type="Label" parent="Background/PlantKnowledgeContainer/Water"]
+layout_mode = 1
+offset_right = 318.0
+offset_bottom = 29.0
 theme_override_font_sizes/font_size = 14
 text = "Water Need:"
 
-[node name="WaterGraph" type="Control" parent="Background/PlantKnowledgeContainer"]
-visible = false
-anchors_preset = 0
-offset_left = 42.0
-offset_top = 245.0
-offset_right = 423.0
-offset_bottom = 379.0
+[node name="WaterGraph" type="Control" parent="Background/PlantKnowledgeContainer/Water"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 29.0
+offset_top = -137.0
+offset_right = 410.0
+offset_bottom = -3.0
+grow_vertical = 0
+pivot_offset = Vector2(143, 62)
 script = ExtResource("4_gqdoo")
 
-[node name="GrowSpeed" type="Label" parent="Background/PlantKnowledgeContainer/WaterGraph"]
+[node name="GrowSpeed" type="Label" parent="Background/PlantKnowledgeContainer/Water/WaterGraph"]
 layout_mode = 0
 offset_left = -28.0
 offset_top = -24.0
@@ -163,7 +209,7 @@ text = "Grow Speed"
 horizontal_alignment = 1
 vertical_alignment = 2
 
-[node name="MaxSpeed" type="Label" parent="Background/PlantKnowledgeContainer/WaterGraph"]
+[node name="MaxSpeed" type="Label" parent="Background/PlantKnowledgeContainer/Water/WaterGraph"]
 layout_mode = 0
 offset_left = -44.0
 offset_top = -7.0
@@ -174,7 +220,7 @@ text = "100%"
 horizontal_alignment = 1
 vertical_alignment = 2
 
-[node name="Origin" type="Label" parent="Background/PlantKnowledgeContainer/WaterGraph"]
+[node name="Origin" type="Label" parent="Background/PlantKnowledgeContainer/Water/WaterGraph"]
 layout_mode = 0
 offset_left = -31.0
 offset_top = 135.0
@@ -185,7 +231,7 @@ text = "0%"
 horizontal_alignment = 1
 vertical_alignment = 2
 
-[node name="Water" type="Label" parent="Background/PlantKnowledgeContainer/WaterGraph"]
+[node name="Water" type="Label" parent="Background/PlantKnowledgeContainer/Water/WaterGraph"]
 layout_mode = 0
 offset_left = 379.0
 offset_top = 127.0
@@ -197,7 +243,7 @@ text = "Water
 horizontal_alignment = 1
 vertical_alignment = 2
 
-[node name="MaxWater" type="Label" parent="Background/PlantKnowledgeContainer/WaterGraph"]
+[node name="MaxWater" type="Label" parent="Background/PlantKnowledgeContainer/Water/WaterGraph"]
 layout_mode = 0
 offset_left = 351.0
 offset_top = 136.0
@@ -208,12 +254,17 @@ text = "100%"
 horizontal_alignment = 1
 vertical_alignment = 2
 
-[node name="WaterGraphResearch" type="Label" parent="Background/PlantKnowledgeContainer"]
-layout_mode = 0
-offset_left = -1.0
-offset_top = 223.0
-offset_right = 467.0
-offset_bottom = 395.0
+[node name="WaterGraphResearch" type="Label" parent="Background/PlantKnowledgeContainer/Water"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 29.0
+offset_top = -175.0
+offset_right = 497.0
+offset_bottom = -3.0
+grow_vertical = 0
+pivot_offset = Vector2(143, 100)
 theme_override_font_sizes/font_size = 14
 text = "More research has to be done!"
 horizontal_alignment = 1
@@ -221,11 +272,18 @@ vertical_alignment = 1
 
 [node name="GeneralKnowlegeContainer" type="Panel" parent="Background"]
 visible = false
-layout_mode = 0
-offset_left = 219.0
-offset_top = 147.0
-offset_right = 686.0
-offset_bottom = 546.0
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -508.0
+offset_top = -528.0
+offset_right = -8.0
+offset_bottom = -8.0
+grow_horizontal = 0
+grow_vertical = 0
 
 [node name="GeneralKnowledge" type="Label" parent="Background/GeneralKnowlegeContainer"]
 layout_mode = 0
@@ -236,4 +294,4 @@ offset_bottom = 396.0
 autowrap_mode = 2
 
 [connection signal="gui_input" from="." to="." method="_on_gui_input"]
-[connection signal="item_selected" from="Background/KnowledgeType" to="." method="_on_knowledge_type_item_selected"]
+[connection signal="item_selected" from="Background/Sidebar/KnowledgeType" to="." method="_on_knowledge_type_item_selected"]

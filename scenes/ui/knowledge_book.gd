@@ -1,10 +1,10 @@
 extends Control
 
-@onready var buttons: VBoxContainer = $Background/GeneralKnowledge/KnowledgeSelector;
+@onready var buttons: VBoxContainer = $Background/Sidebar/GeneralKnowledge/KnowledgeSelector;
 @export var GeneralButtonScene: PackedScene
 @export var PlantButtonScene: PackedScene
 @export var click_sound: AudioStream;
-@onready var types: OptionButton = $Background/KnowledgeType;
+@onready var types: OptionButton = $Background/Sidebar/KnowledgeType;
 @onready var plant_panel: Panel = $Background/PlantKnowledgeContainer;
 @onready var general_panel: Panel = $Background/GeneralKnowlegeContainer;
 var changed = true;

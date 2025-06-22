@@ -6,8 +6,8 @@ class_name GeneralKnowledgeButton
 		general_knowledge = value
 		text = general_knowledge.name
 		
-@onready var title: Label = $"../../../KnowledgeTitle";
-@onready var description: Label = $"../../../GeneralKnowlegeContainer/GeneralKnowledge";
+@onready var title: Label = $"../../../../KnowledgeTitle"
+@onready var description: Label = $"../../../../GeneralKnowlegeContainer/GeneralKnowledge"
 
 @export var click_sound: AudioStream;
 
