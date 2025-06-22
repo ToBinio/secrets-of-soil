@@ -12,9 +12,16 @@ var plant_knowledge: KnowledgeClass.PlantKnowledge;
 @onready var plant_icon: TextureRect = $"../../../../PlantKnowledgeContainer/Icon";
 @onready var water: Control = $"../../../../PlantKnowledgeContainer/Water";
 @onready var water_graph: WaterGraph = $"../../../../PlantKnowledgeContainer/Water/WaterGraph";
-@onready var food: Label = $"../../../../PlantKnowledgeContainer/Food";
-@onready var days: Label = $"../../../../PlantKnowledgeContainer/Days";
-@onready var villager_preference: Label = $"../../../../PlantKnowledgeContainer/VillagerPreference";
+
+@onready var food: Label = $"../../../../PlantKnowledgeContainer/Food/Value";
+@onready var food_container: Control = $"../../../../PlantKnowledgeContainer/Food";
+
+@onready var days: Label = $"../../../../PlantKnowledgeContainer/Growth/Value";
+@onready var days_container: Control = $"../../../../PlantKnowledgeContainer/Growth";
+
+@onready var villager_preference: Label = $"../../../../PlantKnowledgeContainer/Preference/Value";
+@onready var villager_preference_container: Control = $"../../../../PlantKnowledgeContainer/Preference";
+
 @export var click_sound: AudioStream;
 
 func _on_button_down() -> void:
@@ -36,21 +43,21 @@ func _on_button_down() -> void:
 		water.hide()
 		
 	if plant_knowledge.food:
-		food.show()
-		food.text = "Food: " + str(plant.food)
+		food_container.show()
+		food.text = "" + str(plant.food)
 	else:
-		food.hide()
+		food_container.hide()
 		
 	if plant_knowledge.village_preferance:
-		villager_preference.show()
-		villager_preference.text = "Villager Preference: %.2f" % plant.village_preferance
+		villager_preference_container.show()
+		villager_preference.text = str(int(plant.village_preferance * 100))
 	else:
-		villager_preference.hide()
+		villager_preference_container.hide()
 		
 	if plant_knowledge.growth_speed:
-		days.show()
-		days.text = "Expected Days: %.2f" % (1. / plant.growth_speed)
+		days_container.show()
+		days.text = "%.2f" % (1. / plant.growth_speed)
 	else:
-		days.hide()
+		days_container.hide()
 
 	

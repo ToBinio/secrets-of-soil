@@ -153,46 +153,146 @@ texture = SubResource("PlaceholderTexture2D_bakcb")
 expand_mode = 3
 stretch_mode = 5
 
-[node name="Food" type="Label" parent="Background/PlantKnowledgeContainer"]
-layout_mode = 0
-offset_left = 11.0
-offset_top = 121.0
-offset_right = 329.0
-offset_bottom = 150.0
-theme_override_font_sizes/font_size = 14
-text = "Food: Currently unknown, must be researched!"
+[node name="Food" type="Control" parent="Background/PlantKnowledgeContainer"]
+anchors_preset = 0
+offset_left = 19.0
+offset_top = 140.0
+offset_right = 148.0
+offset_bottom = 180.0
 
-[node name="Days" type="Label" parent="Background/PlantKnowledgeContainer"]
-layout_mode = 0
-offset_left = 9.0
-offset_top = 385.0
-offset_right = 482.0
-offset_bottom = 414.0
-theme_override_font_sizes/font_size = 14
-text = "Expected Days: Currently unknown, must be researched!"
+[node name="Value" type="Label" parent="Background/PlantKnowledgeContainer/Food"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -43.0
+offset_top = -17.5
+offset_bottom = 17.5
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 25
+text = "10"
 
-[node name="VillagerPreference" type="Label" parent="Background/PlantKnowledgeContainer"]
-layout_mode = 0
-offset_left = 12.0
-offset_top = 406.0
-offset_right = 424.0
-offset_bottom = 435.0
+[node name="Title" type="Label" parent="Background/PlantKnowledgeContainer/Food"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -21.5
+offset_right = 79.0
+offset_bottom = 21.5
+grow_vertical = 2
+theme_override_constants/line_spacing = -5
 theme_override_font_sizes/font_size = 14
-text = "Villager Preference: Currently unknown, must be researched!"
+text = "Nutritional
+Value"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Growth" type="Control" parent="Background/PlantKnowledgeContainer"]
+anchors_preset = 0
+offset_left = 181.0
+offset_top = 140.0
+offset_right = 313.0
+offset_bottom = 180.0
+
+[node name="Value" type="Label" parent="Background/PlantKnowledgeContainer/Growth"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -26.0
+offset_bottom = 9.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 25
+text = "0.50"
+
+[node name="Title" type="Label" parent="Background/PlantKnowledgeContainer/Growth"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -25.0
+offset_right = 79.0
+offset_bottom = 25.0
+grow_vertical = 2
+theme_override_constants/line_spacing = -5
+theme_override_font_sizes/font_size = 14
+text = "Optimal
+Growth
+Duration"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Title2" type="Label" parent="Background/PlantKnowledgeContainer/Growth"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -47.0
+offset_top = -16.0
+offset_bottom = 34.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_constants/line_spacing = -5
+theme_override_font_sizes/font_size = 14
+text = "Days"
+vertical_alignment = 1
+
+[node name="Preference" type="Control" parent="Background/PlantKnowledgeContainer"]
+anchors_preset = 0
+offset_left = 351.0
+offset_top = 140.0
+offset_right = 467.0
+offset_bottom = 180.0
+pivot_offset = Vector2(185, 71)
+
+[node name="Value" type="Label" parent="Background/PlantKnowledgeContainer/Preference"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -43.0
+offset_top = -17.5
+offset_bottom = 17.5
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 25
+text = "50"
+
+[node name="Title" type="Label" parent="Background/PlantKnowledgeContainer/Preference"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -25.0
+offset_right = 79.0
+offset_bottom = 25.0
+grow_vertical = 2
+theme_override_constants/line_spacing = -5
+theme_override_font_sizes/font_size = 14
+text = "Flavor
+Appeal"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Water" type="Control" parent="Background/PlantKnowledgeContainer"]
 anchors_preset = 0
 offset_left = 12.0
-offset_top = 144.0
+offset_top = 206.0
 offset_right = 512.0
-offset_bottom = 338.0
-
-[node name="Water" type="Label" parent="Background/PlantKnowledgeContainer/Water"]
-layout_mode = 1
-offset_right = 318.0
-offset_bottom = 29.0
-theme_override_font_sizes/font_size = 14
-text = "Water Need:"
+offset_bottom = 357.0
+pivot_offset = Vector2(159, -1)
 
 [node name="WaterGraph" type="Control" parent="Background/PlantKnowledgeContainer/Water"]
 layout_mode = 1
@@ -283,7 +383,7 @@ offset_bottom = 7.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 12
-text = "Ground wetness"
+text = "Ground Wetness"
 horizontal_alignment = 1
 
 [node name="MaxWater" type="Label" parent="Background/PlantKnowledgeContainer/Water/WaterGraph/Vertical"]
