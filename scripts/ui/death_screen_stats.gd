@@ -1,11 +1,11 @@
 extends GridContainer
 
-@onready var plants_harvested: Label = $Panel/PanelContainer/Header2
-@onready var new_knowledge: Label = $Panel2/PanelContainer/Header2
-@onready var days_survived: Label = $Panel3/PanelContainer/Header2
-@onready var food_consumed: Label = $Panel4/PanelContainer/Header2
-@onready var killed_by_village: Label = $Panel5/PanelContainer/Header2
-@onready var quests_completed: Label = $Panel6/PanelContainer/Header2
+@onready var plants_harvested: Label = $Panel/Header2
+@onready var new_knowledge: Label = $Panel2/Header2
+@onready var days_survived: Label = $Panel3/Header2
+@onready var food_consumed: Label = $Panel4/Header2
+@onready var killed_by_village: Label = $Panel5/Header2
+@onready var quests_completed: Label = $Panel6/Header2
 
 func _process(_delta: float) -> void:
 	if(is_visible_in_tree()):

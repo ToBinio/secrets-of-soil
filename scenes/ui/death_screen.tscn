@@ -1,7 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://l1bnxdwqgv4n"]
+[gd_scene load_steps=4 format=3 uid="uid://l1bnxdwqgv4n"]
 
 [ext_resource type="Script" uid="uid://bs0wnt0wwbi12" path="res://scripts/ui/try_again.gd" id="1_j0ehl"]
 [ext_resource type="Script" uid="uid://7pi0p26sauku" path="res://scripts/ui/death_screen_stats.gd" id="2_njuei"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_njuei"]
+bg_color = Color(0.705882, 0.615686, 0.494118, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
 
 [node name="DeathScreen" type="Control"]
 layout_mode = 3
@@ -32,20 +39,21 @@ offset_right = 319.5
 offset_bottom = 194.5
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_njuei")
 
 [node name="Header" type="Label" parent="Bg/Panel"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -84.0
-offset_top = 18.5
-offset_right = 85.0
-offset_bottom = 67.5
+offset_left = -144.5
+offset_top = 34.5
+offset_right = 147.5
+offset_bottom = 73.5
 grow_horizontal = 2
-theme_override_font_sizes/font_size = 22
-text = "your people starved...
-shame on you :("
+pivot_offset = Vector2(202.5, -122)
+theme_override_font_sizes/font_size = 28
+text = "Food supplies ran out"
 horizontal_alignment = 1
 
 [node name="Button" type="Button" parent="Bg/Panel"]
@@ -56,11 +64,12 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -40.0
-offset_top = -42.5
+offset_top = -53.5
 offset_right = 41.0
-offset_bottom = -11.5
+offset_bottom = -22.5
 grow_horizontal = 2
 grow_vertical = 0
+theme_override_font_sizes/font_size = 20
 text = "Try Again"
 script = ExtResource("1_j0ehl")
 
@@ -71,10 +80,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -168.0
-offset_top = -82.0
-offset_right = 168.0
-offset_bottom = 122.0
+offset_left = -182.5
+offset_top = -94.5
+offset_right = 182.5
+offset_bottom = 113.5
 grow_horizontal = 2
 grow_vertical = 2
 columns = 2
@@ -85,137 +94,192 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="PanelContainer" type="VBoxContainer" parent="Bg/Panel/GridContainer/Panel"]
+[node name="Header" type="Label" parent="Bg/Panel/GridContainer/Panel"]
 layout_mode = 1
-anchors_preset = 15
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 96.0
+grow_vertical = 2
+theme_override_constants/line_spacing = -5
+text = "Plants 
+Harvested"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Header2" type="Label" parent="Bg/Panel/GridContainer/Panel"]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-grow_horizontal = 2
+offset_left = -87.0
+offset_right = 1.0
+grow_horizontal = 0
 grow_vertical = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="Header" type="Label" parent="Bg/Panel/GridContainer/Panel/PanelContainer"]
-layout_mode = 2
-text = "Plants Harvested:"
-
-[node name="Header2" type="Label" parent="Bg/Panel/GridContainer/Panel/PanelContainer"]
-layout_mode = 2
-text = "0"
+theme_override_font_sizes/font_size = 28
+text = "6000"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Panel2" type="Panel" parent="Bg/Panel/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="PanelContainer" type="VBoxContainer" parent="Bg/Panel/GridContainer/Panel2"]
+[node name="Header" type="Label" parent="Bg/Panel/GridContainer/Panel2"]
 layout_mode = 1
-anchors_preset = 15
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 96.0
+grow_vertical = 2
+theme_override_constants/line_spacing = -5
+text = "Knowledge
+Gathered"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Header2" type="Label" parent="Bg/Panel/GridContainer/Panel2"]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-grow_horizontal = 2
+offset_left = -87.0
+offset_right = 1.0
+grow_horizontal = 0
 grow_vertical = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="Header" type="Label" parent="Bg/Panel/GridContainer/Panel2/PanelContainer"]
-layout_mode = 2
-text = "Knowledge Gathered"
-
-[node name="Header2" type="Label" parent="Bg/Panel/GridContainer/Panel2/PanelContainer"]
-layout_mode = 2
-text = "0"
+theme_override_font_sizes/font_size = 28
+text = "6000"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Panel3" type="Panel" parent="Bg/Panel/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="PanelContainer" type="VBoxContainer" parent="Bg/Panel/GridContainer/Panel3"]
+[node name="Header" type="Label" parent="Bg/Panel/GridContainer/Panel3"]
 layout_mode = 1
-anchors_preset = 15
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 96.0
+grow_vertical = 2
+theme_override_constants/line_spacing = -5
+text = "Days
+Survived"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Header2" type="Label" parent="Bg/Panel/GridContainer/Panel3"]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-grow_horizontal = 2
+offset_left = -87.0
+offset_right = 1.0
+grow_horizontal = 0
 grow_vertical = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="Header" type="Label" parent="Bg/Panel/GridContainer/Panel3/PanelContainer"]
-layout_mode = 2
-text = "Days Survived"
-
-[node name="Header2" type="Label" parent="Bg/Panel/GridContainer/Panel3/PanelContainer"]
-layout_mode = 2
-text = "0"
+theme_override_font_sizes/font_size = 28
+text = "6000"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Panel4" type="Panel" parent="Bg/Panel/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="PanelContainer" type="VBoxContainer" parent="Bg/Panel/GridContainer/Panel4"]
+[node name="Header" type="Label" parent="Bg/Panel/GridContainer/Panel4"]
 layout_mode = 1
-anchors_preset = 15
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 96.0
+grow_vertical = 2
+theme_override_constants/line_spacing = -5
+text = "Food
+Consumed"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Header2" type="Label" parent="Bg/Panel/GridContainer/Panel4"]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-grow_horizontal = 2
+offset_left = -87.0
+offset_right = 1.0
+grow_horizontal = 0
 grow_vertical = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="Header" type="Label" parent="Bg/Panel/GridContainer/Panel4/PanelContainer"]
-layout_mode = 2
-text = "Food Consumed"
-
-[node name="Header2" type="Label" parent="Bg/Panel/GridContainer/Panel4/PanelContainer"]
-layout_mode = 2
-text = "0"
+theme_override_font_sizes/font_size = 28
+text = "6000"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Panel5" type="Panel" parent="Bg/Panel/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="PanelContainer" type="VBoxContainer" parent="Bg/Panel/GridContainer/Panel5"]
+[node name="Header" type="Label" parent="Bg/Panel/GridContainer/Panel5"]
 layout_mode = 1
-anchors_preset = 15
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 96.0
+grow_vertical = 2
+theme_override_constants/line_spacing = -5
+text = "Plants 
+Destroyed
+by Village"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Header2" type="Label" parent="Bg/Panel/GridContainer/Panel5"]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-grow_horizontal = 2
+offset_left = -87.0
+offset_right = 1.0
+grow_horizontal = 0
 grow_vertical = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="Header" type="Label" parent="Bg/Panel/GridContainer/Panel5/PanelContainer"]
-layout_mode = 2
-text = "Villager killed Plants"
-
-[node name="Header2" type="Label" parent="Bg/Panel/GridContainer/Panel5/PanelContainer"]
-layout_mode = 2
-text = "0"
+theme_override_font_sizes/font_size = 28
+text = "6000"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Panel6" type="Panel" parent="Bg/Panel/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="PanelContainer" type="VBoxContainer" parent="Bg/Panel/GridContainer/Panel6"]
+[node name="Header" type="Label" parent="Bg/Panel/GridContainer/Panel6"]
 layout_mode = 1
-anchors_preset = 15
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 96.0
+grow_vertical = 2
+theme_override_constants/line_spacing = -5
+text = "Quests
+Completed"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Header2" type="Label" parent="Bg/Panel/GridContainer/Panel6"]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-grow_horizontal = 2
+offset_left = -87.0
+offset_right = 1.0
+grow_horizontal = 0
 grow_vertical = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="Header" type="Label" parent="Bg/Panel/GridContainer/Panel6/PanelContainer"]
-layout_mode = 2
-text = "quests Completed"
-
-[node name="Header2" type="Label" parent="Bg/Panel/GridContainer/Panel6/PanelContainer"]
-layout_mode = 2
-text = "0"
+theme_override_font_sizes/font_size = 28
+text = "6000"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="pressed" from="Bg/Panel/Button" to="Bg/Panel/Button" method="_on_pressed"]
