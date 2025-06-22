@@ -24,7 +24,7 @@ var plant_knowledge: KnowledgeClass.PlantKnowledge;
 
 @export var click_sound: AudioStream;
 
-func _on_button_down() -> void:
+func _on_pressed() -> void:
 	var player = AudioStreamPlayer2D.new();
 	player.volume_db = -10;
 	player.stream = click_sound;
@@ -59,5 +59,3 @@ func _on_button_down() -> void:
 		days.text = "%.2f" % (1. / plant.growth_speed)
 	else:
 		days_container.hide()
-
-	

@@ -4,8 +4,9 @@
 [ext_resource type="AudioStream" uid="uid://deemq57yaju52" path="res://assets/music/ui_click.mp3" id="2_x87mp"]
 
 [node name="KnowledgeButton" type="Button"]
+custom_minimum_size = Vector2(0, 32)
+toggle_mode = true
 script = ExtResource("1_aci6n")
 click_sound = ExtResource("2_x87mp")
 
-[connection signal="button_down" from="." to="." method="_on_button_down"]
 [connection signal="pressed" from="." to="." method="_on_pressed"]

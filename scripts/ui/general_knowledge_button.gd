@@ -11,8 +11,8 @@ class_name GeneralKnowledgeButton
 
 @export var click_sound: AudioStream;
 
-func _on_button_down() -> void:
-	title.text = general_knowledge.name;
+func _on_pressed() -> void:
+	title.text = general_knowledge.name;1
 	description.text = general_knowledge.description
 	
 	var player = AudioStreamPlayer2D.new();
