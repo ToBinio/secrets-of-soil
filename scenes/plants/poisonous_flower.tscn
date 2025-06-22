@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://ck84qc8gtv5j2"]
 
 [ext_resource type="Script" uid="uid://kmp8a7og7efk" path="res://scripts/components/plant.gd" id="1_yoh0x"]
-[ext_resource type="Resource" uid="uid://c7kl60m3asbtb" path="res://scripts/resources/plants/pink_cucumber.tres" id="2_yoh0x"]
+[ext_resource type="Resource" uid="uid://7p0pv58eosok" path="res://scripts/resources/plants/poisouness_flower.tres" id="2_6sjm2"]
 [ext_resource type="PackedScene" uid="uid://7mmprl7udtce" path="res://scenes/particles/place_particle_5x5.tscn" id="3_indwx"]
 [ext_resource type="PackedScene" uid="uid://bbivfwup2rbo2" path="res://scenes/plant/growable.tscn" id="4_60ok1"]
 [ext_resource type="PackedScene" uid="uid://boeiwk7qotto2" path="res://scenes/plant/clicker_area.tscn" id="5_r4k68"]
@@ -15,7 +15,7 @@ height = 1.31252
 
 [node name="PinkCucumber" type="Node3D" node_paths=PackedStringArray("clicker_area") groups=["Plant"]]
 script = ExtResource("1_yoh0x")
-plant = ExtResource("2_yoh0x")
+plant = ExtResource("2_6sjm2")
 clicker_area = NodePath("Clicker")
 removal_particles = ExtResource("3_indwx")
 

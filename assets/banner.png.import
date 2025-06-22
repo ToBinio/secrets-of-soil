@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b1k03xoaxabhe"
-path="res://.godot/imported/growth_state.png-2350577abaf30c7f74a3f51ce79b4d0a.ctex"
+uid="uid://fqpnf4daq56n"
+path="res://.godot/imported/banner.png-e7286fd0372c3fd293fa9b7b04a52c04.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/ui/growth_state.png"
-dest_files=["res://.godot/imported/growth_state.png-2350577abaf30c7f74a3f51ce79b4d0a.ctex"]
+source_file="res://assets/banner.png"
+dest_files=["res://.godot/imported/banner.png-e7286fd0372c3fd293fa9b7b04a52c04.ctex"]
 
 [params]
 
@@ -31,4 +31,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=0
+detect_3d/compress_to=1

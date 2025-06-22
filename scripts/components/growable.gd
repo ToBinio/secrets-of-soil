@@ -24,7 +24,11 @@ func calc_growth_factor() -> float:
 	water_level += game_manger.current_weather().water_change
 	water_level = clamp(water_level,0,1)
 	
+	print("water ",water_level)
+	
 	var growth_factor = plant.plant.growth_effecency.sample(water_level)
+	
+	print("factor ",growth_factor)
 	
 	return growth_factor
 

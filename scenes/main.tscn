@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://c4l41075qhjsw"]
+[gd_scene load_steps=42 format=3 uid="uid://c4l41075qhjsw"]
 
 [ext_resource type="Script" uid="uid://ck4nxaeidpcxl" path="res://scripts/camera.gd" id="1_0wfyh"]
 [ext_resource type="PackedScene" uid="uid://22wsbw7e8njp" path="res://scenes/world.tscn" id="1_o5qli"]
@@ -24,6 +24,7 @@
 [ext_resource type="Resource" uid="uid://kkrue7ik5pmi" path="res://scripts/resources/plants/special_mushrooms.tres" id="17_fv21b"]
 [ext_resource type="Resource" uid="uid://ds6t2yqfhiiv5" path="res://scripts/resources/knowledge/weather.tres" id="18_og1vs"]
 [ext_resource type="Resource" uid="uid://t2whhx1uy52j" path="res://scripts/resources/plants/water_princess.tres" id="18_tel4y"]
+[ext_resource type="Resource" uid="uid://7p0pv58eosok" path="res://scripts/resources/plants/poisouness_flower.tres" id="19_dgi5k"]
 [ext_resource type="Resource" uid="uid://b0ancyse4leen" path="res://scripts/resources/knowledge/turorial.tres" id="19_fv21b"]
 [ext_resource type="Resource" uid="uid://dwtk7swnc2nrm" path="res://scripts/resources/plants/mysterious_grass.tres" id="20_fv21b"]
 [ext_resource type="Resource" uid="uid://dvxeunxfrhuf1" path="res://scripts/resources/knowledge/building.tres" id="20_tel4y"]
@@ -191,8 +192,10 @@ water_source_change = 0.4
 default_plants = Dictionary[ExtResource("2_choun"), int]({
 ExtResource("17_fv21b"): 3,
 ExtResource("18_tel4y"): 3,
-ExtResource("20_fv21b"): 3
+ExtResource("20_fv21b"): 3,
+ExtResource("19_dgi5k"): 3
 })
+number_of_default_plants = 4
 death_screen = NodePath("../Ui/DeathScreen")
 can_die = true
 story_knowledge = ExtResource("19_fv21b")
