@@ -51,3 +51,9 @@ func _on_knowledge_type_item_selected(index: int) -> void:
 	player.stream = click_sound;
 	get_tree().root.add_child(player)
 	player.playing = true
+	player.finished.connect(func(): player.queue_free())
+
+func _on_gui_input(event: InputEvent) -> void:
+	if event is InputEventMouseButton:
+		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+			pass

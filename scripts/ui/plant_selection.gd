@@ -29,6 +29,7 @@ func _on_pressed() -> void:
 	player.stream = click_sound;
 	get_tree().root.add_child(player)
 	player.playing = true
+	player.finished.connect(func(): player.queue_free())
 	
 	if(Events.selected_plant == plant):
 		Events.selected_plant = null

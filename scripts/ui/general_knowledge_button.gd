@@ -20,3 +20,4 @@ func _on_button_down() -> void:
 	player.stream = click_sound;
 	get_tree().root.add_child(player)
 	player.playing = true
+	player.finished.connect(func(): player.queue_free())

@@ -55,5 +55,6 @@ func _on_discard_button_pressed() -> void:
 	player.stream = discard_sound;
 	get_tree().root.add_child(player)
 	player.playing = true
+	player.finished.connect(func(): player.queue_free())
 	
 	discard.emit()
