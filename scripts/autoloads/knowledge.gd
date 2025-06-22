@@ -77,11 +77,13 @@ func try_add_new_plant(plant: PlantResource):
 	Events.new_knowledge()
 
 
-func try_add_general_knowledge(knowledge: GeneralKnowledgeResource):
+func try_add_general_knowledge(knowledge: GeneralKnowledgeResource) -> bool:
 	if general_knowledge.has(knowledge):
-		return
+		return false
 	
 	print("learned new knowledge: ", knowledge.name)
 	GameManager.instant(self).stats.knowledge_gathered += 1
 	general_knowledge.push_back(knowledge)
 	Events.new_knowledge()
+	
+	return true

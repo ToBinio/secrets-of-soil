@@ -54,8 +54,10 @@ func weather_at(offset: int) -> WeatherResource:
 	return possible_weather[_weather[offset]]
 
 func _ready() -> void:
-	Knowledge.try_add_general_knowledge(story_knowledge)
-	knowledge_book.show()
+	Inventory.reset()
+
+	if Knowledge.try_add_general_knowledge(story_knowledge):
+		knowledge_book.show()
 	
 	death_screen.hide()
 	

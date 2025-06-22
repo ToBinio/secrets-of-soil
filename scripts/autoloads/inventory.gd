@@ -1,7 +1,7 @@
 extends Node
 
 class Data:
-	var harvested: int = 100
+	var harvested: int = 0
 	var seeds: int = 0
 	var max_seeds: int = 0
 
@@ -33,7 +33,11 @@ func undiscoverd_plants() -> Array[PlantResource]:
 		if data.max_seeds == 0:
 			undiscovered.append(plant)
 	return undiscovered
-	
-func _ready() -> void:
+
+func reset():
+	plants = {}
 	for plant in Plants.all_plants():
 		plants[plant] = Data.new()
+
+func _ready() -> void:
+	reset()

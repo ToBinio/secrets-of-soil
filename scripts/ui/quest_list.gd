@@ -30,6 +30,12 @@ func _on_next_day():
 
 func _add_new_quest():
 	var quest = _generate_random_quest()
+	
+	for existing_quest in quests:
+		if existing_quest.quest.type == quest.type:
+			quest = _generate_random_quest()
+			break
+	
 	var scene = quest_scene.instantiate() as Quest
 	
 	scene.done.connect(func(): _on_quest_done(quest, scene))
@@ -138,6 +144,8 @@ func _generate_random_quest() -> QuestResource:
 	
 	var possible_plants = Inventory.plants_with_seeds()
 	
+	var plant_sum = 0;
+	
 	var number_of_requirements = randi_range(1,3)
 	for i in number_of_requirements:
 		if(possible_plants.size() <= 0):
@@ -150,8 +158,12 @@ func _generate_random_quest() -> QuestResource:
 		quest_requirement.plant_resource = possible_plants[plant_index]
 		possible_plants.remove_at(plant_index)
 		
-		quest_requirement.required_amount = randi_range(2, 4) * quest.type.difficulty_multiplier;
-		
+		quest_requirement.required_amount = randi_range(2, 5) * quest.type.difficulty_multiplier;
 		quest.requirements.push_back(quest_requirement)
+		
+		plant_sum += quest_requirement.required_amount
+		
+		if(plant_sum >= 5 * quest.type.difficulty_multiplier):
+			break
 	
 	return quest
