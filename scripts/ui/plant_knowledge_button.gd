@@ -14,8 +14,15 @@ var plant_knowledge: KnowledgeClass.PlantKnowledge;
 @onready var food: Label = $"../../../PlantKnowledgeContainer/Food";
 @onready var days: Label = $"../../../PlantKnowledgeContainer/Days";
 @onready var villager_preference: Label = $"../../../PlantKnowledgeContainer/VillagerPreference";
+@export var click_sound: AudioStream;
 
 func _on_button_down() -> void:
+	var player = AudioStreamPlayer2D.new();
+	player.volume_db = -10;
+	player.stream = click_sound;
+	get_tree().root.add_child(player)
+	player.playing = true
+	
 	title.text = plant.name;
 	description.text = plant.description;
 	plant_icon.texture = plant.icon

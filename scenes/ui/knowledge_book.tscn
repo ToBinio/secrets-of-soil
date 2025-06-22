@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://3vywj2fmfnsf"]
+[gd_scene load_steps=6 format=3 uid="uid://3vywj2fmfnsf"]
 
 [ext_resource type="PackedScene" uid="uid://lxyvgwch1vkp" path="res://scenes/ui/general_knowledge_button.tscn" id="1_myjw5"]
 [ext_resource type="Script" uid="uid://br1f5ycx6a5aq" path="res://scenes/ui/knowledge_book.gd" id="1_wvykr"]
 [ext_resource type="PackedScene" uid="uid://bxb2jkudci1vx" path="res://scenes/ui/plant_knowledge_button.tscn" id="3_gfald"]
+[ext_resource type="AudioStream" uid="uid://deemq57yaju52" path="res://assets/music/ui_click.mp3" id="4_bakcb"]
 [ext_resource type="Script" uid="uid://dfm3q5pyalsyo" path="res://scripts/ui/water_graph.gd" id="4_gqdoo"]
 
 [node name="KnowledgeBook" type="Control"]
@@ -13,6 +14,7 @@ offset_bottom = 40.0
 script = ExtResource("1_wvykr")
 GeneralButtonScene = ExtResource("1_myjw5")
 PlantButtonScene = ExtResource("3_gfald")
+click_sound = ExtResource("4_bakcb")
 
 [node name="Background" type="Panel" parent="."]
 layout_mode = 0

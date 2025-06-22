@@ -5,7 +5,9 @@ class_name Field
 @export var invalid_preview_color: Color
 
 @export var ground_material: StandardMaterial3D 
+@export var place_sound: AudioStream;
 
+@onready var audio_player: AudioStreamPlayer2D = $AudioPlayer;
 var preview: PlantPreview;
 
 func _process(delta: float) -> void:
@@ -63,6 +65,10 @@ func _on_input_event(_camera: Node, event: InputEvent, event_position: Vector3, 
 		
 		preview.set_color(invalid_preview_color)
 		Inventory.plants[Events.selected_plant].seeds -= 1
+		
+		# Play place sound
+		audio_player.stream = place_sound
+		audio_player.playing = true
 		
 		if(Inventory.plants[Events.selected_plant].seeds <= 0):
 			Events.selected_plant = null

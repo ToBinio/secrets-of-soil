@@ -9,6 +9,14 @@ class_name GeneralKnowledgeButton
 @onready var title: Label = $"../../../KnowledgeTitle";
 @onready var description: Label = $"../../../GeneralKnowlegeContainer/GeneralKnowledge";
 
+@export var click_sound: AudioStream;
+
 func _on_button_down() -> void:
 	title.text = general_knowledge.name;
 	description.text = general_knowledge.description
+	
+	var player = AudioStreamPlayer2D.new();
+	player.volume_db = -10;
+	player.stream = click_sound;
+	get_tree().root.add_child(player)
+	player.playing = true

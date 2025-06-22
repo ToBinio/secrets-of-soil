@@ -3,6 +3,9 @@ extends VBoxContainer
 @export var quest_scene: PackedScene
 @export var possible_quest_types: Array[QuestTypeResource];
 
+@onready var player: AudioStreamPlayer2D = $"../../../AudioStreamPlayer2D";
+@export var quest_complete: AudioStream;
+
 var quests: Array[Quest] = [];
 
 func _ready() -> void:
@@ -46,8 +49,14 @@ func _on_quest_done(quest: QuestResource, scene: Quest):
 	
 	var index = quests.find(scene)
 	quests.remove_at(index)
+	
+	player.stream = quest_complete;
+	player.playing = true
 
 func _exec_quest(quest: QuestResource):
+	
+	
+	
 	match quest.type.name:
 		"Discover":
 			print("execute quest `Discover`")

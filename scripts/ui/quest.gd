@@ -21,6 +21,8 @@ signal discard
 @onready var requirements_parent: HBoxContainer = $Requirements;
 @onready var discard_button: TextureButton = $CompleteButton/DiscardButton
 
+@export var discard_sound: AudioStream;
+
 func _ready() -> void:
 	quest_type.quest_type = quest.type;
 	
@@ -48,4 +50,10 @@ func _on_finish_button_pressed() -> void:
 	done.emit()
 
 func _on_discard_button_pressed() -> void:
+	var player = AudioStreamPlayer2D.new()
+	player.volume_db = 0
+	player.stream = discard_sound;
+	get_tree().root.add_child(player)
+	player.playing = true
+	
 	discard.emit()

@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://b02xejo14xqvk"]
 
 [ext_resource type="Script" uid="uid://c0ja0jhsr5ruk" path="res://scripts/components/plant_preview.gd" id="1_hiade"]
-[ext_resource type="Resource" uid="uid://c85nr0tqy0565" path="res://scripts/resources/plants/sunflower.tres" id="2_pmwg7"]
+[ext_resource type="Resource" uid="uid://dnq4bvasyu22c" path="res://scripts/resources/plants/sunflower.tres" id="2_pmwg7"]
 [ext_resource type="Material" uid="uid://cdxhr3dvt28vk" path="res://assets/plants/sunflower/preview.tres" id="3_7dgs5"]
 [ext_resource type="PackedScene" uid="uid://b6pr5f7tn25j7" path="res://assets/plants/sunflower/sunflower_preview.gltf" id="4_k4bk7"]
 [ext_resource type="Material" uid="uid://ctdmilrs7sdou" path="res://assets/grid_blocker_preview.tres" id="5_7dgs5"]

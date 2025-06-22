@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://bbivfwup2rbo2" path="res://scenes/plant/growable.tscn" id="1_coew3"]
 [ext_resource type="PackedScene" uid="uid://boeiwk7qotto2" path="res://scenes/plant/clicker_area.tscn" id="1_hodiq"]
 [ext_resource type="PackedScene" uid="uid://bwi3piy4f66no" path="res://assets/plants/wheat/wheat.gltf" id="1_yfabo"]
-[ext_resource type="Resource" uid="uid://dl5fl0mgy1sor" path="res://scripts/resources/plants/wheat.tres" id="2_ucxq8"]
+[ext_resource type="Resource" uid="uid://iatdjwp2323c" path="res://scripts/resources/plants/wheat.tres" id="2_ucxq8"]
 [ext_resource type="PackedScene" uid="uid://bd00p8h4tp4ej" path="res://scenes/plant/grid_blocker.tscn" id="5_yhkry"]
 [ext_resource type="PackedScene" uid="uid://cr0k8b14xsa3h" path="res://scenes/particles/place_particle_3x3.tscn" id="7_475s8"]
 [ext_resource type="PackedScene" uid="uid://b76rcvq2cdxrv" path="res://scenes/plant/growth_label.tscn" id="8_f802b"]

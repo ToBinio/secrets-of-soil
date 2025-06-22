@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://cd6yn8ep2yldo"]
+[gd_scene load_steps=19 format=3 uid="uid://cd6yn8ep2yldo"]
 
 [ext_resource type="Texture2D" uid="uid://wjiuk85eafmo" path="res://assets/ui/food/food.png" id="1_kgkxc"]
 [ext_resource type="Script" uid="uid://copxj13kvd3fv" path="res://scripts/ui/day_count.gd" id="1_pqpau"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://bv3ctkv746ps6" path="res://scripts/ui/current_wheater.gd" id="3_fool0"]
 [ext_resource type="Resource" uid="uid://4ovjpg6b7k1a" path="res://scripts/resources/quest_types/research.tres" id="3_qaetd"]
 [ext_resource type="Script" uid="uid://cqwtr73q8nk5c" path="res://scripts/ui/food_requirement.gd" id="5_lftq7"]
+[ext_resource type="AudioStream" uid="uid://deemq57yaju52" path="res://assets/music/ui_click.mp3" id="5_p8ohf"]
 [ext_resource type="Script" uid="uid://dlah4mp4jl04n" path="res://scripts/ui/quest_list.gd" id="7_wimm1"]
 [ext_resource type="Resource" uid="uid://b7wrrh3s6i7cx" path="res://scripts/resources/quest_types/weather.tres" id="8_kgkxc"]
 [ext_resource type="Script" uid="uid://dl7eih8bkdpyl" path="res://scripts/resources/quest_type_resource.gd" id="8_qjh4u"]
@@ -15,6 +16,7 @@
 [ext_resource type="Resource" uid="uid://cw385itg5jx0y" path="res://scripts/resources/quest_types/rain.tres" id="13_3yvyw"]
 [ext_resource type="Resource" uid="uid://hi68myjytbys" path="res://scripts/resources/quest_types/sun.tres" id="14_gt72t"]
 [ext_resource type="Resource" uid="uid://b6ccda4x73o75" path="res://scripts/resources/quest_types/seeds.tres" id="14_yp0nx"]
+[ext_resource type="AudioStream" uid="uid://dfobqdu5gjg41" path="res://assets/music/quest_finish.wav" id="16_xmiiw"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pqpau"]
 atlas = ExtResource("2_lftq7")
@@ -131,6 +133,7 @@ offset_bottom = 43.0
 grow_horizontal = 0
 text = "Next Day"
 script = ExtResource("1_pwilp")
+click_sound = ExtResource("5_p8ohf")
 
 [node name="Background" type="VBoxContainer" parent="Panel"]
 layout_mode = 1
@@ -181,5 +184,9 @@ layout_mode = 2
 script = ExtResource("7_wimm1")
 quest_scene = ExtResource("2_s4ftv")
 possible_quest_types = Array[ExtResource("8_qjh4u")]([ExtResource("3_qaetd"), ExtResource("8_kgkxc"), ExtResource("12_mbg3n"), ExtResource("13_3yvyw"), ExtResource("14_gt72t"), ExtResource("14_yp0nx")])
+quest_complete = ExtResource("16_xmiiw")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+volume_db = -10.0
 
 [connection signal="pressed" from="Panel/NextDay" to="Panel/NextDay" method="_on_pressed"]
