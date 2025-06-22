@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://3vywj2fmfnsf"]
+[gd_scene load_steps=7 format=3 uid="uid://3vywj2fmfnsf"]
 
 [ext_resource type="PackedScene" uid="uid://lxyvgwch1vkp" path="res://scenes/ui/general_knowledge_button.tscn" id="1_myjw5"]
 [ext_resource type="Script" uid="uid://br1f5ycx6a5aq" path="res://scenes/ui/knowledge_book.gd" id="1_wvykr"]
@@ -6,8 +6,14 @@
 [ext_resource type="AudioStream" uid="uid://deemq57yaju52" path="res://assets/music/ui_click.mp3" id="4_bakcb"]
 [ext_resource type="Script" uid="uid://dfm3q5pyalsyo" path="res://scripts/ui/water_graph.gd" id="4_gqdoo"]
 
-[node name="KnowledgeBook" type="Control"]
-layout_mode = 3
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bakcb"]
+bg_color = Color(0.705882, 0.615686, 0.494118, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[node name="KnowledgeBook" type="Panel"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -24,6 +30,7 @@ offset_left = 215.0
 offset_top = 39.0
 offset_right = 937.0
 offset_bottom = 614.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_bakcb")
 
 [node name="Knowledge Book" type="Label" parent="Background"]
 layout_mode = 0
