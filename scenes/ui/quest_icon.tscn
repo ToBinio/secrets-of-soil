@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://ctnoljcbnsjug" path="res://scripts/ui/quest_icon.gd" id="1_iasy3"]
 [ext_resource type="Resource" uid="uid://dnq4bvasyu22c" path="res://scripts/resources/plants/sunflower.tres" id="2_gi38p"]
-[ext_resource type="Script" uid="uid://cjtp7kpgbgy2h" path="res://scripts/resources/quest_requirement_resource.gd" id="3_wbxki"]
+[ext_resource type="Script" path="res://scripts/resources/quest_requirement_resource.gd" id="3_wbxki"]
 [ext_resource type="Texture2D" uid="uid://bo7abxlejyd25" path="res://assets/plants/sunflower/sunflower.png" id="4_wbxki"]
 
 [sub_resource type="Resource" id="Resource_5hpdf"]
@@ -20,6 +20,7 @@ offset_bottom = 45.0
 size_flags_horizontal = 8
 script = ExtResource("1_iasy3")
 requirement = SubResource("Resource_5hpdf")
+done_color = Color(0.760784, 0.839216, 0.309804, 1)
 
 [node name="Icon" type="TextureRect" parent="."]
 layout_mode = 1
@@ -28,14 +29,14 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -15.0
-offset_top = -15.0
-offset_right = 15.0
-offset_bottom = 15.0
+offset_left = -17.5
+offset_top = -17.5
+offset_right = 17.5
+offset_bottom = 17.5
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("4_wbxki")
-expand_mode = 5
+expand_mode = 3
 stretch_mode = 5
 
 [node name="QuantityAmount" type="Label" parent="."]

@@ -9,6 +9,8 @@ class_name QuestIcon
 @onready var label: Label = $QuantityAmount;
 @onready var icon: TextureRect = $Icon;
  
+@export var done_color: Color
+
 func _ready() -> void:
 	_update()
 	
@@ -30,6 +32,6 @@ func _set_label_text():
 	label.text = str(data.harvested)+"/"+str(requirement.required_amount)
 	
 	if requirement.required_amount <= data.harvested:
-		label.set("theme_override_colors/font_color", Color.GREEN)
+		label.set("theme_override_colors/font_color", done_color)
 	else:
 		label.set("theme_override_colors/font_color", Color.WHITE)

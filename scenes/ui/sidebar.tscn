@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://cd6yn8ep2yldo"]
+[gd_scene load_steps=20 format=3 uid="uid://cd6yn8ep2yldo"]
 
 [ext_resource type="Texture2D" uid="uid://wjiuk85eafmo" path="res://assets/ui/food/food.png" id="1_kgkxc"]
 [ext_resource type="Script" uid="uid://copxj13kvd3fv" path="res://scripts/ui/day_count.gd" id="1_pqpau"]
@@ -17,6 +17,10 @@
 [ext_resource type="Resource" uid="uid://hi68myjytbys" path="res://scripts/resources/quest_types/sun.tres" id="14_gt72t"]
 [ext_resource type="Resource" uid="uid://b6ccda4x73o75" path="res://scripts/resources/quest_types/seeds.tres" id="14_yp0nx"]
 [ext_resource type="AudioStream" uid="uid://dfobqdu5gjg41" path="res://assets/music/quest_finish.wav" id="16_xmiiw"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p8ohf"]
+bg_color = Color(0.136101, 0.136101, 0.136101, 0.784314)
+corner_radius_bottom_left = 8
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pqpau"]
 atlas = ExtResource("2_lftq7")
@@ -38,6 +42,7 @@ anchor_right = 1.0
 offset_left = -199.0
 offset_bottom = 309.0
 grow_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_p8ohf")
 
 [node name="Control" type="Control" parent="Panel"]
 custom_minimum_size = Vector2(48.76, 55.35)
@@ -51,7 +56,7 @@ layout_mode = 1
 offset_left = 3.0
 offset_right = 46.0
 offset_bottom = 23.0
-text = "Day 1"
+text = "Day 10"
 script = ExtResource("1_pqpau")
 
 [node name="CurrentWeather" type="TextureRect" parent="Panel/Control"]
@@ -127,13 +132,13 @@ layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -147.0
+offset_left = -138.0
 offset_top = 6.0
 offset_right = -51.0
 offset_bottom = 56.0
 grow_horizontal = 0
 pivot_offset = Vector2(21, 30)
-theme_override_font_sizes/font_size = 22
+theme_override_font_sizes/font_size = 20
 text = "End Day"
 script = ExtResource("1_pwilp")
 click_sound = ExtResource("5_p8ohf")

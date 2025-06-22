@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://c4l41075qhjsw"]
+[gd_scene load_steps=40 format=3 uid="uid://c4l41075qhjsw"]
 
 [ext_resource type="Script" uid="uid://ck4nxaeidpcxl" path="res://scripts/camera.gd" id="1_0wfyh"]
 [ext_resource type="PackedScene" uid="uid://22wsbw7e8njp" path="res://scenes/world.tscn" id="1_o5qli"]
@@ -29,6 +29,7 @@
 [ext_resource type="Resource" uid="uid://dvxeunxfrhuf1" path="res://scripts/resources/knowledge/building.tres" id="20_tel4y"]
 [ext_resource type="PackedScene" uid="uid://3vywj2fmfnsf" path="res://scenes/ui/knowledge_book.tscn" id="24_2wyq8"]
 [ext_resource type="Script" uid="uid://ibfusfkao4ot" path="res://scripts/ui/knowledge_book_button.gd" id="25_vxglm"]
+[ext_resource type="Texture2D" uid="uid://bsab6fx77n27i" path="res://assets/ui/star.png" id="30_5q0nq"]
 [ext_resource type="AudioStream" uid="uid://deemq57yaju52" path="res://assets/music/ui_click.mp3" id="30_qkpxi"]
 [ext_resource type="Texture2D" uid="uid://kj2lithyev31" path="res://assets/ui/book.png" id="31_5q0nq"]
 [ext_resource type="AudioStream" uid="uid://boxt4emo50bei" path="res://assets/music/backgroung.mp3" id="31_tel4y"]
@@ -255,6 +256,15 @@ grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(35, -77)
 texture = ExtResource("31_5q0nq")
+
+[node name="Info" type="TextureRect" parent="Ui/KnowledgeBookButton"]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 1.0
+offset_right = 39.0
+offset_bottom = 21.0
+pivot_offset = Vector2(15, 17)
+texture = ExtResource("30_5q0nq")
 
 [node name="KnowledgeBook" parent="Ui" instance=ExtResource("24_2wyq8")]
 visible = false

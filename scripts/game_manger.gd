@@ -158,7 +158,7 @@ func _consume_food() -> bool:
 	while to_eat > 0:
 		var plants: Array[PlantResource] = []
 		
-		for plant_key in Inventory.plants.keys():
+		for plant_key in Inventory.discoverd_plants():
 			if(Inventory.plants[plant_key].harvested <= 0):
 				continue
 			
@@ -193,7 +193,7 @@ func _consume_food() -> bool:
 		stats.food_consumed += eat.food
 		
 		Inventory.plants[eat].harvested -= 1
-		
+	
 	return true
 
 func _remove_random_structure():

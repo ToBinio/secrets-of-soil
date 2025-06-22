@@ -31,6 +31,8 @@ func disover_random_plant_knowledge():
 		if discover_knowledge_for_plant(plant):
 			print("learned something new about a plant")
 			GameManager.instant(self).stats.knowledge_gathered += 1
+			
+			Events.new_knowledge()
 			return
 	
 	printerr("nothing to learn anymore :(")
@@ -69,6 +71,7 @@ func try_add_new_plant(plant: PlantResource):
 	print("learned new plant: ", plant.name)
 	GameManager.instant(self).stats.knowledge_gathered += 1
 	known_plants.push_back(plant)
+	Events.new_knowledge()
 
 
 func try_add_general_knowledge(knowledge: GeneralKnowledgeResource):
@@ -78,3 +81,4 @@ func try_add_general_knowledge(knowledge: GeneralKnowledgeResource):
 	print("learned new knowledge: ", knowledge.name)
 	GameManager.instant(self).stats.knowledge_gathered += 1
 	general_knowledge.push_back(knowledge)
+	Events.new_knowledge()
