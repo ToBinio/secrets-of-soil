@@ -4,6 +4,9 @@ class_name WaterGraph
 @onready var research_label: Label = $"../WaterGraphResearch";
 var curve: Curve;
 
+@export var curve_color: Color
+@export var axes_color: Color
+
 func _ready() -> void:
 	pass
 
@@ -31,7 +34,7 @@ func _draw() -> void:
 		var y = (1.0 - curve.sample(t)) * height
 		points.append(Vector2(x, y))
 	
-	draw_polyline(points, Color.BLUE, 2.0)
+	draw_polyline(points, curve_color, 2.0)
 	
-	draw_line(Vector2(0,0),Vector2(0,height),Color.BLACK, 2.0)
-	draw_line(Vector2(0,height),Vector2(width,height),Color.BLACK, 2.0)
+	draw_line(Vector2(0,0),Vector2(0,height),axes_color, 2.0)
+	draw_line(Vector2(0,height),Vector2(width,height),axes_color, 2.0)

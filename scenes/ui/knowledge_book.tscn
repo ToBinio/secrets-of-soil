@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://3vywj2fmfnsf"]
+[gd_scene load_steps=11 format=3 uid="uid://3vywj2fmfnsf"]
 
 [ext_resource type="PackedScene" uid="uid://lxyvgwch1vkp" path="res://scenes/ui/general_knowledge_button.tscn" id="1_myjw5"]
 [ext_resource type="Script" uid="uid://br1f5ycx6a5aq" path="res://scenes/ui/knowledge_book.gd" id="1_wvykr"]
 [ext_resource type="PackedScene" uid="uid://bxb2jkudci1vx" path="res://scenes/ui/plant_knowledge_button.tscn" id="3_gfald"]
 [ext_resource type="AudioStream" uid="uid://deemq57yaju52" path="res://assets/music/ui_click.mp3" id="4_bakcb"]
 [ext_resource type="Script" uid="uid://dfm3q5pyalsyo" path="res://scripts/ui/water_graph.gd" id="4_gqdoo"]
+[ext_resource type="Texture2D" uid="uid://dgjb08kv4t786" path="res://assets/ui/growth_speed.png" id="6_tghia"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bakcb"]
 bg_color = Color(0.705882, 0.615686, 0.494118, 1)
@@ -14,6 +15,14 @@ corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_bakcb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8qljd"]
+atlas = ExtResource("6_tghia")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4cegn"]
+atlas = ExtResource("6_tghia")
+region = Rect2(0, 0, 16, 16)
 
 [node name="KnowledgeBook" type="Panel"]
 anchors_preset = 15
@@ -49,7 +58,7 @@ anchor_right = 1.0
 offset_top = 13.0
 offset_bottom = 100.0
 grow_horizontal = 2
-theme_override_constants/line_spacing = -70
+theme_override_constants/line_spacing = -15
 theme_override_font_sizes/font_size = 30
 text = "Book
 of
@@ -155,19 +164,19 @@ text = "Food: Currently unknown, must be researched!"
 
 [node name="Days" type="Label" parent="Background/PlantKnowledgeContainer"]
 layout_mode = 0
-offset_left = 11.0
-offset_top = 359.0
-offset_right = 484.0
-offset_bottom = 388.0
+offset_left = 9.0
+offset_top = 385.0
+offset_right = 482.0
+offset_bottom = 414.0
 theme_override_font_sizes/font_size = 14
 text = "Expected Days: Currently unknown, must be researched!"
 
 [node name="VillagerPreference" type="Label" parent="Background/PlantKnowledgeContainer"]
 layout_mode = 0
 offset_left = 12.0
-offset_top = 388.0
+offset_top = 406.0
 offset_right = 424.0
-offset_bottom = 417.0
+offset_bottom = 435.0
 theme_override_font_sizes/font_size = 14
 text = "Villager Preference: Currently unknown, must be researched!"
 
@@ -197,61 +206,101 @@ offset_bottom = -3.0
 grow_vertical = 0
 pivot_offset = Vector2(143, 62)
 script = ExtResource("4_gqdoo")
+curve_color = Color(0.239216, 0.501961, 0.639216, 1)
+axes_color = Color(0.841469, 0.841469, 0.841469, 1)
 
-[node name="GrowSpeed" type="Label" parent="Background/PlantKnowledgeContainer/Water/WaterGraph"]
-layout_mode = 0
-offset_left = -28.0
-offset_top = -24.0
-offset_right = 30.0
-offset_bottom = -10.0
-theme_override_font_sizes/font_size = 10
-text = "Grow Speed"
-horizontal_alignment = 1
-vertical_alignment = 2
+[node name="Horizontal" type="Control" parent="Background/PlantKnowledgeContainer/Water/WaterGraph"]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = -17.0
+offset_right = -17.0
+grow_vertical = 2
 
-[node name="MaxSpeed" type="Label" parent="Background/PlantKnowledgeContainer/Water/WaterGraph"]
-layout_mode = 0
-offset_left = -44.0
+[node name="TextureRect" type="TextureRect" parent="Background/PlantKnowledgeContainer/Water/WaterGraph/Horizontal"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -12.5
+offset_right = 12.5
+offset_bottom = 25.0
+grow_horizontal = 2
+texture = SubResource("AtlasTexture_8qljd")
+stretch_mode = 5
+
+[node name="TextureRect2" type="TextureRect" parent="Background/PlantKnowledgeContainer/Water/WaterGraph/Horizontal"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -12.5
+offset_top = -25.0
+offset_right = 12.5
+grow_horizontal = 2
+grow_vertical = 0
+texture = SubResource("AtlasTexture_4cegn")
+stretch_mode = 5
+
+[node name="Vertical" type="Control" parent="Background/PlantKnowledgeContainer/Water/WaterGraph"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 8.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 0
+pivot_offset = Vector2(208, -9)
+
+[node name="Origin" type="Label" parent="Background/PlantKnowledgeContainer/Water/WaterGraph/Vertical"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
 offset_top = -7.0
-offset_right = 14.0
+offset_right = 58.0
 offset_bottom = 7.0
-theme_override_font_sizes/font_size = 10
-text = "100%"
-horizontal_alignment = 1
-vertical_alignment = 2
-
-[node name="Origin" type="Label" parent="Background/PlantKnowledgeContainer/Water/WaterGraph"]
-layout_mode = 0
-offset_left = -31.0
-offset_top = 135.0
-offset_right = 27.0
-offset_bottom = 149.0
+grow_vertical = 2
 theme_override_font_sizes/font_size = 10
 text = "0%"
-horizontal_alignment = 1
 vertical_alignment = 2
 
-[node name="Water" type="Label" parent="Background/PlantKnowledgeContainer/Water/WaterGraph"]
-layout_mode = 0
-offset_left = 379.0
-offset_top = 127.0
-offset_right = 437.0
-offset_bottom = 158.0
-theme_override_font_sizes/font_size = 10
-text = "Water
-"
+[node name="Water" type="Label" parent="Background/PlantKnowledgeContainer/Water/WaterGraph/Vertical"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -39.0
+offset_top = -7.5
+offset_right = 39.0
+offset_bottom = 7.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 12
+text = "Ground wetness"
 horizontal_alignment = 1
-vertical_alignment = 2
 
-[node name="MaxWater" type="Label" parent="Background/PlantKnowledgeContainer/Water/WaterGraph"]
-layout_mode = 0
-offset_left = 351.0
-offset_top = 136.0
-offset_right = 409.0
-offset_bottom = 150.0
+[node name="MaxWater" type="Label" parent="Background/PlantKnowledgeContainer/Water/WaterGraph/Vertical"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -58.0
+offset_top = -7.0
+offset_bottom = 7.0
+grow_horizontal = 0
+grow_vertical = 2
 theme_override_font_sizes/font_size = 10
 text = "100%"
-horizontal_alignment = 1
+horizontal_alignment = 2
 vertical_alignment = 2
 
 [node name="WaterGraphResearch" type="Label" parent="Background/PlantKnowledgeContainer/Water"]
