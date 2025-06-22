@@ -191,7 +191,6 @@ ExtResource("18_tel4y"): 3,
 ExtResource("20_fv21b"): 3
 })
 death_screen = NodePath("../Ui/DeathScreen")
-can_die = true
 story_knowledge = ExtResource("19_fv21b")
 building_knowledge = ExtResource("20_tel4y")
 weather_knowledge = ExtResource("18_og1vs")

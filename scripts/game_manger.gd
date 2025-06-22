@@ -12,6 +12,8 @@ class Stats:
 var stats: Stats = Stats.new() 
 
 var current_food_requirements: int;
+@export var food_increase_per_day: int = 10
+
 var _weather: Array[int] = [0]
 
 var weather_bias: int = 0
@@ -140,7 +142,12 @@ func add_weather():
 	_weather.push_back(int(new_weather))
 
 func _calc_food_requirement() -> int:
-	return stats.days_survived * 10
+	var days_factor = (min(stats.days_survived, 5)**2) / 10.0
+	
+	if(stats.days_survived >= 5):
+		days_factor += stats.days_survived - 5.0
+	
+	return days_factor * food_increase_per_day
 
 func _consume_food() -> bool:
 	var to_eat = current_food_requirements

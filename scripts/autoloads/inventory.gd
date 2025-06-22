@@ -1,7 +1,7 @@
 extends Node
 
 class Data:
-	var harvested: int = 100
+	var harvested: int = 0
 	var seeds: int = 0
 	var max_seeds: int = 0
 
